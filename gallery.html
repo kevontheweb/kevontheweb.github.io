@@ -1,0 +1,20 @@
+---
+layout: default
+permalink: /gallery/
+---
+
+<h1><em>/ my moodboard /</em></h1>
+<p>
+  here are some images that i have been feeling the
+  <em>a e s t h e t i c</em> of lately
+</p>
+<div class="gallery"></div>
+<script>
+  gallery = document.querySelector(".gallery");
+  for (let i = 1; i < 25; i++) {
+    imageEntry = document.createElement("img");
+    imageEntry.src = `{{ site.url }}{{ site.baseurl }}/assets/images/gallery/${i}.png`;
+    imageEntry.className = "gallery_img";
+    gallery.append(imageEntry);
+  }
+</script>

@@ -1,0 +1,7 @@
+title: Kevin Nel's Blog
+author: Kevin Nel
+description: This is a place for my thoughts, projects, and other stuff, free from the rat race that is the modern web.
+permalink: none
+markdown: kramdown
+kramdown:
+    smart_quotes: ["apos", "apos", "quot", "quot"]

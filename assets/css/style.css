@@ -4,6 +4,7 @@
   --background-color: #0d1117;
   --secondary-bg-color: #272e38;
   --font-color: #c9d1d9;
+  --secondary-font-color: #8a939c;
   --link-color: #4d6589;
   --link-color-visited: #69568f;
   --selection-color: #3eb1ab;
@@ -15,6 +16,7 @@
     --background-color: white;
     --secondary-bg-color: #c8ccd1;
     --font-color: #0d1117;
+    --secondary-font-color: #b0bed2;
     --link-color: #3666ae;
     --link-color-visited: #6948ac;
     --selection-color: #ffecad;
@@ -66,7 +68,7 @@ a:hover {
 }
 
 ul {
-  list-style-type: "-";
+  list-style-type: "- ";
 }
 
 .posts > ul {
@@ -131,6 +133,7 @@ tbody {
 
 blockquote {
   font-style: italic;
+  color: var(--secondary-font-color);
 }
 
 /* nav bar  */

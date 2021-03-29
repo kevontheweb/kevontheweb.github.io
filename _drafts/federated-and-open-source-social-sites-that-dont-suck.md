@@ -42,3 +42,15 @@ link aggregator for the fediverse
 https://vidcommons.org/
 
 public domain and creative commons content
+
+
+mastodon instances
+https://merveilles.town/about
+https://qoto.org
+https://mastodon.sdf.org
+forbidden e https://oulipo.social/about/more
+https://cybre.space/about
+https://shpposter.club/
+
+
+another article https://fediverse.blog/~/DielansBlog@melonmancy.net/finding-your-way-around-the-fediverse

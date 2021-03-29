@@ -107,5 +107,7 @@ This will be a dynamically updated article and I will add/remove fonts periodica
     to add:
     https://github.com/coreyhu/Urbanist
     https://github.com/source-foundry/Hack
+    https://www.type-together.com/literata-font
+    https://fonts.google.com/specimen/Averia+Libre?preview.text_type=custom
     
 -->

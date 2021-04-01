@@ -1,98 +1,4 @@
-@font-face{
-  font-family: "mononoki";
-  src: url("../fonts/mononoki-Regular.woff") format("woff"),
-       url("../fonts/mononoki-Regular.woff2") format("woff2");
-}
-@font-face{
-  font-family: "mononoki";
-  src: url("../fonts/mononoki-Bold.woff") format("woff"),
-       url("../fonts/mononoki-Bold.woff2") format("woff2");
-  font-weight: bold;
-}
-@font-face{
-  font-family: "mononoki";
-  src: url("../fonts/mononoki-Italic.woff") format("woff"),
-       url("../fonts/mononoki-Italic.woff2") format("woff2");
-  font-style: italic;
-}
-@font-face{
-  font-family: "mononoki";
-  src: url("../fonts/mononoki-BoldItalic.woff") format("woff"),
-       url("../fonts/mononoki-BoldItalic.woff2") format("woff2");
-  font-style: italic;
-  font-weight: bold;
-}
-
-/* self host google fonts:  https://google-webfonts-helper.herokuapp.com/ */
-/* roboto-slab-300 - latin */
-@font-face {
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: 300;
-  src: local(''),
-       url('../fonts/roboto-slab-v13-latin-300.woff2') format('woff2'), 
-       url('../fonts/roboto-slab-v13-latin-300.woff') format('woff'); 
-}
-
-/* roboto-slab-regular - latin */
-@font-face {
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: 400;
-  src: local(''),
-       url('../fonts/roboto-slab-v13-latin-regular.woff2') format('woff2'), 
-       url('../fonts/roboto-slab-v13-latin-regular.woff') format('woff'); 
-}
-
-/* roboto-slab-700 - latin */
-@font-face {
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: 700;
-  src: local(''),
-       url('../fonts/roboto-slab-v13-latin-700.woff2') format('woff2'), 
-       url('../fonts/roboto-slab-v13-latin-700.woff') format('woff');
-}
-
-/* roboto-regular - latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local(''),
-       url('../fonts/roboto-v20-latin-regular.woff2') format('woff2'),
-       url('../fonts/roboto-v20-latin-regular.woff') format('woff');
-}
-
-/* roboto-italic - latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: italic;
-  font-weight: 400;
-  src: local(''),
-       url('../fonts/roboto-v20-latin-italic.woff2') format('woff2'),
-       url('../fonts/roboto-v20-latin-italic.woff') format('woff');
-}
-
-/* roboto-700 - latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  src: local(''),
-       url('../fonts/roboto-v20-latin-700.woff2') format('woff2'),
-       url('../fonts/roboto-v20-latin-700.woff') format('woff');
-}
-
-/* roboto-700italic - latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: italic;
-  font-weight: 700;
-  src: local(''),
-       url('../fonts/roboto-v20-latin-700italic.woff2') format('woff2'),
-       url('../fonts/roboto-v20-latin-700italic.woff') format('woff');
-}
+@import url("fonts.css");
 
 :root {
   --background-color: #0d1117;
@@ -120,9 +26,10 @@
   }
 }
 
+
 html {
   font-family: var(--font-serif);
-  font-size: 18px;
+  font-size: 16px;
   background-color: var(--background-color);
   color: var(--font-color);
 }
@@ -134,20 +41,12 @@ body {
   padding: 0 10px;
 }
 
-p,
-ol,
-ul,
-pre {
-  margin: 5px 0;
-}
-
 h1,
 h2,
 h3,
 h4,
 h5,
 h6{
-  margin: 10px 0;
   font-family: var(--font-sans);
   font-weight: 700;
   font-style: italic;
@@ -189,6 +88,7 @@ ul {
 .post-content{
   margin-bottom: 15px;
 }
+
 img {
   display: block;
   width: 60%;
@@ -200,18 +100,21 @@ pre {
   font-family: var(--font-mono);
   background-color: var(--secondary-bg-color);
   padding: 5px;
+  min-height: 2em;
   height: auto;
   max-height: var(--content-width);
   overflow: auto;
   word-break: normal;
   word-wrap: normal;
   white-space: pre;
+  border-radius: 5px;
 }
 
 code {
   font-family: var(--font-mono);
   background-color: var(--secondary-bg-color);
-  padding: 1px 2px;
+  padding: 2px;
+  border-radius: 2px;
 }
 
 table,
@@ -243,12 +146,9 @@ blockquote {
 
 /* nav bar  */
 
-header {
-  margin: 10px 0;
-}
-
 nav {
-  display: inline;
+  display: flex;
+  justify-content: space-between;
 }
 
 nav > * {

@@ -7,7 +7,6 @@ body{
   line-height: 1.2;
   overflow: auto;
 }
-
 img{
   max-width: 650px;
   display: block;
@@ -16,12 +15,13 @@ img{
 blockquote{
   font-style: italic;
   background-color: #ddd;
-  padding: 10px 20px;
+  padding: 5px 20px;
 }
 pre {
   overflow: auto;
   white-space: pre;
   background-color: #eee;
+  padding: 5px;
 }
 @media (prefers-color-scheme: dark) {
   body{

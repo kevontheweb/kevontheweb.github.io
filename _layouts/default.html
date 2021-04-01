@@ -11,8 +11,10 @@
 </head>
 
 <body>
-    <header>{% include navigation.html %}</header>
+  <header>{% include navigation.html %}</header>
+  <main>
     <h1 class="page-title">{{ page.title }}</h1>
+    <span>{{ post.date | date: "%B %e, %Y" }}</span>
     <div class="post-categories">
         {% if post %}
           {% assign categories = post.categories %}
@@ -27,6 +29,7 @@
     <div class="content">
         {{content}}  
     </div>
+  </main>
 </body>
 
 </html>

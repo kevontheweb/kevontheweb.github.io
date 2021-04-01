@@ -26,7 +26,6 @@
   }
 }
 
-
 html {
   font-family: var(--font-serif);
   font-size: 15px;
@@ -82,10 +81,12 @@ ul {
 .posts > ul > li > a {
   text-decoration: underline;
 }
-.microblog > ul {
+
+.microblog > article{
   padding: 5px;
   font-family: var(--font-mono)
 }
+
 .post-content{
   margin-bottom: 15px;
 }

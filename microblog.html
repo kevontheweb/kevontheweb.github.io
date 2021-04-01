@@ -4,16 +4,13 @@ title: "μ-blog"
 permalink: /microblog/
 ---
 
-<div class="microblog posts">
-    {% for post in site.posts %}
-      {% if post.path contains 'microblog' %}
-      <article>
-        <span>{{ post.date | date: "%B %e, %Y" }}</span>
-        <a href="{{ post.url }}">{{ post.title }}</a>
-        <div class="post-content">
-            {{post.content}}
-        </div>
-      </article>
-      {% endif %}
-    {% endfor %}  
-</div>
+
+{% for post in site.posts %}
+  {% if post.path contains 'microblog' %}
+  <article>
+    <span>{{ post.date | date: "%B %e, %Y" }}</span>
+    <a href="{{ post.url }}">{{ post.title }}</a>
+    {{post.content}}
+  </article>
+  {% endif %}
+{% endfor %}  

@@ -70,8 +70,9 @@ ul {
   list-style-type: "- ";
 }
 
-.posts > ul {
+.category-group > ul {
   list-style: none;
+  padding: 0px;
 }
 
 .posts > ul > li {

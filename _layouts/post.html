@@ -1,7 +1,13 @@
 ---
 layout: default
 ---
-
+{% assign categories = post.categories %}
 <article id="post">
+  <h1 class="post-title">{{ post.title }}</h1>
+  <span>{{ post.date | date: "%B %e, %Y" }} </span>
+  {% for category in categories %}
+    <a href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a>
+    {% unless forloop.last %}&nbsp;{% endunless %}
+  {% endfor %}
   {{ content }}
 </article>

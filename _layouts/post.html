@@ -1,15 +1,16 @@
 ---
 layout: default
 ---
-{% assign categories = post.categories %}
+
 <article class="h-entry">
   <h1 class="p-name">{{ page.title }}</h1>
-  <p>Author: <a class="p-author h-card" href="http://kevinnel.com/about">Kevin Nel</a>
+  <p>Author: <a class="p-author h-card" href="http://kevinnel.com/about">Kevin Nel</a></p>
   <time class="dt-published" datetime="{{ page.date }}">{{ page.date | date: "%B %e, %Y" }}</time>
-  {% for category in categories %}
+  {% for category in post.categories %}
     <a class="p-category" href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a>
     {% unless forloop.last %}&nbsp;{% endunless %}
   {% endfor %}
+  <a href="{{post_url}}">Share this post</a>
   <div class="e-content">
   {{ content }}
   </div>

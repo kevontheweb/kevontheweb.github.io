@@ -7,10 +7,10 @@ permalink: /categories/
 {% for category in site.categories %}
 <section>
   {% capture category_name %}{{ category | first }}{% endcapture %}
-  <h3>{{ category_name }}</h3>
+  <h3 class="category-head">{{ category_name }}</h3>
   <ul>
     {% for post in site.categories[category_name] %}
-      <li><span>{{ post.date | date: "%B %e, %Y" }}</span><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></li>
+      <li><time datetime="{{post.date}}">{{ post.date | date: "%B %e, %Y" }}</time><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></li>
     {% endfor %}
   </ul>
 </section>

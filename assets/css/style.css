@@ -51,6 +51,10 @@ h6{
   font-style: italic;
 }
 
+time{
+  padding-right: 1ch;
+}
+
 a:link {
   text-decoration: none;
   color: var(--link-color);
@@ -70,7 +74,8 @@ ul {
   list-style-type: "- ";
 }
 
-.category-group > ul {
+.category-group > ul,
+.posts > ul {
   list-style: none;
   padding: 0px;
 }
@@ -83,8 +88,7 @@ ul {
   text-decoration: underline;
 }
 
-.microblog > article{
-  padding: 5px;
+article.microblog{
   font-family: var(--font-mono)
 }
 

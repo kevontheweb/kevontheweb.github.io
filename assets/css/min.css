@@ -1,24 +1,34 @@
 body{
-    max-width: 700px;
-    margin:auto;
-    font-family: sans-serif;
-    color: #444;
-    margin-top: 30px;
-    line-height: 1.2;
-    overflow: auto;
+  max-width: 700px;
+  margin:auto;
+  font-family: sans-serif;
+  color: #444;
+  margin-top: 30px;
+  line-height: 1.2;
+  overflow: auto;
+}
+
+img{
+  max-width: 650px;
+  display: block;
+  margin: auto;
+}
+blockquote{
+  font-style: italic;
+  background-color: #ddd;
+  padding: 10px 20px;
+}
+pre {
+  overflow: auto;
+  white-space: pre;
+  background-color: #eee;
+}
+@media (prefers-color-scheme: dark) {
+  body{
+    background-color: #0d1117;
+    color: #c9d1d9;
   }
-  
-  pre {
-    overflow: auto;
-    white-space: pre;
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    body{
-      background-color: #121212;
-      color: #ddd;
-    }
-    a:link{color: lightskyblue}
-    a:visited{color: orchid}
-  }
-  
+  blockquote{background-color: #272e38;}
+  a:link{color: lightskyblue}
+  a:visited{color: orchid}
+}

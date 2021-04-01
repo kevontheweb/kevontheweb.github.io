@@ -11,7 +11,7 @@ As someone that is relatively privacy conscious the idea of using my website as 
 Going back to the "wild west" of the internet and not relying on any platform to post my own stuff feels strangely refreshing, considering that it is a very old way of using the internet.
 One day I was helping a friend start his own jekyll blog and this inspired me to finally bite the bullet and rebuild it.
 I wanted to make the layout much simpler, and not rely on a theme for custom styling.
-I also wanted to make some new sections to accommadate the type of content one might like to post on social media like images and short *"microblogs"*
+I also wanted to make some new sections to accommodate the type of content one might like to post on social media like images and short *"microblogs"*
 
 ## How
 
@@ -20,7 +20,7 @@ I wanted to use a much simpler theme or make my own theme.
 I ended up not using a theme and doing all the styling myself.
 for the style I was quite inspired by the excellent site [tilde town](tilde.town)
 
-Since I struggled getting jekyll and ruby to work on my windows maching I started with the [jekyll base](https://github.com/danielmcgraw/Jekyll-Base) repository and removed the theme from ``_config.yml``.
+Since I struggled getting jekyll and ruby to work on my windows machine I started with the [jekyll base](https://github.com/danielmcgraw/Jekyll-Base) repository and removed the theme from ``_config.yml``.
 I started with a simple main page that just lists all my blog posts chronologically and slowly added more categories and a nav bar etc.
 [This cheatsheet](https://gist.github.com/magicznyleszek/9803727) proved useful in figuring out some of the more complicated liquid syntax.
 One of the things I struggled with most was excluding the micro blog posts from the main blog page since I would like to be able to post more often and more freely without it cluttering up the section that contained longer more "serious" blog posts.

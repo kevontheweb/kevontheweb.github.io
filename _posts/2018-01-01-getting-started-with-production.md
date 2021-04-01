@@ -20,10 +20,11 @@ Youtube has tons of tutorials all free free (apart from data costs) and you can 
 
 Theres tons of great free plugins for synths and effects (a quick google search will get you thousands)
 
-1. PS. Landr has got a lot of great articles with tips and stuff as well
+> PS. Landr has got a lot of great articles with tips and stuff as well
+
 1. [Every Free VST Plugin You Need For Mixing Perfect Vocals | LANDR Blog](https://blog.landr.com/every-free-plugin-need-mixing-perfect-vocals/)
-1. [The 200 Best Free VST Plugins | LANDR Blog](https://blog.landr.com/best-free-vst-plugins/)
-1. [12 of the best free VST/AU plugin synths | MusicRadar](https://www.musicradar.com/news/tech/12-of-the-best-free-vst-au-plugin-synths-615790)
+2. [The 200 Best Free VST Plugins | LANDR Blog](https://blog.landr.com/best-free-vst-plugins/)
+3. [12 of the best free VST/AU plugin synths | MusicRadar](https://www.musicradar.com/news/tech/12-of-the-best-free-vst-au-plugin-synths-615790)
 
 Some others like ‘camel crusher’ are even staples in a lot of pros setups
 

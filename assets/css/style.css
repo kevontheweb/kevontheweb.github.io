@@ -37,6 +37,7 @@ body {
   max-width: var(--content-width);
   margin: 0 auto;
   margin-top: 50px;
+  margin-bottom: 15px;
   padding: 0 10px;
 }
 
@@ -49,10 +50,6 @@ h6{
   font-family: var(--font-sans);
   font-weight: 700;
   font-style: italic;
-}
-
-time{
-  padding-right: 1ch;
 }
 
 a:link {
@@ -70,9 +67,15 @@ a:hover {
   font-style: italic;
 }
 
+::selection {
+  background: var(--selection-color);
+}
+
 ul {
   list-style-type: "- ";
 }
+
+/* underline headings in the categories page and style the post lists to be a bit nicer */
 
 .category-group > ul,
 .posts > ul {
@@ -90,10 +93,6 @@ ul {
 
 article.microblog{
   font-family: var(--font-mono)
-}
-
-.post-content{
-  margin-bottom: 15px;
 }
 
 img {
@@ -123,6 +122,8 @@ code {
   border-radius: 2px;
 }
 
+/* tables */
+
 table,
 th,
 td {
@@ -138,10 +139,6 @@ tbody {
   border-collapse: collapse;
 }
 
-::selection {
-  background: var(--selection-color);
-}
-
 blockquote {
   font-style: italic;
   color: var(--font-color);
@@ -152,19 +149,16 @@ blockquote {
 
 /* nav bar  */
 
-nav {
-  display: flex;
-  justify-content: space-between;
-}
+nav {display: inline;}
 
 nav > * {
-  padding-inline-end: 15px;
+  padding-right: 15px;
   font-size: 1.2em;
   font-style: var(--font-mono);
   font-weight: bold;
 }
 
-nav > a:any-link {
+nav > a{
   text-decoration: none;
 }
 

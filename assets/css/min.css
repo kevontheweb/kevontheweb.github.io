@@ -2,33 +2,34 @@ body{
   max-width: 700px;
   margin:auto;
   font-family: sans-serif;
-  color: #444;
+  color: #0d1117;
   margin-top: 30px;
   line-height: 1.2;
   overflow: auto;
 }
+a:link{color: #3666ae}
+a:visited{color: #6948ac}
+::selection{background: #ffecad}
 img{
-  max-width: 650px;
+  max-width: 350px;
   display: block;
   margin: auto;
 }
-blockquote{
-  font-style: italic;
-  background-color: #ddd;
+
+blockquote{font-style: italic}
+pre {overflow: auto;}
+blockquote,pre{
+  background-color: #eee;
   padding: 5px 20px;
 }
-pre {
-  overflow: auto;
-  white-space: pre;
-  background-color: #eee;
-  padding: 5px;
-}
+
 @media (prefers-color-scheme: dark) {
   body{
     background-color: #0d1117;
     color: #c9d1d9;
   }
-  blockquote{background-color: #272e38;}
-  a:link{color: lightskyblue}
-  a:visited{color: orchid}
+  blockquote,pre{background-color: #272e38}
+  a:link{color: #4d6589}
+  a:visited{color: #69568f}
+  ::selection{background: #3eb1ab}
 }

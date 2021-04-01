@@ -1,7 +1,7 @@
 ---
 title: "My Favorite Fonts"
 author: Kevin Nel
-categories: [tech]
+categories: [tech,art]
 ---
 
 Typography is one of my favorite facets of design, although I am not a designer or even a visual/graphic artist I have a deep appreciation for how the presentation of text influences our perception of the content.

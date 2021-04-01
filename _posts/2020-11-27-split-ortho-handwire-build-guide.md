@@ -2,7 +2,7 @@
 title: "Building a Custom Split Mechanical Keyboard"
 author: Kevin Nel
 last_modified_at: 2020-11-27
-categories: [tech]
+categories: [tech,electronics]
 ---
 
 ## 1. Table of Contents

@@ -29,7 +29,8 @@
 
 html {
   font-family: var(--font-serif);
-  font-size: 16px;
+  font-size: 15px;
+  letter-spacing: 0.05em;
   background-color: var(--background-color);
   color: var(--font-color);
 }
@@ -94,6 +95,7 @@ img {
   width: 60%;
   height: auto;
   margin: 5px auto;
+  border-radius: 5px;
 }
 
 pre {

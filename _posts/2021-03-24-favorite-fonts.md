@@ -7,7 +7,7 @@ categories: [tech]
 Typography is one of my favorite facets of design, although I am not a designer or even a visual/graphic artist I have a deep appreciation for how the presentation of text influences our perception of the content.
 Good font choices and layout can make an article feel powerful, playful or sombre all before one even begins to read.
 
-My own website *attempts* to channel a technical or old-school feel through the use of monospace fonts and limited formatting (though this is subject to change due to the continuously evolving nature of this website).
+<!-- My own website *attempts* to channel a technical or old-school feel through the use of monospace fonts and limited formatting (though this is subject to change due to the continuously evolving nature of this website). -->
 
 Below I intend on showcasing some of my favorite fonts with some classic lorem ipsum dummy text.
 This will be a dynamically updated article and I will add/remove fonts periodically.

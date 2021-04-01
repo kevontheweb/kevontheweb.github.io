@@ -51,6 +51,14 @@ https://mastodon.sdf.org
 forbidden e https://oulipo.social/about/more
 https://cybre.space/about
 https://shpposter.club/
+https://mastodon.art/about/more very extensive blocklist and strict sounding policy regarding nsfw
+https://sunbeam.city/about solarpunk instance
 
 
 another article https://fediverse.blog/~/DielansBlog@melonmancy.net/finding-your-way-around-the-fediverse
+
+https://gnu.gr/ [libre.ops](https://libreops.cc/) 
+
+free xmpp hostingh
+
+

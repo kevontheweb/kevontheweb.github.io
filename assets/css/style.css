@@ -32,6 +32,9 @@
   --link-color-visited: #69568f;
   --selection-color: #3eb1ab;
   --content-width: 750px;
+  --font-serif: Georgia, 'Bookman Old Style', serif;
+  --font-sans: Verdana, sans-serif;
+  --font-mono: "mononoki", monospace;
 }
 
 @media (prefers-color-scheme: light) {
@@ -47,7 +50,7 @@
 }
 
 html {
-  font-family: "mononoki", monospace;
+  font-family: var(--font-serif);
   background-color: var(--background-color);
   color: var(--font-color);
 }
@@ -73,6 +76,7 @@ h4,
 h5,
 h6 {
   margin: 10px 0;
+  font-family: var(--font-sans);
 }
 
 a:link {
@@ -119,6 +123,7 @@ img {
 }
 
 pre {
+  font-family: var(--font-mono);
   background-color: var(--secondary-bg-color);
   padding: 5px;
   height: auto;
@@ -130,6 +135,7 @@ pre {
 }
 
 code {
+  font-family: var(--font-mono);
   background-color: var(--secondary-bg-color);
   padding: 1px 2px;
 }

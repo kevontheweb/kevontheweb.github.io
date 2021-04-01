@@ -171,7 +171,7 @@ nav > a:any-link {
 }
 
 .category-head:after,
-nav:after {
+header:after {
   margin-top: 10px;
   display: block;
   width: 100%;

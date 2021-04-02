@@ -1,7 +1,8 @@
 @import url("fonts.css");
 body{
   max-width: 700px;
-  margin: 50px auto;
+  padding: 0px 5px;
+  margin: 30px auto;
   font-family: 'Roboto Slab', sans-serif;
   color: #0d1117
 }
@@ -13,7 +14,7 @@ a:link{color: #3666ae}
 a:visited{color: #6948ac}
 ::selection{background: #ffecad}
 img{
-  max-width: 600px;
+  max-width: 90%;
   max-height: 50vh;
   display: block;
   margin: 10px auto

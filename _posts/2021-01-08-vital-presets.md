@@ -5,11 +5,11 @@ last_modified_at: 2021-01-08
 categories: [music]
 ---
 
-> Update :
-> 
+> Update:
+>
 > Unfortunately due to licencing issues I had to remove these presets.
 > Although I did make them from scratch they were using the factory wavetables which are unfortunately not re-distributable.
-> I may decide to remake them all my own wavetables but until then the presets are unavailable 😢 
+> I may decide to remake them all my own wavetables but until then the presets are unavailable 😢
 
 
 Ever since [Matt Tytel's Vital](https://vital.audio/) released late 2020 I've been playing with this synth almost non stop. It's an amazing wavetable synth in the vein of [Xfer serum](https://xferrecords.com/products/serum/) and [Arturia Pigments](https://www.arturia.com/store/analog-classics/pigments) but **it's entirely free** (although you can opt to pay for more stock patches to be included and support the developer if you'd like).

@@ -5,6 +5,10 @@ last_modified_at: 2020-11-27
 categories: [tech,electronics]
 ---
 
+<!--
+![final build with nice keycaps](../assets/images/lets-split-preonic/final.png)
+-->
+
 ## 1. Table of Contents
 
 - [1. Table of Contents](#1-table-of-contents)
@@ -46,7 +50,11 @@ I had three main criteria:
 2. cost: I did not want my first foray into mechanical keyboards to cost me a fortune as I would just be trying it out.
 3. cool factor: I didn't want it to just be any old keyboard.
 
-With that in mind here are the options I considered with pros and cons.
+I ended up going with the idea of a split ortholinear keyboard with the same amount of keys as a preonic.
+<details>
+<summary>See all the options I considered</summary>
+
+Here are the options I considered with pros and cons.
 I also included KLE json for each of them for convenience sake.
 
 ### 2.1. 75% ortho
@@ -170,6 +178,9 @@ cons:
 
 acrylic and standoffs for case (ie raspberry pi)
 
+
+</details>
+
 ## 3. Final Choice
 
 split 75% ortho handwired (similar to let's split only with a number row.) with an acrylic mounting and base plate separated by pcb standoffs.
@@ -189,7 +200,8 @@ split 75% ortho handwired (similar to let's split only with a number row.) with 
 The case and plate where generated using [swillkb builder](builder.swillkb.com/)
 I had the case and plate laser cut in 3mm acrylic by my uncle. who graciously didn't charge me.
 
-![plate]({{ site.url }}{{ site.baseurl }}/assets/images/lets-split-preonic/0.svg)
+
+> ![plate](/assets/images/lets-split-preonic/0.svg)
 
 ### 4.2. BOM
 
@@ -237,7 +249,7 @@ You can see a schematic below.
 this is how I wired my rows and columns to the Pro-Micro
 
 ```txt
-rows:  
+rows:
 0=b5
 1=b4
 2=e6
@@ -302,15 +314,15 @@ If I do not adapt to the split I may try my hand at building a plank as they are
 
 ## 8. Some Photos
 
-![laser cut plates]({{ site.url }}{{ site.baseurl }}/assets/images/lets-split-preonic/1.jpg)
+![laser cut plates](/assets/images/lets-split-preonic/1.jpg)
 
-![soldering]({{ site.url }}{{ site.baseurl }}/assets/images/lets-split-preonic/2.jpg)
+![soldering](/assets/images/lets-split-preonic/2.jpg)
 
-![first half done including microcontroller and trrs jack]({{ site.url }}{{ site.baseurl }}/assets/images/lets-split-preonic/3.jpg)
+![first half done including microcontroller and trrs jack](/assets/images/lets-split-preonic/3.jpg)
 
-![assembled with bottom (no keycaps yet)]({{ site.url }}{{ site.baseurl }}/assets/images/lets-split-preonic/4.jpg)
+![assembled with bottom (no keycaps yet)](/assets/images/lets-split-preonic/4.jpg)
 
-![on the desk (still no keycaps 😢)]({{ site.url }}{{ site.baseurl }}/assets/images/lets-split-preonic/5.jpg)
+![on the desk (still no keycaps 😢)](/assets/images/lets-split-preonic/5.jpg)
 
 ## 9. References
 

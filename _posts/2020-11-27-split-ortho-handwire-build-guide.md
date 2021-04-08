@@ -54,6 +54,7 @@ I ended up going with the idea of a split ortholinear keyboard with the same amo
 <details>
 <summary>See all the options I considered</summary>
 
+<div markdown="1">
 Here are the options I considered with pros and cons.
 I also included KLE json for each of them for convenience sake.
 
@@ -178,7 +179,7 @@ cons:
 
 acrylic and standoffs for case (ie raspberry pi)
 
-
+</div>
 </details>
 
 ## 3. Final Choice

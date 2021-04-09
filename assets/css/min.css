@@ -7,6 +7,7 @@ body{
   font: 16px /1.5 'Roboto Slab', sans-serif
 }
 h1,h2,h3,h4,h5,h6{font: italic small-caps bold 1.3em /1.2 'Roboto', sans-serif}
+hr{color: #0d1117}
 a:link{color: #3666ae}
 a:visited{color: #6948ac}
 ::selection{background: #ffecad}
@@ -37,6 +38,7 @@ table,thead,tbody{
     color: #c9d1d9
   }
   blockquote,pre,code{background-color: #272e38}
+  hr{color: #c9d1d9}
   a:link{color: #4d6589}
   a:visited{color: #69568f}
   ::selection{background: #3eb1ab}

@@ -5,9 +5,10 @@ permalink: /categories/
 ---
 
 {% for category in site.categories %}
-<section class="category-group">
+<section>
   {% capture category_name %}{{ category | first }}{% endcapture %}
-  <h3 class="category-head">{{ category_name }}</h3>
+  <h3 align="right">{{ category_name }}</h3>
+  <hr>
   <ul>
     {% for post in site.categories[category_name] %}
       <li><time datetime="{{post.date}}">{{ post.date | date: "%B %e, %Y" }}&nbsp;</time><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></li>

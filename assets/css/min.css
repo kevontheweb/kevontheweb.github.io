@@ -4,15 +4,9 @@ body{
   padding: 0px 5px;
   margin: 30px auto;
   color: #0d1117;
-  font-family: 'Roboto Slab', sans-serif;
-  font-size: 16px;
-  line-height: 1.5
+  font: 16px /1.5 'Roboto Slab', sans-serif
 }
-h1,h2,h3,h4,h5,h6{
-  font-family: 'Roboto', sans-serif;
-  font-style: italic;
-  line-height: 1.2
-}
+h1,h2,h3,h4,h5,h6{font: italic small-caps bold 1.3em /1.2 'Roboto', sans-serif}
 a:link{color: #3666ae}
 a:visited{color: #6948ac}
 ::selection{background: #ffecad}
@@ -28,6 +22,15 @@ blockquote{font-style: italic}
 pre,code{font-family: 'mononoki', 'Consolas', monospace}
 pre{overflow: auto}
 code{padding: 0.1em}
+table,th,td {
+  border: 0.1em solid;
+  padding: 0.3em
+}
+table,thead,tbody{
+  max-width: 90%;
+  margin: 10px auto;
+  border-collapse: collapse
+}
 @media (prefers-color-scheme: dark) {
   body{
     background-color: #0d1117;

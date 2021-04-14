@@ -8,14 +8,15 @@ body{
 }
 h1,h2,h3,h4,h5,h6{font: italic small-caps bold 1.3em /1.2 'Roboto', sans-serif}
 hr{color: #0d1117}
-a:link{color: #3666ae}
+a:link{color: #3666ae; padding: 2px;}
 a:visited{color: #6948ac}
+a:hover{background-color: #0d1117; color: #c9d1d9}
 ::selection{background: #ffecad}
 img{
   max-width: 90%;
   max-height: 50vh;
   display: block;
-  margin: 10px auto
+  margin: 10px auto;
 }
 blockquote,pre,code{background-color: #c9d1d9}
 blockquote,pre{padding: 1em}
@@ -32,6 +33,9 @@ table,thead,tbody{
   margin: 10px auto;
   border-collapse: collapse
 }
+nav ul{
+  list-style-type: none;
+}
 @media (prefers-color-scheme: dark) {
   body{
     background-color: #0d1117;
@@ -41,5 +45,6 @@ table,thead,tbody{
   hr{color: #c9d1d9}
   a:link{color: #4d6589}
   a:visited{color: #69568f}
+  a:hover{background-color: #c9d1d9; color: #0d1117}
   ::selection{background: #3eb1ab}
 }

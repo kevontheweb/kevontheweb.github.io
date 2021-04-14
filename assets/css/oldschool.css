@@ -1,0 +1,71 @@
+/* adapted from http://werc.cat-v.org/ */
+:root{
+    --text-color: black;
+    --bg-color: whitesmoke;
+    --accent-color: gray;
+    --alt-text-color: white;
+}
+@media (prefers-color-scheme: dark) {
+:root{
+    --text-color: whitesmoke;
+    --bg-color: black;
+    --accent-color: white;
+    --alt-text-color: gray
+  }
+}
+  html {
+    background: linear-gradient(90deg, var(--bg-color) 20px, transparent 1%) center, linear-gradient(var(--bg-color) 20px, transparent 1%) center, var(--alt-text-color);
+    background-size: 22px 22px;
+  }
+  body {
+    max-width: 50em;
+    margin: 3em auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 3em;
+    font: 16px /1.5 'Georgia', serif;
+  }
+  header {
+    flex-basis: 100%;
+    flex-shrink: 0;
+  }
+  main {
+    flex-basis: 75%;
+    padding-left: 1em;
+  }
+  footer {
+    flex-basis: 100%;
+    flex-shrink: 0;
+  }
+  header nav {
+    display: flex;
+    justify-content: space-between;
+  }
+  nav a,
+  header a,
+  a{
+    text-decoration: none;
+    color: var(--alt-text-color);
+  }
+  a:hover{
+    background-color: var(--text-color);
+    color: var(--bg-color);
+  }
+  body > nav {
+    flex-basis: content;
+    padding-right: 2em;
+  }
+  nav ul {
+    padding-left: 1em;
+  }
+  footer {
+    display: flex;
+    margin-top: 1em;
+    justify-content: space-between;
+  }
+  footer > * {
+    margin: unset;
+    color: var(--alt-text-color);
+  }

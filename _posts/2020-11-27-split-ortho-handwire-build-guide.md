@@ -5,9 +5,7 @@ last_modified_at: 2020-11-27
 categories: [tech,electronics]
 ---
 
-<!--
-![final build with nice keycaps](../assets/images/lets-split-preonic/final.png)
--->
+![final build with nice keycaps](/assets/images/lets-split-preonic/final.jpg)
 
 ## 1. Table of Contents
 
@@ -315,15 +313,23 @@ If I do not adapt to the split I may try my hand at building a plank as they are
 
 ## 8. Some Photos
 
+The acrylic plates, fresh off the laser cutter.
 ![laser cut plates](/assets/images/lets-split-preonic/1.jpg)
 
+Soldering away!
 ![soldering](/assets/images/lets-split-preonic/2.jpg)
 
+First half done!
 ![first half done including microcontroller and trrs jack](/assets/images/lets-split-preonic/3.jpg)
 
+Half the board assembled but no keycaps.
 ![assembled with bottom (no keycaps yet)](/assets/images/lets-split-preonic/4.jpg)
 
+Finished but still no keycaps
 ![on the desk (still no keycaps 😢)](/assets/images/lets-split-preonic/5.jpg)
+
+Final build with some nice bright pink and purple dsa keycaps!
+![final build with nice keycaps](/assets/images/lets-split-preonic/final.jpg)
 
 ## 9. References
 

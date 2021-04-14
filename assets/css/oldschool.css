@@ -73,6 +73,7 @@ code {
 }
 blockquote {
   font-style: italic;
+  border-left: 1px solid var(--text-color);
 }
 pre {
   overflow: auto;
@@ -105,6 +106,7 @@ nav ul {
 img {
   max-width: 60%;
   display: block;
+  object-fit: scale-down;
 }
 hr {
   color: var(--text-color);
@@ -139,7 +141,7 @@ footer {
   justify-content: space-between;
 }
 article {
-  max-width: calc(0.75 * var(--content-width));
+  max-width: calc(0.8 * var(--content-width));
 }
 footer > * {
   margin: unset;

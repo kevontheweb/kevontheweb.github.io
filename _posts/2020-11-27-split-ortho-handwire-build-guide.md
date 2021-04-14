@@ -287,7 +287,7 @@ I ended up completely rewriting the qmk firmware and removed the ``rev1/`` and `
 
 After flashing both promicros with this new firmware you should be able to import the ``via.json`` file into VIA and the board should be detected.
 
-I have also included a much nicer via layout in the via folder on the [github repo for this project](https://github.com/plainoldcheese/lets-split-preonic-handwire)
+I have also included a much nicer via layout in the via folder on the [github repo for this project](https://github.com/kevin-nel/split-ortholinear)
 
 ## 7. Final Thoughts/Review
 

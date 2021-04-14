@@ -1,71 +1,164 @@
-/* adapted from http://werc.cat-v.org/ */
-:root{
-    --text-color: black;
-    --bg-color: whitesmoke;
-    --accent-color: gray;
-    --alt-text-color: white;
+:root {
+  --text-color: #c9d1d9;
+  --bg-color: #0d1117;
+  --accent-color: #272e38;
+  --alt-text-color: #c9d1d9;
+  --selection-color: #3eb1ab;
+  --content-width: 1000px;
 }
-@media (prefers-color-scheme: dark) {
-:root{
-    --text-color: whitesmoke;
-    --bg-color: black;
-    --accent-color: white;
-    --alt-text-color: gray
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --text-color: #0d1117;
+    --bg-color: white;
+    --accent-color: #c9d1d9;
+    --alt-text-color: #c9d1d9;
+    --selection-color: #ffecad;
   }
 }
-  html {
-    background: linear-gradient(90deg, var(--bg-color) 20px, transparent 1%) center, linear-gradient(var(--bg-color) 20px, transparent 1%) center, var(--alt-text-color);
-    background-size: 22px 22px;
+
+::selection {
+  background: var(--selection-color);
+}
+html {
+  background: linear-gradient(90deg, #0d1117 15%, transparent 1%) center,
+    linear-gradient(#0d1117 15%, transparent 1%) center, #272e38;
+  background-size: 20px 20px;
+}
+/* layout of page */
+body {
+  max-width: var(--content-width);
+  margin: 3em auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 3em;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font: 16px /1.5 "Roboto Slab", "Georgia", serif;
+}
+header {
+  flex-basis: 100%;
+  flex-shrink: 0;
+}
+main {
+  flex-basis: 75%;
+  padding: 1em;
+}
+footer {
+  flex-basis: 100%;
+  flex-shrink: 0;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+}
+body > nav {
+  flex-basis: content;
+  padding-right: 2em;
+}
+
+/* general styling */
+blockquote,
+code,
+pre {
+  background-color: var(--accent-color);
+}
+blockquote,
+pre {
+  padding: 1em;
+}
+pre,
+code {
+  font-family: mononoki, "Inconsolata", "Consolas", monospace;
+}
+blockquote {
+  font-style: italic;
+}
+pre {
+  overflow: auto;
+}
+code {
+  padding: 0.1em;
+}
+table,
+th,
+td {
+  border: 0.1em solid;
+  padding: 0.3em;
+}
+table,
+thead,
+tbody {
+  max-width: 90%;
+  margin: 10px auto;
+  border-collapse: collapse;
+}
+ul {
+  list-style-type: "- ";
+}
+nav {
+  border-right: 1px solid var(--text-color);
+}
+nav ul {
+  padding-left: 1em;
+}
+img {
+  max-width: 60%;
+  display: block;
+}
+hr {
+  color: var(--text-color);
+  border-width: 0.5px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-style: italic;
+  font-variant-caps: small-caps;
+  font-weight: bold;
+  line-height: 1.2;
+  font-family: "Roboto", sans-serif;
+}
+a {
+  text-decoration: underline;
+  font-weight: bold;
+  color: var(--text-color);
+  padding: 0px 2px;
+  font-family: "Roboto", sans-serif;
+}
+a:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+footer {
+  display: flex;
+  margin-top: 1em;
+  justify-content: space-between;
+}
+article {
+  max-width: calc(0.75 * var(--content-width));
+}
+footer > * {
+  margin: unset;
+  color: var(--alt-text-color);
+}
+
+@media only screen and (max-width: 800px) {
+  nav ul li {
+    display: inline-block;
   }
   body {
-    max-width: 50em;
-    margin: 3em auto;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    padding: 3em;
-    font: 16px /1.5 'Georgia', serif;
-  }
-  header {
-    flex-basis: 100%;
-    flex-shrink: 0;
-  }
-  main {
-    flex-basis: 75%;
+    display: block;
+    padding: 0;
     padding-left: 1em;
   }
-  footer {
-    flex-basis: 100%;
-    flex-shrink: 0;
+  nav {
+    border: none;
   }
-  header nav {
-    display: flex;
-    justify-content: space-between;
+  html {
+    background: initial;
   }
-  nav a,
-  header a,
-  a{
-    text-decoration: none;
-    color: var(--alt-text-color);
-  }
-  a:hover{
-    background-color: var(--text-color);
-    color: var(--bg-color);
-  }
-  body > nav {
-    flex-basis: content;
-    padding-right: 2em;
-  }
-  nav ul {
-    padding-left: 1em;
-  }
-  footer {
-    display: flex;
-    margin-top: 1em;
-    justify-content: space-between;
-  }
-  footer > * {
-    margin: unset;
-    color: var(--alt-text-color);
-  }
+}

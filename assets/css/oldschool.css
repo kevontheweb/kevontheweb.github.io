@@ -137,6 +137,11 @@ a:hover {
   background-color: var(--text-color);
   color: var(--bg-color);
 }
+
+.post-info{
+  padding: 0 0;
+}
+
 footer {
   display: flex;
   margin-top: 1em;

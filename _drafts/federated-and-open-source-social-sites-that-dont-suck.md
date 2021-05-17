@@ -13,10 +13,10 @@ you can of course still browser posts from other instances but the atmosphere of
 
 odysee
 
-odysee, although not entirely open source, is still worth checking out. 
+odysee, although not entirely open source, is still worth checking out.
 it is an alternative frontend for LBRY (a blockchain based video streaming platform which has amassed quite a lot of support and content.
 a lot of youtubers that are worried about the future of youtube have begun to upload their videos to lbry (or odysee) as well
-there is also a crypto currency thing attached to it, just like every blockchain related thing. 
+there is also a crypto currency thing attached to it, just like every blockchain related thing.
 but you can get by fine without ever worrying about it
 
 ruqqus
@@ -53,12 +53,12 @@ https://cybre.space/about
 https://shpposter.club/
 https://mastodon.art/about/more very extensive blocklist and strict sounding policy regarding nsfw
 https://sunbeam.city/about solarpunk instance
+https://friend.camp closed
+
 
 
 another article https://fediverse.blog/~/DielansBlog@melonmancy.net/finding-your-way-around-the-fediverse
 
-https://gnu.gr/ [libre.ops](https://libreops.cc/) 
+https://gnu.gr/ [libre.ops](https://libreops.cc/)
 
 free xmpp hostingh
-
-

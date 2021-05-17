@@ -1,9 +1,9 @@
 :root {
-  --text-color: #c9d1d9;
-  --bg-color: #0d1117;
-  --accent-color: #272e38;
-  --alt-text-color: #c9d1d9;
-  --selection-color: #3eb1ab;
+  --text-color: #b2b6b9;
+  --bg-color: #141414;
+  --accent-color: #1b1b1b;
+  --alt-text-color: #b2b6b9;
+  --selection-color: #b2b6b9;
   --content-width: 1000px;
 }
 
@@ -19,10 +19,11 @@
 
 ::selection {
   background: var(--selection-color);
+  color: var(--bg-color);
 }
 html {
-  background: linear-gradient(90deg, #0d1117 15%, transparent 1%) center,
-    linear-gradient(#0d1117 15%, transparent 1%) center, #272e38;
+  background: linear-gradient(90deg, var(--bg-color) 15%, transparent 1%) center,
+    linear-gradient(var(--bg-color) 15%, transparent 1%) center, var(--accent-color);
   background-size: 20px 20px;
 }
 /* layout of page */
@@ -106,6 +107,7 @@ nav ul {
 img {
   max-width: 60%;
   display: block;
+  margin: auto;
   object-fit: scale-down;
 }
 hr {

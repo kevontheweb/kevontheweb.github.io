@@ -139,18 +139,19 @@ a:hover {
 }
 
 .post-info{
-  padding: 0 0;
+  margin: 0 0;
 }
 
-footer {
-  display: flex;
-  margin-top: 1em;
-  justify-content: space-between;
-}
 article {
   max-width: calc(0.8 * var(--content-width));
 }
+
+footer > *{
+  margin-top: 1em;
+}
+
 footer > * {
+  display: inline-block;
   margin: unset;
   color: var(--alt-text-color);
 }

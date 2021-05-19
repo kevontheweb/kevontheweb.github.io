@@ -40,6 +40,8 @@ body {
 header {
   flex-basis: 100%;
   flex-shrink: 0;
+  padding: 2em 0;
+  /*background-image: url(/assets/images/header.png);*/
 }
 main {
   flex-basis: 75%;
@@ -157,9 +159,14 @@ footer > * {
 }
 
 .icon{
-  display:inline;
-  vertical-align:middle;
-  height: 2em;
+  display: inline;
+  vertical-align: middle;
+  height: 3em;
+  padding: 0 0.5em;
+}
+
+header>h1{
+  display: inline;
 }
 
 @media only screen and (max-width: 800px) {

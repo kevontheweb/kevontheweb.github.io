@@ -156,6 +156,12 @@ footer > * {
   color: var(--alt-text-color);
 }
 
+.icon{
+  display:inline;
+  vertical-align:middle;
+  height: 2em;
+}
+
 @media only screen and (max-width: 800px) {
   nav ul li {
     display: inline-block;

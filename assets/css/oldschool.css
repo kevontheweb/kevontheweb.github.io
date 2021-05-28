@@ -147,7 +147,7 @@ a:hover{
   border-radius: 0.2em;
 }
 
-a:hover > img{
+a:hover > img.icon{
   filter:invert(1);
   filter:brightness(0.1);
 }

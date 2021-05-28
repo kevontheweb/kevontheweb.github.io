@@ -141,13 +141,11 @@ a:hover{
   background-color: var(--text-color);
   color: var(--bg-color);
   text-decoration: none;
-  transform: skewX(-20deg);
-
+  border-radius: 0.2em;
 }
-a:hover > img{
-  filter: invert(1);
-  filter: brightness(0.1);
-  transform: skewX(+20deg);
+
+a:hover > svg > path{
+  fill: var(--bg-color);
 }
 
 .post-info{
@@ -193,4 +191,3 @@ header>h1{
     background: initial;
   }
 }
-

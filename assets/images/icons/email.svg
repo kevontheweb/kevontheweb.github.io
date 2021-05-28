@@ -7,9 +7,9 @@
         </mask>
     </defs>
     <g>
-        <circle cx="150" cy="150" r="150" fill="var(--text-color)" mask="url(#hole)"/>
-        <line x1="75" y1="100" x2="150" y2="150" stroke-linecap="round" stroke="var(--text-color)" stroke-width="15px"/>
-        <line x1="150" y1="150" x2="225" y2="100" stroke-linecap="round" stroke="var(--text-color)" stroke-width="15px"/>
+        <circle cx="150" cy="150" r="150" fill="#b2b6b9" mask="url(#hole)"/>
+        <line x1="75" y1="100" x2="150" y2="150" stroke-linecap="round" stroke="#b2b6b9" stroke-width="15px"/>
+        <line x1="150" y1="150" x2="225" y2="100" stroke-linecap="round" stroke="#b2b6b9" stroke-width="15px"/>
     </g>
 </g>
 </svg>

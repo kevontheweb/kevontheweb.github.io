@@ -19,6 +19,7 @@
 
 ::selection {
   background: var(--selection-color);
+
   color: var(--bg-color);
 }
 html {
@@ -35,7 +36,7 @@ body {
   padding: 3em;
   background-color: var(--bg-color);
   color: var(--text-color);
-  font: 16px /1.5 "Roboto Slab", "Georgia", serif;
+  font: 16px /1.7 "Roboto Slab", "Georgia", serif;
 }
 header {
   flex-basis: 100%;
@@ -129,15 +130,24 @@ h6 {
   font-family: "Roboto", sans-serif;
 }
 a {
+  display: inline-block;
   text-decoration: underline;
   font-weight: bold;
   color: var(--text-color);
-  padding: 0px 2px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;  
+  padding: 0.1em;
 }
-a:hover {
+a:hover{
   background-color: var(--text-color);
   color: var(--bg-color);
+  text-decoration: none;
+  transform: skewX(-20deg);
+
+}
+a:hover > img{
+  filter: invert(1);
+  filter: brightness(0.1);
+  transform: skewX(+20deg);
 }
 
 .post-info{
@@ -148,21 +158,19 @@ article {
   max-width: calc(0.8 * var(--content-width));
 }
 
-footer > *{
-  margin-top: 1em;
+footer{
+  margin: 1em 0px;
 }
 
-footer > * {
+footer > *{
   display: inline-block;
-  margin: unset;
   color: var(--alt-text-color);
 }
 
 .icon{
   display: inline;
   vertical-align: middle;
-  height: 3em;
-  padding: 0 0.5em;
+  width: 3.5em;
 }
 
 header>h1{
@@ -185,3 +193,4 @@ header>h1{
     background: initial;
   }
 }
+

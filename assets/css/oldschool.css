@@ -19,9 +19,9 @@
 
 ::selection {
   background: var(--selection-color);
-
   color: var(--bg-color);
 }
+
 html {
   background: linear-gradient(90deg, var(--bg-color) 15%, transparent 1%) center,
     linear-gradient(var(--bg-color) 15%, transparent 1%) center, var(--accent-color);
@@ -107,11 +107,15 @@ nav {
 nav ul {
   padding-left: 1em;
 }
-img {
+img, figure{
   max-width: 60%;
   display: block;
-  margin: auto;
+  margin: 1em auto;
   object-fit: scale-down;
+}
+figcaption {
+  text-align: center;
+  font-style: italic;
 }
 hr {
   color: var(--text-color);

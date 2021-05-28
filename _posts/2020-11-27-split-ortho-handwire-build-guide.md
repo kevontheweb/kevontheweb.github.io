@@ -5,7 +5,7 @@ last_modified_at: 2020-11-27
 categories: [tech,electronics]
 ---
 
-![final build with nice keycaps](/assets/images/lets-split-preonic/final.jpg)
+[![final build with nice keycaps](/assets/images/lets-split-preonic/final-dithered.png){:loading="lazy"}](/assets/images/lets-split-preonic/final.jpg)
 
 ## 1. Table of Contents
 
@@ -58,7 +58,7 @@ I also included KLE json for each of them for convenience sake.
 
 ### 2.1. 75% ortho
 
-![above examples photo](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2F9xtys3toscg21.jpg&f=1&nofb=1)
+![above examples photo](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2F9xtys3toscg21.jpg&f=1&nofb=1){:loading="lazy"}
 
 pros:
 - fits in 60% case
@@ -80,7 +80,7 @@ cons:
 
 ### 2.2. planck
 
-![planck](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.BlxyzbZuZDw9NrBThqR7vAHaE8%26pid%3DApi&f=1)
+![planck](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.BlxyzbZuZDw9NrBThqR7vAHaE8%26pid%3DApi&f=1){:loading="lazy"}
 
 pros:
 - relatively standardized layout
@@ -102,7 +102,7 @@ cons:
 
 [kbdfans niu mini diy kit](https://kbdfans.com/products/niu-mini-40-diy-kit)
 
-![niu mini](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2F3o9d8dkfeoe31.jpg&f=1&nofb=1)
+![niu mini](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2F3o9d8dkfeoe31.jpg&f=1&nofb=1){:loading="lazy"}
 
 pros:
 - easier build
@@ -113,7 +113,7 @@ cons:
 
 ### 2.4. Split ortho 75%
 
-![split 75%](https://cdn.thingiverse.com/assets/74/60/71/08/d9/large_display_1_-_Fvgm3Y5.jpg)
+![split 75%](https://cdn.thingiverse.com/assets/74/60/71/08/d9/large_display_1_-_Fvgm3Y5.jpg){:loading="lazy"}
 
 [guide](https://www.thingiverse.com/thing:4565609)
 
@@ -134,7 +134,7 @@ hand wired
 
 ### 2.5. iris (mini ergodox also 40%)
 
-![IMAGE](https://jonathanbayless.com/assets/img/640/iris1.jpg)
+![IMAGE](https://jonathanbayless.com/assets/img/640/iris1.jpg){:loading="lazy"}
 
 [link to a build guide](https://jonathanbayless.com/2020/06/09/iris-handwire.html)
 
@@ -152,7 +152,7 @@ cons:
 
 ### 2.6. split 40%
 
-![split 40](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2Fb6ne0b69ztg21.jpg&f=1&nofb=1)
+![split 40](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2Fb6ne0b69ztg21.jpg&f=1&nofb=1){:loading="lazy"}
 
 [a very thorough build guide](https://johannes-jansson.github.io/projects/2018/07/23/hand-wiring-lets-split.html)
 
@@ -200,7 +200,7 @@ The case and plate where generated using [swillkb builder](builder.swillkb.com/)
 I had the case and plate laser cut in 3mm acrylic by my uncle. who graciously didn't charge me.
 
 
-> ![plate](/assets/images/lets-split-preonic/0.svg)
+> ![plate](/assets/images/lets-split-preonic/0.svg){:loading="lazy"}
 
 ### 4.2. BOM
 
@@ -241,7 +241,7 @@ I opted for I2C over a TRRS cable.
 This required me to solder 2 pull up 4k7 ohm resistors on the sda and scl lines (pin 2 and pin 3).
 You can see a schematic below.
 
-![I2C wiring](https://qmk.fm/keyboards/lets_split/i2c_wiring.png)
+![I2C wiring](https://qmk.fm/keyboards/lets_split/i2c_wiring.png){:loading="lazy"}
 
 ### 6.3. firmware
 
@@ -313,23 +313,36 @@ If I do not adapt to the split I may try my hand at building a plank as they are
 
 ## 8. Some Photos
 
-The acrylic plates, fresh off the laser cutter.
-![laser cut plates](/assets/images/lets-split-preonic/1.jpg)
+<figure>
+[![laser cut plates](/assets/images/lets-split-preonic/1-dithered.jpg){:loading="lazy"}](/assets/images/lets-split-preonic/1.png)
+<figcaption>The acrylic plates, fresh off the laser cutter. (click for full resolution)</figcaption>
+</figure>
 
-Soldering away!
-![soldering](/assets/images/lets-split-preonic/2.jpg)
+<figure>
+[![soldering](/assets/images/lets-split-preonic/2-dithered.png){:loading="lazy"}](/assets/images/lets-split-preonic/2.jpg)
+<figcaption>Soldering away! (click for full resolution)</figcaption>
+</figure>
 
-First half done!
-![first half done including microcontroller and trrs jack](/assets/images/lets-split-preonic/3.jpg)
 
-Half the board assembled but no keycaps.
-![assembled with bottom (no keycaps yet)](/assets/images/lets-split-preonic/4.jpg)
+<figure>
+[![first half done including microcontroller and trrs jack](/assets/images/lets-split-preonic/3-dithered.png){:loading="lazy"}](/assets/images/lets-split-preonic/3.jpg)
+<figcaption>First half done! (click for full resolution)</figcaption>
+</figure>
 
-Finished but still no keycaps
-![on the desk (still no keycaps 😢)](/assets/images/lets-split-preonic/5.jpg)
+<figure>
+[![assembled with bottom (no keycaps yet)](/assets/images/lets-split-preonic/4-dithered.png){:loading="lazy"}](/assets/images/lets-split-preonic/4.jpg)
+<figcaption>Half the board assembled but no keycaps. (click for full resolution)</figcaption>
+</figure>
 
-Final build with some nice bright pink and purple dsa keycaps!
-![final build with nice keycaps](/assets/images/lets-split-preonic/final.jpg)
+<figure>
+[![on the desk (still no keycaps 😢)](/assets/images/lets-split-preonic/5-dithered.png){:loading="lazy"}](/assets/images/lets-split-preonic/5.jpg)
+<figcaption>Finished but still no keycaps. (click for full resolution)</figcaption>
+</figure>
+
+<figure>
+[![final build with nice keycaps](/assets/images/lets-split-preonic/final-dithered.png){:loading="lazy"}](/assets/images/lets-split-preonic/final.jpg)
+<figcaption>Final build with some nice bright pink and purple dsa keycaps! (click for full resolution)</figcaption>
+</figure>
 
 ## 9. References
 

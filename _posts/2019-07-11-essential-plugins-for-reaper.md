@@ -26,13 +26,13 @@ Firstly, unless you want to try figure out reasampleomatic5000 or you make ambie
 For that theres [Sitala](https://decomposer.de/sitala/) an excellent free drum sampler that allows you to drag and drop samples, has multichannel outputs, gives your midi notes names in reaper, and gives you the ability to tweak the samples with a basic eq, reverse, fades and more!
 It also comes with an 808 and a 909 style kit.
 
-![sitala](/assets/images/reaper-essentials/sitala.png)
+![sitala](/assets/images/reaper-essentials/sitala.png){:loading="lazy"}
  
 ### [Steven Slate Drums 5 Free](https://stevenslatedrums.com/ssd5/#SSD5FREE) Acoustic Kit
 
 [Steven Slate Drums 5 Sampler](https://stevenslatedrums.com/ssd5/#SSD5FREE) is the highest quality acoustic drum sounds you can get a hold of for free, the free kits it comes with can sound very heavy but the sounds are incredibly recorded and very velocity sensitive. You can tweak each drum sound individually, it supports multichannel outputs and the groove patterns that it comes with are pretty solid too.
 
-![ssd](/assets/images/reaper-essentials/ssd.png)
+![ssd](/assets/images/reaper-essentials/ssd.png){:loading="lazy"}
 
 
 ## Synths
@@ -48,13 +48,13 @@ If you know your stuff you can make any sound using just these
 
 is an open source digital synthesizer with great presets and modulation options, it sounds great and can pull off anything from wavetables and fm to fat analog sounds.
 
-![surge](/assets/images/reaper-essentials/surge.png)
+![surge](/assets/images/reaper-essentials/surge.png){:loading="lazy"}
 
 ### [Vital](https://vital.audio/) 
 
 [Vital](https://vital.audio/)  is an excellent wavetable synthesizer in the vein of Arturia Pygments or Xfer Serum. Not to be over dramatic but this one is a game changer! It basically packs all the features of serum into a free (and open source) plugin. It is made by the same person who made helm which I suggested above. (I have completely switched from serum to Vital since it came out)
 
-![vital](../assets/images/reaper-essentials/vital.png)
+![vital](../assets/images/reaper-essentials/vital.png){:loading="lazy"}
   
 > Honorable Mention:
 >
@@ -72,19 +72,19 @@ Here are my recommendations.
 
 [discoDSP OB-XD](https://www.discodsp.com/obxd/) is an emulation of the classic Oberheim DX synthesizer. It is my go to for vintage polyphonic synth sounds. There are also a lot of preset banks available for it online.
 
-![obx](/assets/images/reaper-essentials/obxd.png)
+![obx](/assets/images/reaper-essentials/obxd.png){:loading="lazy"}
 
 ### [Tal uno 62](https://tal-software.com/products/tal-u-no-62) 
 
 [Tal uno 62](https://tal-software.com/products/tal-u-no-62) is a great free emulation of a Roland Juno. 
 
-![uno](/assets/images/reaper-essentials/uno.png)
+![uno](/assets/images/reaper-essentials/uno.png){:loading="lazy"}
 
 ### [Uhe Tyrell n6](https://u-he.com/products/tyrelln6/) 
 
 [Uhe Tyrell n6](https://u-he.com/products/tyrelln6/) is an analog style software synth with some cool presets and lots of functionality. The link on their website takes you to a german site, the download links are just a bit lower on the page.
 
-![tyrell](/assets/images/reaper-essentials/tyrell.png)
+![tyrell](/assets/images/reaper-essentials/tyrell.png){:loading="lazy"}
 
 ## FM synths
 
@@ -94,7 +94,7 @@ FM synthesis can be pretty confusing, but if you give it time the sounds achieva
 
 [Dexed](https://asb2m10.github.io/dexed/) is a one to one emulation of the yamaha dx7, it can even read old yamaha dx7 sysex presets. The interface is pretty confusing but since there are thousands of dx7 presets online you dont realy need to fiddle too much. 
 
-![dexed](/assets/images/reaper-essentials/dexed.png)
+![dexed](/assets/images/reaper-essentials/dexed.png){:loading="lazy"}
 
 If you are looking for something a bit easier to use/understand then [Sonic Bits Exakt Lite](https://www.sonicbits.com/exakt-lite.html) is what you are looking for!
 
@@ -111,13 +111,13 @@ What would a list of synthesizers be without some nice mono synths?
 
 [Tal noise maker](https://tal-software.com/products) is another free Tal plugin (see any trends?) it's great for grimey basses, and its interface is much more refined than Tal elektro. Tal's filters just sound excellent and wonderfully dirty.
 
-![noise](/assets/images/reaper-essentials/noisemaker.png)
+![noise](/assets/images/reaper-essentials/noisemaker.png){:loading="lazy"}
 
 ### [HY mono](https://hy-plugins.com/product/hy-mono/)
  
 [HY mono](https://hy-plugins.com/product/hy-mono/) is my current favorite mono synth vst. It's not too complicated, has a great interface and has just enough to get you fiddling and making some cool sounds.
 
-![hymono](/assets/images/reaper-essentials/hymono.png)
+![hymono](/assets/images/reaper-essentials/hymono.png){:loading="lazy"}
 
 ## Real Instruments
 
@@ -132,32 +132,32 @@ You really can't go wrong with these they sound very professional and it's easy 
 They are also very responsive to midi velocity and thus can be very expressive.
 Also be sure to check their site every couple of weeks as they add more libraries all the time.
 
-![labs](/assets/images/reaper-essentials/labs.png)
+![labs](/assets/images/reaper-essentials/labs.png){:loading="lazy"}
 
 ### [Sampleson collab3](https://sampleson.com/collab3-free-tonewheel-organ.html) 
 
 [Sampleson collab3](https://sampleson.com/collab3-free-tonewheel-organ.html) is an excellent free tone-wheel organ reminiscent of the hammond B3.
 
-![collab3](/assets/images/reaper-essentials/collab3.png)
+![collab3](/assets/images/reaper-essentials/collab3.png){:loading="lazy"}
 
 ### [Keyzone Classic by Bit Sonic](https://vstplug-ins.com/keyzoneclassic.html) 
 
 [Keyzone Classic by Bit Sonic](https://vstplug-ins.com/keyzoneclassic.html) has a much brighter grand piano type sound as opposed to the soft upright felt piano that comes with LABs. It also has a decent Rhodes-like electric piano.
 
-![keyz](/assets/images/reaper-essentials/keyzone.png)
+![keyz](/assets/images/reaper-essentials/keyzone.png){:loading="lazy"}
 
 ### [dead duck Dpiano E](https://www.kvraudio.com/developer/dead-duck-software) 
 
 [dead duck Dpiano E](https://www.kvraudio.com/developer/dead-duck-software) has a few different styles of electric piano to choose from if you don't fancy the LABS wurlitzer or e-piano.
 
-![dde](/assets/images/reaper-essentials/ddep.png)
+![dde](/assets/images/reaper-essentials/ddep.png){:loading="lazy"}
 
 
 ### [Ample Sounds Bass P Lite](https://www.amplesound.net/en/pro-pd.asp?id=19)
 
 [Ample Sounds Bass P Lite](https://www.amplesound.net/en/pro-pd.asp?id=19) is a deep sampled P-Bass with plenty of articulations and that classic P-Bass punch.
 
-![amplep](/assets/images/reaper-essentials/amplep.png)
+![amplep](/assets/images/reaper-essentials/amplep.png){:loading="lazy"}
 
 > bonus: check out Ample Sounds, [Cloud Drum](https://www.amplesound.net/en/pro-pd.asp?id=27), Hang Drum plugin and their [acoustic guitar](https://www.amplesound.net/en/pro-pd.asp?id=7).
 
@@ -165,7 +165,7 @@ Also be sure to check their site every couple of weeks as they add more librarie
 
 [Native Instruments Komplete Start](https://www.native-instruments.com/en/products/komplete/bundles/komplete-start/) has pretty much everything else you could ask for. Their plugins are very high quality and this is just enough of a taste to make you crave the full version of Kontatk but the sounds that are available in this pack for free are very good.
 
-![native](/assets/images/reaper-essentials/komplete.png)
+![native](/assets/images/reaper-essentials/komplete.png){:loading="lazy"}
 
 
 ## EQ
@@ -176,7 +176,7 @@ The stock eq plugin in reaper is great, but if you want to step up your EQ game 
 It is a JS plugin, but does not come with Reaper (you have to copy it into your ``effects`` folder in the Reaper resource path).
 This EQ has quite a few more types of bands as well as Mid/Side processing capabilities which ReaEQ (the stock EQ plugin) does not have.
 
-![reeq](/assets/images/reaper-essentials/reeq.png)
+![reeq](/assets/images/reaper-essentials/reeq.png){:loading="lazy"}
 
 ### [Analog Obsessions Rare](https://www.patreon.com/analogobsession/posts)
 
@@ -184,7 +184,7 @@ This EQ has quite a few more types of bands as well as Mid/Side processing capab
 I am not normally one for preamps and analog emulsions of eqs but theres something really nice about Analog Obsession's plugins they add a little bit of drive in a very subtle and warm way.
 Certainly nicer than the white noise and distortion that some waves plugins add.
 
-![aorare](/assets/images/reaper-essentials/aorare.png)
+![aorare](/assets/images/reaper-essentials/aorare.png){:loading="lazy"}
 
 ### [Analog Obsessions Brit Channel](https://www.patreon.com/analogobsession/posts)
 
@@ -192,7 +192,7 @@ Certainly nicer than the white noise and distortion that some waves plugins add.
 The drive is gain compensated which is amazing and it goes from adding some subtle warmth to full out blown capacitor sounds. 
  the eq is also very nice and never sounds harsh even when pushing the highs up.
 
-![aoc](/assets/images/reaper-essentials/aobc.png)
+![aoc](/assets/images/reaper-essentials/aobc.png){:loading="lazy"}
 
 ### [Analog Obsessions Merica](https://www.patreon.com/analogobsession/posts)
 
@@ -200,7 +200,7 @@ The drive is gain compensated which is amazing and it goes from adding some subt
  I love the way this sounds when boosting the highs and lows and cutting the mids
  it very smooth and held back so don't expect it to be as exaggerated as the brit channel but its still very useful for adding some subtle spice to a track.
 
-![aorare](/assets/images/reaper-essentials/aomerica.png)
+![aorare](/assets/images/reaper-essentials/aomerica.png){:loading="lazy"}
 
 
 ## Guitars
@@ -212,7 +212,7 @@ They're a classic and for a reason.
 Most of the amps are a little too high gain for my taste but the hybrit is my favorite amp model.
 I even think it sounds better than the free guitar rig stuff.
 
-![lepou](/assets/images/reaper-essentials/hybrit.png)
+![lepou](/assets/images/reaper-essentials/hybrit.png){:loading="lazy"}
 
 > Note:
 > 
@@ -224,25 +224,25 @@ I even think it sounds better than the free guitar rig stuff.
 
 [Nadir Cab Sim](http://www.igniteamps.com/#software) is an excellent impulse response loader plugin that comes with some great free mic and cab impulses.
 
-![nadir](/assets/images/reaper-essentials/nadir.png)
+![nadir](/assets/images/reaper-essentials/nadir.png){:loading="lazy"}
 
 ### [Analog Obsession Kabin](https://www.patreon.com/analogobsession/posts)
 
 [Analog Obsession Kabin](https://www.patreon.com/analogobsession/posts) is a no frills cabinet sim with a few knobs to tweak. sounds great and gets the job done with minimal effort.
 
-![kabin](/assets/images/reaper-essentials/kabin.png)
+![kabin](/assets/images/reaper-essentials/kabin.png){:loading="lazy"}
 
 ### [Voxengo Boogex](https://www.voxengo.com/group/free-vst-plugin-download/)
 
 [Voxengo Boogex](https://www.voxengo.com/group/free-vst-plugin-download/) can sound a little boxy but it gives you decent control over the sound with a graphical eq and some decent cab impulses.
 
-![boog](/assets/images/reaper-essentials/boogex.png)
+![boog](/assets/images/reaper-essentials/boogex.png){:loading="lazy"}
 
 ### [Ignite Amps other plugins](http://www.igniteamps.com/#software)
 
 Their [Ts999](http://www.igniteamps.com/#software) (tubescreamer emulation) and emissary (high gain amp) are also great guitar plugins.
 
-![ts999](/assets/images/reaper-essentials/ts999.png)
+![ts999](/assets/images/reaper-essentials/ts999.png){:loading="lazy"}
 
 ## Modulation
 
@@ -250,14 +250,14 @@ Their [Ts999](http://www.igniteamps.com/#software) (tubescreamer emulation) and 
 
 [Multiply](https://acondigital.com/products/multiply/) is an awesome chorus thats really tweakable but still easy to use. I highly recommend this one. It's especially good for more subtle chorus sounds or adding some width.
 
-![multiply](/assets/images/reaper-essentials/multiply.png)
+![multiply](/assets/images/reaper-essentials/multiply.png){:loading="lazy"}
 
 ### [HY Modulation Plugins](http://www.vst4free.com/index.php?dev=HY-Plugins)
 
 HY makes great plugins and I often finding myslef using the modulation plugins
 Especially the chorus/flanger plugin.
 
-![hychofla](/assets/images/reaper-essentials/hychofla.png)
+![hychofla](/assets/images/reaper-essentials/hychofla.png){:loading="lazy"}
 
 
 - [HY chorus-flanger](http://www.vst4free.com/index.php?dev=HY-Plugins) is an excellent chorus that has a more intense boss ce-3 type sound.
@@ -273,7 +273,7 @@ Especially the chorus/flanger plugin.
 [Pecheneg tremolo](http://pechenegfx.org/plugins/pecheneg-tremolo/) is tremolo with a nice interface that makes it very quick to get the tremolo sound you want.
 From smooth to choppy in seconds.
 
-![ptrem](/assets/images/reaper-essentials/ptremolo.png)
+![ptrem](/assets/images/reaper-essentials/ptremolo.png){:loading="lazy"}
 
 
 ### [Pecheneg auto swell](http://pechenegfx.org/plugins/automatic-volume-effect-autoswell-light-in-vst-and-au-formats/)
@@ -281,7 +281,7 @@ From smooth to choppy in seconds.
 [Pecheneg auto swell](http://pechenegfx.org/plugins/automatic-volume-effect-autoswell-light-in-vst-and-au-formats/) is like a boss slow gear in your DAW!
 No more automating volume swells!
 
-![pswell](/assets/images/reaper-essentials/pswell.png)
+![pswell](/assets/images/reaper-essentials/pswell.png){:loading="lazy"}
 
 ## Reverbs
 
@@ -293,38 +293,38 @@ You can also wait for giveaways which most plugin companies do fairly often.
 
 [Tal reverb 4](https://tal-software.com/products/tal-reverb-4) is an early 2000s styled digital plate reverb, you can get some crazy ambiance out of it, but don't expect anything too realistic.
 
-![talverb](/assets/images/reaper-essentials/talverb4.png)
+![talverb](/assets/images/reaper-essentials/talverb4.png){:loading="lazy"}
 
 ### [Oliriver plate/hall reverb](https://www.kvraudio.com/product/orilriver-by-denis-tihanov) 
 
 [Oliriver plate/hall reverb](https://www.kvraudio.com/product/orilriver-by-denis-tihanov) is a more subdued hall/plate style reverb that can get the more realistic and subtle sounds down.
 
-![oril](/assets/images/reaper-essentials/oril.png)
+![oril](/assets/images/reaper-essentials/oril.png){:loading="lazy"}
 
 ### [Cloudseed algorithmic reverb](https://github.com/ValdemarOrn/CloudSeed) 
 
 [Cloudseed algorithmic reverb](https://github.com/ValdemarOrn/CloudSeed) is an ambient machine! 
 the controls are a little weird but it does that beautiful modulated ambient reverb sound **really** well.
 
-![cloud](/assets/images/reaper-essentials/cloudseed.png)
+![cloud](/assets/images/reaper-essentials/cloudseed.png){:loading="lazy"}
 
 ### [Voxeno Old Skool Verb](https://www.voxengo.com/product/oldskoolverb/)
 
 [Voxeno Old Skool Verb](https://www.voxengo.com/product/oldskoolverb/) is goof for lofi room sounds.
 
-![oldskool](/assets/images/reaper-essentials/oldskoolverb.png)
+![oldskool](/assets/images/reaper-essentials/oldskoolverb.png){:loading="lazy"}
 
 ### [Airwindows Reverbs](https://www.airwindows.com/category/spatial/)
 
 The [Airwindows Plugins](https://www.airwindows.com/category/spatial/) don't have pretty interfaces but they sound great! Verbity, Matrix, and BrightAmbience2 are more "realistic" sounding room/plate style verbs while galactic is an epic pad reverb that can literally turn any sound into a tonal pad.
 
-![airw](/assets/images/reaper-essentials/airwindowsverb.png)
+![airw](/assets/images/reaper-essentials/airwindowsverb.png){:loading="lazy"}
 
 ### [Valhalla supermassive](https://valhalladsp.com/shop/reverb/valhalla-supermassive/) 
 
 [Valhalla supermassive](https://valhalladsp.com/shop/reverb/valhalla-supermassive/) is another ambient reverb/delay with a funky control scheme brought to you by the team responsible for some of the best modern reverb sounds available.
 
-![valh](/assets/images/reaper-essentials/valhalla.png)
+![valh](/assets/images/reaper-essentials/valhalla.png){:loading="lazy"}
 
 ### [Melda MConvolutionEZ](https://www.meldaproduction.com/MConvolutionEZ)
 
@@ -332,7 +332,7 @@ The [Airwindows Plugins](https://www.airwindows.com/category/spatial/) don't hav
 Melda also has a free pack of plugins with basically one of every plugin you could want.
 They're a bit mit or miss but its a great way to experiment with some unique effects.
 
-![mconv](/assets/images/reaper-essentials/mconvez.png)
+![mconv](/assets/images/reaper-essentials/mconvez.png){:loading="lazy"}
 
 ## Delays
 
@@ -340,14 +340,14 @@ They're a bit mit or miss but its a great way to experiment with some unique eff
 
 Readelay is the stock delay plugin in Reaper, has a few quirks but you can get a lot of decent sounds out of it. You can check out [this video by Dan Worrall](https://www.youtube.com/watch?v=5UmNyk6vNA8) explaining it in more depth.
 
-![readelau](/assets/images/reaper-essentials/readelay.png)
+![readelau](/assets/images/reaper-essentials/readelay.png){:loading="lazy"}
 
 ### Leet Delay2 by Sonic Anomaly 
 
 Leet Delay2 by Sonic Anomaly can be downloaded through [reapack](https://reapack.com/) or [on reverb.com](https://reverb.com/software/effects/sonic-anomaly/407-sonic-anomaly-leet-delay-2).
 It' a really nice dark gritty analog style delay with ping pong.
 
-![leet](/assets/images/reaper-essentials/leet.png)
+![leet](/assets/images/reaper-essentials/leet.png){:loading="lazy"}
 
 ### [Spaceship Delay by Musical Entropy](https://www.musicalentropy.com/SpaceshipDelay.html) 
 
@@ -355,7 +355,7 @@ Saving the best for last, [Spaceship Delay by Musical Entropy](https://www.music
 It does everything from pristine digital delay to gritty tape emulation with flutter and modulation.
 It is also very lightweight and versatile.
 
-![space](/assets/images/reaper-essentials/spaceship.png)
+![space](/assets/images/reaper-essentials/spaceship.png){:loading="lazy"}
 
 ## Saturation and Dynamics
 
@@ -363,34 +363,34 @@ It is also very lightweight and versatile.
 
 [Klanghelm](https://klanghelm.com/contents/main.php) has 3 great free plugins for some aggressive compression and saturation (IVGI, DC1A, MJUC jr)
 
-![klanghelm](/assets/images/reaper-essentials/klanghelm.png)
+![klanghelm](/assets/images/reaper-essentials/klanghelm.png){:loading="lazy"}
 
 ### [Krush](https://www.tritik.com/products/krush/) 
 
 [Krush](https://www.tritik.com/products/krush/) is an awesome bit-crusher and distortion, really great on drums.
 
-![krush](/assets/images/reaper-essentials/krush.png)
+![krush](/assets/images/reaper-essentials/krush.png){:loading="lazy"}
 
 
 ### JS Waveshaping distortion
 
 The JS Waveshaping distortion comes with Reaper and only has one slider but don't underestimate it!
 
-![jswd](/assets/images/reaper-essentials/jswd.png)
+![jswd](/assets/images/reaper-essentials/jswd.png){:loading="lazy"}
 
 
 ### [FreeClip by Venn Audio](https://www.vennaudio.com/free-clip/) 
 
 [FreeClip](https://www.vennaudio.com/free-clip/) is similar to JS waveshaping distortion but with a few more saturation curves. It doesn't have any eq but it's a very versatile saturation and clipping plugin that can do everything from hard digital clipping to flubby tube style overdrive.
 
-![freec](/assets/images/reaper-essentials/freeclip.png)
+![freec](/assets/images/reaper-essentials/freeclip.png){:loading="lazy"}
 
 ## Analysis
 
 [Voxengo SPAN](https://www.voxengo.com/product/span/) is an incredible spectrum analyser that really shouldn't be free. A good spectrum analyser is a powerful tool for mixing and can help help you spot problems that your equipment might not be letting hear.
 Check This amazing video by [Dan Worral explaining how to use a spectrum analyzer](https://www.youtube.com/watch?v=iZrWMv02tlA). He also has a lot great mixing videos for the more technically inclined.
 
-![span](/assets/images/reaper-essentials/span.png)
+![span](/assets/images/reaper-essentials/span.png){:loading="lazy"}
 
 ## Quality of life
 

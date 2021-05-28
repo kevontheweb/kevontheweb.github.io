@@ -199,6 +199,12 @@ footer > * {
   width: var(--icon-size);
 }
 
+.logo {
+    display: inline;
+    max-width: 8em;
+    vertical-align: middle;
+}
+
 header > h1 {
   display: inline;
 }

@@ -315,48 +315,48 @@ If I do not adapt to the split I may try my hand at building a plank as they are
 
 ## 8. Some Photos
 
-<a href="/assets/images/lets-split-preonic/1.jpg">
 <figure markdown="1">
+<a href="/assets/images/lets-split-preonic/1.jpg">
 ![laser cut plates](/assets/images/lets-split-preonic/1-dithered.png){:loading="lazy"}
+</a>
 <figcaption>The acrylic plates, fresh off the laser cutter. (click for full resolution)</figcaption>
 </figure>
-</a>
 
-<a href="/assets/images/lets-split-preonic/2.jpg">
 <figure markdown="1">
+<a href="/assets/images/lets-split-preonic/2.jpg">
 ![soldering](/assets/images/lets-split-preonic/2-dithered.png){:loading="lazy"}
+</a>
 <figcaption>Soldering away! (click for full resolution)</figcaption>
 </figure>
-</a>
 
 
-<a href="/assets/images/lets-split-preonic/3.jpg">
 <figure markdown="1">
+<a href="/assets/images/lets-split-preonic/3.jpg">
 ![first half done including microcontroller and trrs jack](/assets/images/lets-split-preonic/3-dithered.png){:loading="lazy"}
+</a>
 <figcaption>First half done! (click for full resolution)</figcaption>
 </figure>
-</a>
 
-<a href="/assets/images/lets-split-preonic/2.jpg">
 <figure markdown="1">
+<a href="/assets/images/lets-split-preonic/2.jpg">
 ![assembled with bottom (no keycaps yet)](/assets/images/lets-split-preonic/4-dithered.png){:loading="lazy"}
+</a>
 <figcaption>Half the board assembled but no keycaps. (click for full resolution)</figcaption>
 </figure>
-</a>
 
-<a href="/assets/images/lets-split-preonic/2.jpg">
 <figure markdown="1">
+<a href="/assets/images/lets-split-preonic/2.jpg">
 ![on the desk (still no keycaps 😢)](/assets/images/lets-split-preonic/5-dithered.png){:loading="lazy"}
+</a>
 <figcaption>Finished but still no keycaps. (click for full resolution)</figcaption>
 </figure>
-</a>
 
-<a href="/assets/images/lets-split-preonic/2.jpg">
 <figure markdown="1">
+<a href="/assets/images/lets-split-preonic/2.jpg">
 ![final build with nice keycaps](/assets/images/lets-split-preonic/final-dithered.png){:loading="lazy"}
+</a>
 <figcaption>Final build with some nice bright pink and purple dsa keycaps! (click for full resolution)</figcaption>
 </figure>
-</a>
 
 ## 9. References
 

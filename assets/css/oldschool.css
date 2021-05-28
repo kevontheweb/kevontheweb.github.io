@@ -134,7 +134,6 @@ h6 {
   font-family: "Roboto", sans-serif;
 }
 a {
-  display: inline-block;
   text-decoration: underline;
   font-weight: bold;
   color: var(--text-color);
@@ -148,8 +147,9 @@ a:hover{
   border-radius: 0.2em;
 }
 
-a:hover > svg > path{
-  fill: var(--bg-color);
+a:hover > img{
+  filter:invert(1);
+  filter:brightness(0.1);
 }
 
 .post-info{

@@ -5,7 +5,9 @@ last_modified_at: 2020-11-27
 categories: [tech,electronics]
 ---
 
-[![final build with nice keycaps](/assets/images/lets-split-preonic/final-dithered.png){:loading="lazy"}](/assets/images/lets-split-preonic/final.jpg)
+<a href="/assets/images/lets-split-preonic/final.jpg">
+  ![final build with nice keycaps](/assets/images/lets-split-preonic/final-dithered.png){:loading="lazy"}
+</a>
 
 ## 1. Table of Contents
 
@@ -313,36 +315,48 @@ If I do not adapt to the split I may try my hand at building a plank as they are
 
 ## 8. Some Photos
 
+<a href="/assets/images/lets-split-preonic/1.jpg">
 <figure>
-[![laser cut plates](/assets/images/lets-split-preonic/1-dithered.jpg){:loading="lazy"}](/assets/images/lets-split-preonic/1.png)
+![laser cut plates](/assets/images/lets-split-preonic/1-dithered.png){:loading="lazy"}
 <figcaption>The acrylic plates, fresh off the laser cutter. (click for full resolution)</figcaption>
 </figure>
+</a>
 
+<a href="/assets/images/lets-split-preonic/2.jpg">
 <figure>
-[![soldering](/assets/images/lets-split-preonic/2-dithered.png){:loading="lazy"}](/assets/images/lets-split-preonic/2.jpg)
+![soldering](/assets/images/lets-split-preonic/2-dithered.png){:loading="lazy"}
 <figcaption>Soldering away! (click for full resolution)</figcaption>
 </figure>
+</a>
 
 
+<a href="/assets/images/lets-split-preonic/3.jpg">
 <figure>
-[![first half done including microcontroller and trrs jack](/assets/images/lets-split-preonic/3-dithered.png){:loading="lazy"}](/assets/images/lets-split-preonic/3.jpg)
+![first half done including microcontroller and trrs jack](/assets/images/lets-split-preonic/3-dithered.png){:loading="lazy"}
 <figcaption>First half done! (click for full resolution)</figcaption>
 </figure>
+</a>
 
+<a href="/assets/images/lets-split-preonic/2.jpg">
 <figure>
-[![assembled with bottom (no keycaps yet)](/assets/images/lets-split-preonic/4-dithered.png){:loading="lazy"}](/assets/images/lets-split-preonic/4.jpg)
+![assembled with bottom (no keycaps yet)](/assets/images/lets-split-preonic/4-dithered.png){:loading="lazy"}
 <figcaption>Half the board assembled but no keycaps. (click for full resolution)</figcaption>
 </figure>
+</a>
 
+<a href="/assets/images/lets-split-preonic/2.jpg">
 <figure>
-[![on the desk (still no keycaps 😢)](/assets/images/lets-split-preonic/5-dithered.png){:loading="lazy"}](/assets/images/lets-split-preonic/5.jpg)
+![on the desk (still no keycaps 😢)](/assets/images/lets-split-preonic/5-dithered.png){:loading="lazy"}
 <figcaption>Finished but still no keycaps. (click for full resolution)</figcaption>
 </figure>
+</a>
 
+<a href="/assets/images/lets-split-preonic/2.jpg">
 <figure>
-[![final build with nice keycaps](/assets/images/lets-split-preonic/final-dithered.png){:loading="lazy"}](/assets/images/lets-split-preonic/final.jpg)
+![final build with nice keycaps](/assets/images/lets-split-preonic/final-dithered.png){:loading="lazy"}
 <figcaption>Final build with some nice bright pink and purple dsa keycaps! (click for full resolution)</figcaption>
 </figure>
+</a>
 
 ## 9. References
 

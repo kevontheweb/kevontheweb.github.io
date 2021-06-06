@@ -21,17 +21,4 @@ layout: default
   <div class="e-content">
     {{ content }}
   </div>
-  <h3>backlinks</h3>
-  {% assign home = site.html_pages | where: 'url', '/' | first %}
-  {% if page.url != home.url %}
-        {% if page.backlinks.size > 0 %}
-            <div class="backlink-box">
-                <ul>
-                {% for backlink in page.backlinks %}
-                    <li><a href="{{ site.url }}{{ backlink.url }}">{{ backlink.title }}</a></li>
-                {% endfor %}
-                </ul>
-            </div>
-        {% endif %}
-    {% endif %}
 </article>

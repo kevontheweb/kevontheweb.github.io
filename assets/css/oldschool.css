@@ -140,6 +140,7 @@ figcaption {
 hr {
   color: var(--text-color);
   border-width: 0.5px;
+  width: 70%;
 }
 
 h1,

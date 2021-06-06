@@ -1,8 +1,8 @@
 ---
-title: "The Only Thing Original About You Is Your Taste"
+title: "On Creativity and inspiration"
 author: Kevin Nel
 last_modified_at: 2021-04-01
-categories: [music,art]
+categories: [other]
 ---
 
 Whether it's intentional or not, we all take inspiration from other people/things and as artists the only thing original about us is our taste, what we like and how we let that influence our work.

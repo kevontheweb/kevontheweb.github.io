@@ -157,6 +157,8 @@ h6 {
 
 a {
   text-decoration: underline;
+  font-style: italic;
+  font-variant-caps: small-caps;
   font-weight: bold;
   color: var(--text-color);
   font-family: "Roboto", sans-serif;
@@ -205,6 +207,8 @@ footer > * {
     display: inline;
     max-width: 8em;
     vertical-align: middle;
+    margin-right: 2em;
+    border-radius: 50%; 
 }
 
 header > h1 {

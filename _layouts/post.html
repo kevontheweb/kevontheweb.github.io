@@ -24,7 +24,6 @@ layout: default
   <h3>backlinks</h3>
   {% assign home = site.html_pages | where: 'url', '/' | first %}
   {% if page.url != home.url %}
-    {% if page.showbacklinks == true %}
         {% if page.backlinks.size > 0 %}
             <div class="backlink-box">
                 <ul>
@@ -35,5 +34,4 @@ layout: default
             </div>
         {% endif %}
     {% endif %}
-{% endif %}
 </article>

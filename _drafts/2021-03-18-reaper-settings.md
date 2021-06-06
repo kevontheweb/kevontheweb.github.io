@@ -17,6 +17,11 @@ Some liken it to programmers and their [.vimrc]()
 
 ## Zoom and Scroll Behaviour
 
+## shortcuts
+
+### quick add eq
+### envelope of last touched parameter
+
 <!--
 idea for another post:
 

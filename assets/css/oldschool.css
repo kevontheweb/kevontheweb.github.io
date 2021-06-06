@@ -4,7 +4,7 @@
   --accent-color: #1b1b1b;
   --alt-text-color: #b2b6b9;
   --selection-color: #b2b6b9;
-  --content-width: 1000px;
+  --content-width: 1200px;
   --icon-size: 3em;
 }
 
@@ -38,7 +38,7 @@ body {
   padding: 3em;
   background-color: var(--bg-color);
   color: var(--text-color);
-  font: 16px /1.7 "Roboto Slab", "Georgia", serif;
+  font: 18px /1.4 "Roboto Slab", "Georgia", serif;
 }
 
 header {
@@ -82,6 +82,7 @@ pre {
 pre,
 code {
   font-family: mononoki, "Inconsolata", "Consolas", monospace;
+  font-size: 14px;
 }
 
 blockquote {
@@ -187,6 +188,7 @@ article {
 
 footer {
   margin: 1em 0px;
+  text-align: right;
 }
 
 footer > * {

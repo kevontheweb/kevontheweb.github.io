@@ -1,5 +1,5 @@
 ---
-title: "Rebuilding My Jekyll Site From the Ground Up and a Retrospective on the Wild Web"
+title: "Rebuilding the Site and a Retrospective on the Wild Web"
 author: Kevin Nel
 last_modified_at: 2021-02-25
 categories: [tech]

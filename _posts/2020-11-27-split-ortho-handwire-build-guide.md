@@ -2,7 +2,7 @@
 title: "Building a Custom Split Mechanical Keyboard"
 author: Kevin Nel
 last_modified_at: 2020-11-27
-categories: [tech,electronics]
+categories: [tech]
 ---
 
 <a href="/assets/images/lets-split-preonic/final.jpg">

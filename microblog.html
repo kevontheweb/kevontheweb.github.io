@@ -10,7 +10,7 @@ permalink: /microblog/
   <article class="h-entry microblog">
     <h3 class="p-name"><a href="{{ post.url }}">{{ post.title }}</a></h3>
     <time class="dt-published" datetime="{{ post.date }}">{{ post.date | date: "%B %e, %Y" }}&nbsp;</time>
-    <a class="p-author h-card" href="http://kevinnel.com/about">Kevin Nel</a>
+    <a class="p-author h-card" href="{{ site.url }}{{ site.baseurl }}/about">Kevin Nel</a>
     <div class="e-content">
       {{post.content}}
     </div>

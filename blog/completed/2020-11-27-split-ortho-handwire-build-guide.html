@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Kevin Nel" />
+  <title>Building a Custom Split Mechanical Keyboard</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="/assets/css/oldschool.css" />
+</head>
+<body>
+<header>
+  <img src="/assets/images/pfp.png" class="logo">
+  <h1>kevin's website</h1>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="/">home</a></li>
+    <li><a href="/about.html">about</a></li>
+    <li><a href="/now.html">now</a></li>
+    <li><a href="https://halfdeep.xyz/">music</a></li>
+    <li><a href="/projects/projects.html">projects</a></li>
+    <li><a href="/blog/completed/blog-index.html">blog</a></li>
+    <li><a href="/blog/microblog/microblog-index.html">μ-blog</a></li>
+  </ul>
+</nav>
+<header id="title-block-header">
+<h1 class="title">Building a Custom Split Mechanical Keyboard</h1>
+<p class="author">Kevin Nel</p>
+</header>
+<p><a href="/assets/images/lets-split-preonic/final.jpg"> <img src="/assets/images/lets-split-preonic/final-dithered.png" alt="final build with nice keycaps" data-loading="lazy" /> </a></p>
+<h2 id="table-of-contents">1. Table of Contents</h2>
+<ul>
+<li><a href="#1-table-of-contents">1. Table of Contents</a></li>
+<li><a href="#2-form-factor-research">2. Form Factor Research</a>
+<ul>
+<li><a href="#21-75-ortho">2.1. 75% ortho</a></li>
+<li><a href="#22-planck">2.2. planck</a></li>
+<li><a href="#23-diy-kit-option-kbdfans-niu-mini">2.3. DIY kit option (KBDFans NIU Mini)</a></li>
+<li><a href="#24-split-ortho-75">2.4. Split ortho 75%</a>
+<ul>
+<li><a href="#241-ideas">2.4.1. ideas</a></li>
+</ul></li>
+<li><a href="#25-iris-mini-ergodox-also-40">2.5. iris (mini ergodox also 40%)</a></li>
+<li><a href="#26-split-40">2.6. split 40%</a>
+<ul>
+<li><a href="#261-ideas">2.6.1. ideas</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#3-final-choice">3. Final Choice</a></li>
+<li><a href="#4-componenents">4. Componenents</a>
+<ul>
+<li><a href="#41-case-and-plate">4.1. Case and Plate</a></li>
+<li><a href="#42-bom">4.2. BOM</a></li>
+<li><a href="#43-cost">4.3. Cost</a></li>
+</ul></li>
+<li><a href="#5-ciruit-diagrams">5. Ciruit Diagrams</a></li>
+<li><a href="#6-build-log">6. Build Log</a>
+<ul>
+<li><a href="#61-hot-glue">6.1. hot glue</a></li>
+<li><a href="#62-communication-between-the-two-halves">6.2. communication between the two halves</a></li>
+<li><a href="#63-firmware">6.3. firmware</a></li>
+<li><a href="#64-adding-via-support">6.4. Adding VIA support</a></li>
+</ul></li>
+<li><a href="#7-final-thoughtsreview">7. Final Thoughts/Review</a>
+<ul>
+<li><a href="#71-problems-that-arose">7.1. Problems that arose</a></li>
+<li><a href="#72-improvements-for-future">7.2. improvements for future</a></li>
+</ul></li>
+<li><a href="#8-some-photos">8. Some Photos</a></li>
+<li><a href="#9-references">9. References</a>
+<ul>
+<li><a href="#91-useful-links">9.1. Useful links</a></li>
+<li><a href="#92-handwired-qmk-guide">9.2. handwired qmk guide</a></li>
+<li><a href="#93-links-that-were-useful-during-the-build">9.3. Links that were useful during the build</a></li>
+</ul></li>
+</ul>
+<h2 id="form-factor-research">2. Form Factor Research</h2>
+<p>Before I started on my journey, I had to do some research on just what type of keyboard I would like to build. I had three main criteria:</p>
+<ol type="1">
+<li>size: I had grown fond of the compact sizes on r/mechanicalkeyboards and would like to keep the board as small as would still be practical</li>
+<li>cost: I did not want my first foray into mechanical keyboards to cost me a fortune as I would just be trying it out.</li>
+<li>cool factor: I didn't want it to just be any old keyboard.</li>
+</ol>
+I ended up going with the idea of a split ortholinear keyboard with the same amount of keys as a preonic.
+<details>
+<p><summary>See all the options I considered</summary></p>
+<div data-markdown="1">
+<p>Here are the options I considered with pros and cons. I also included KLE json for each of them for convenience sake.</p>
+<h3 id="ortho">2.1. 75% ortho</h3>
+<figure>
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2F9xtys3toscg21.jpg&amp;f=1&amp;nofb=1" alt="above examples photo" data-loading="lazy" /><figcaption>above examples photo</figcaption>
+</figure>
+<p>pros: - fits in 60% case - dedicated number row - space for 2x2u keys on bottom row (shift and space)</p>
+<p>cons: - larger than 40% (same size as 60%) - number row on ortholinear might be weird - more switches</p>
+<pre class="json"><code>[&quot;~&quot;,&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;,&quot;6&quot;,&quot;7&quot;,&quot;8&quot;,&quot;9&quot;,&quot;0&quot;,&quot;-&quot;,&quot;=&quot;],
+[&quot;Tab&quot;,&quot;Q&quot;,&quot;W&quot;,&quot;E&quot;,&quot;R&quot;,&quot;T&quot;,&quot;Y&quot;,&quot;U&quot;,&quot;I&quot;,&quot;O&quot;,&quot;P&quot;,&quot;Back Space&quot;,&quot;home&quot;],
+[&quot;Esc&quot;,&quot;A&quot;,&quot;S&quot;,&quot;D&quot;,&quot;F&quot;,&quot;G&quot;,&quot;H&quot;,&quot;J&quot;,&quot;K&quot;,&quot;L&quot;,&quot;;&quot;,&quot;&#39;&quot;,&quot;end&quot;],
+[&quot;Shift&quot;,&quot;Z&quot;,&quot;X&quot;,&quot;C&quot;,&quot;V&quot;,&quot;B&quot;,&quot;N&quot;,&quot;M&quot;,&quot;,&quot;,&quot;.&quot;,&quot;/&quot;,&quot;Return&quot;,&quot;delete&quot;],
+[&quot;meme&quot;,&quot;Ctrl&quot;,&quot;Alt&quot;,&quot;Super&quot;,&quot;&amp;dArr;&quot;,&quot;sp1&quot;,&quot;sp2&quot;,&quot;&amp;uArr;&quot;,&quot;&amp;larr;&quot;,&quot;&amp;darr;&quot;,&quot;&amp;uarr;&quot;,&quot;&amp;rarr;&quot;,&quot;fn&quot;]</code></pre>
+<h3 id="planck">2.2. planck</h3>
+<figure>
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.BlxyzbZuZDw9NrBThqR7vAHaE8%26pid%3DApi&amp;f=1" alt="planck" data-loading="lazy" /><figcaption>planck</figcaption>
+</figure>
+<p>pros: - relatively standardized layout - really small - looks cool</p>
+<p>cons: - really small - will have to build own case</p>
+<pre class="json"><code>[{a:7},&quot;Tab&quot;,&quot;Q&quot;,&quot;W&quot;,&quot;E&quot;,&quot;R&quot;,&quot;T&quot;,&quot;Y&quot;,&quot;U&quot;,&quot;I&quot;,&quot;O&quot;,&quot;P&quot;,&quot;Back Space&quot;],
+[&quot;Esc&quot;,&quot;A&quot;,&quot;S&quot;,&quot;D&quot;,&quot;F&quot;,&quot;G&quot;,&quot;H&quot;,&quot;J&quot;,&quot;K&quot;,&quot;L&quot;,&quot;;&quot;,&quot;&#39;&quot;],
+[&quot;Shift&quot;,&quot;Z&quot;,&quot;X&quot;,&quot;C&quot;,&quot;V&quot;,&quot;B&quot;,&quot;N&quot;,&quot;M&quot;,&quot;,&quot;,&quot;.&quot;,&quot;/&quot;,&quot;Return&quot;],
+[&quot;&quot;,&quot;Ctrl&quot;,&quot;Alt&quot;,&quot;Super&quot;,&quot;&amp;dArr;&quot;,{w:2},&quot;&quot;,&quot;&amp;uArr;&quot;,&quot;&amp;larr;&quot;,&quot;&amp;darr;&quot;,&quot;&amp;uarr;&quot;,&quot;&amp;rarr;&quot;]</code></pre>
+<h3 id="diy-kit-option-kbdfans-niu-mini">2.3. DIY kit option (KBDFans NIU Mini)</h3>
+<p><a href="https://kbdfans.com/products/niu-mini-40-diy-kit">kbdfans niu mini diy kit</a></p>
+<figure>
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2F3o9d8dkfeoe31.jpg&amp;f=1&amp;nofb=1" alt="niu mini" data-loading="lazy" /><figcaption>niu mini</figcaption>
+</figure>
+<p>pros: - easier build - nicer case than I could make</p>
+<p>cons: - expensive</p>
+<h3 id="split-ortho-75">2.4. Split ortho 75%</h3>
+<figure>
+<img src="https://cdn.thingiverse.com/assets/74/60/71/08/d9/large_display_1_-_Fvgm3Y5.jpg" alt="split 75%" data-loading="lazy" /><figcaption>split 75%</figcaption>
+</figure>
+<p><a href="https://www.thingiverse.com/thing:4565609">guide</a></p>
+<p>pros: - split (ergo) - ortho means easier diy/plate</p>
+<p>cons: - have to build own case - needs two pro micros and trs connectors (more parts) - more switches = more money</p>
+<h4 id="ideas">2.4.1. ideas</h4>
+<p>wood case acrylic plates hand wired</p>
+<h3 id="iris-mini-ergodox-also-40">2.5. iris (mini ergodox also 40%)</h3>
+<figure>
+<img src="https://jonathanbayless.com/assets/img/640/iris1.jpg" alt="IMAGE" data-loading="lazy" /><figcaption>IMAGE</figcaption>
+</figure>
+<p><a href="https://jonathanbayless.com/2020/06/09/iris-handwire.html">link to a build guide</a></p>
+<p>pros: - ergonomics - less switches = cheaper (more than a 40% though) - looks <strong>really</strong> cool - case has an interesting shape</p>
+<p>cons: - 2 pro micros and trs needed - will have to build own case - quite involved build process - slightly bigger case</p>
+<h3 id="split-40">2.6. split 40%</h3>
+<figure>
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2Fb6ne0b69ztg21.jpg&amp;f=1&amp;nofb=1" alt="split 40" data-loading="lazy" /><figcaption>split 40</figcaption>
+</figure>
+<p><a href="https://johannes-jansson.github.io/projects/2018/07/23/hand-wiring-lets-split.html">a very thorough build guide</a></p>
+<p>pros: - ergonomics - less switches = cheaper - looks really cool</p>
+<p>cons: - 2 pro micros and trs needed - will have to build own case - more involved build process</p>
+<pre class="json"><code>[&quot;Tab&quot;,&quot;Q&quot;,&quot;W&quot;,&quot;E&quot;,&quot;R&quot;,&quot;T&quot;,{x:1},&quot;Y&quot;,&quot;U&quot;,&quot;I&quot;,&quot;O&quot;,&quot;P&quot;,&quot;Back Space&quot;],
+[&quot;Esc&quot;,&quot;A&quot;,&quot;S&quot;,&quot;D&quot;,&quot;F&quot;,&quot;G&quot;,{x:1},&quot;H&quot;,&quot;J&quot;,&quot;K&quot;,&quot;L&quot;,&quot;;&quot;,&quot;&#39;&quot;],
+[&quot;Shift&quot;,&quot;Z&quot;,&quot;X&quot;,&quot;C&quot;,&quot;V&quot;,&quot;B&quot;,{x:1},&quot;N&quot;,&quot;M&quot;,&quot;,&quot;,&quot;.&quot;,&quot;/&quot;,&quot;Return&quot;],
+[&quot;&quot;,&quot;Ctrl&quot;,&quot;Alt&quot;,&quot;Super&quot;,&quot;&amp;dArr;&quot;,&quot;&quot;,{x:1},&quot;&quot;,&quot;&amp;uArr;&quot;,&quot;&amp;larr;&quot;,&quot;&amp;darr;&quot;,&quot;&amp;uarr;&quot;,&quot;&amp;rarr;&quot;]</code></pre>
+<h4 id="ideas-1">2.6.1. ideas</h4>
+<p>acrylic and standoffs for case (ie raspberry pi)</p>
+</div>
+</details>
+<h2 id="final-choice">3. Final Choice</h2>
+<p>split 75% ortho handwired (similar to let's split only with a number row.) with an acrylic mounting and base plate separated by pcb standoffs.</p>
+<pre class="json"><code>[{a:7},&quot;~&quot;,&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;,{x:1},&quot;6&quot;,&quot;7&quot;,&quot;8&quot;,&quot;9&quot;,&quot;0&quot;,&quot;Num Lock&quot;],
+[&quot;Tab&quot;,&quot;Q&quot;,&quot;W&quot;,&quot;E&quot;,&quot;R&quot;,&quot;T&quot;,{x:1},&quot;Y&quot;,&quot;U&quot;,&quot;I&quot;,&quot;O&quot;,&quot;P&quot;,&quot;Back Space&quot;],
+[&quot;Esc&quot;,&quot;A&quot;,&quot;S&quot;,&quot;D&quot;,&quot;F&quot;,&quot;G&quot;,{x:1},&quot;H&quot;,&quot;J&quot;,&quot;K&quot;,&quot;L&quot;,&quot;;&quot;,&quot;&#39;&quot;],
+[&quot;Shift&quot;,&quot;Z&quot;,&quot;X&quot;,&quot;C&quot;,&quot;V&quot;,&quot;B&quot;,{x:1},&quot;N&quot;,&quot;M&quot;,&quot;,&quot;,&quot;.&quot;,&quot;/&quot;,&quot;Return&quot;],
+[&quot;Fn&quot;,&quot;Ctrl&quot;,&quot;Alt&quot;,&quot;Super&quot;,&quot;&amp;dArr;&quot;,&quot;Shift&quot;,{x:1},&quot;Space&quot;,&quot;&amp;uArr;&quot;,&quot;&amp;larr;&quot;,&quot;&amp;darr;&quot;,&quot;&amp;uarr;&quot;,&quot;&amp;rarr;&quot;]</code></pre>
+<h2 id="componenents">4. Componenents</h2>
+<h3 id="case-and-plate">4.1. Case and Plate</h3>
+<p>The case and plate where generated using <a href="builder.swillkb.com/">swillkb builder</a> I had the case and plate laser cut in 3mm acrylic by my uncle. who graciously didn't charge me.</p>
+<blockquote>
+<figure>
+<img src="/assets/images/lets-split-preonic/0.svg" alt="plate" data-loading="lazy" /><figcaption>plate</figcaption>
+</figure>
+</blockquote>
+<h3 id="bom">4.2. BOM</h3>
+<ul>
+<li>4 x (134.301mm x 96.201mm x 3mm) acrylic sheets (2 will be laser cut for mounting plates)</li>
+<li>48 x gateron yellow switches <a href="https://www.banggood.com/">bangood is probably a safer bet even if its more expensive</a></li>
+<li>48 1N4001 or 1N4148 silicon diodes <a href="http://www.40percent.club/2016/07/diodes.html">check this link</a></li>
+<li>48 x DSA blank keycaps <a href="https://www.aliexpress.com/item/1005001453122923.html?spm=a2g0o.cart.0.0.70bf3c00m8bF9A&amp;mp=1">Aliexpress is the cheapest</a></li>
+<li>2 x arduino pro micro <a href="https://www.banggood.com/Geekcreit-Pro-Micro-5V-16M-Mini-Leonardo-Microcontroller-Development-Board-Geekcreit-for-Arduino-products-that-work-with-official-Arduino-boards-p-1077675.html?rmmds=cart_middle_products&amp;cur_warehouse=CN">banggood delivers quickest</a></li>
+<li>1 x trrs cable (salvaged from an aux cable my brother gave me)</li>
+<li>2 x trrs breakout boards (bought off banggood)</li>
+<li>wire (cat5 cable that I salvaged wire from)</li>
+<li>pcb standoffs (banggood)</li>
+</ul>
+<h3 id="cost">4.3. Cost</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Store</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bangood cart</td>
+<td>R1450</td>
+</tr>
+<tr class="even">
+<td>Aliexpress (just caps)</td>
+<td>R223</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td><strong>R1673</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="ciruit-diagrams">5. Ciruit Diagrams</h2>
+<p><a href="https://builder.mrkeebs.com/">Keyboard Firmware Builder</a> proved extremely helpful in working out the layout for this build.</p>
+<h2 id="build-log">6. Build Log</h2>
+<h3 id="hot-glue">6.1. hot glue</h3>
+<p>After Installing the switches and soldering everything in place I realized the switches do not clip in properly to a 3mm plate (1.6mm is the required thickness from the switches datasheet) but a thinner acrylic plate would have way too much flex. The issue this cause was that removing keycaps would rip out the switch and undo all the hard work that went into soldering. The only solution I could come up with was to hot glue everything in place from underneath. I tried my best to be neat and keep the hot glue where the keycaps would cover it.</p>
+<h3 id="communication-between-the-two-halves">6.2. communication between the two halves</h3>
+<p>I opted for I2C over a TRRS cable. This required me to solder 2 pull up 4k7 ohm resistors on the sda and scl lines (pin 2 and pin 3). You can see a schematic below.</p>
+<figure>
+<img src="https://qmk.fm/keyboards/lets_split/i2c_wiring.png" alt="I2C wiring" data-loading="lazy" /><figcaption>I2C wiring</figcaption>
+</figure>
+<h3 id="firmware">6.3. firmware</h3>
+<p>this is how I wired my rows and columns to the Pro-Micro</p>
+<pre class="txt"><code>rows:
+0=b5
+1=b4
+2=e6
+3=d7
+4=c6
+
+cols:
+0=b6
+1=b2
+2=b3
+3=b1
+4=f7
+5=f6</code></pre>
+<p>For the firmware I initially tried using the Nyquist firmware but ran into issues, I ended up using the Let's Split firmware in the handwire folder and adding a row and adjusting the layout.</p>
+<p>These articles helped me to build/flash the pro micros.</p>
+<ol type="1">
+<li><a href="https://docs.qmk.fm/#/newbs_building_firmware">qmk building firmware</a></li>
+<li><a href="https://github.com/qmk/qmk_firmware/tree/master/keyboards/lets_split#flashing">qmk lets split flashing</a></li>
+</ol>
+<blockquote>
+<p>NOTE: In order to flash the promicro you should begin flashing on the computer then bridge the GND and RST (ground and reset) pins on the pro micro (or press the reset switch if your board has one.)</p>
+</blockquote>
+<p>You also have to flash both pro micros.</p>
+<h3 id="adding-via-support">6.4. Adding VIA support</h3>
+<p>After a while I discovered the amazing VIA software and decided to try add support for my build. I followed along with <a href="https://www.youtube.com/watch?v=KQCJmRKr13Y">this stream by mechmerlin</a></p>
+<p>although following the documentation on <a href="https://caniusevia.com/docs/specification/">caniusevia.com</a> also proved helpful</p>
+<p>I ended up completely rewriting the qmk firmware and removed the <code>rev1/</code> and <code>rev2/</code> folders so the firmware is overall much simpler.</p>
+<p>After flashing both promicros with this new firmware you should be able to import the <code>via.json</code> file into VIA and the board should be detected.</p>
+<p>I have also included a much nicer via layout in the via folder on the <a href="https://github.com/kevin-nel/split-ortholinear">github repo for this project</a></p>
+<h2 id="final-thoughtsreview">7. Final Thoughts/Review</h2>
+<h3 id="problems-that-arose">7.1. Problems that arose</h3>
+<p>The soldering went quite smoothly apart from the fact that my iron has a really short cable and I ended up using my left hand to solder which resulted in a few burns. I also may have melted the switch housings on a few of the switches when my iron was set too hot (I think I saw it suggested to use 325C and mine was set to 400C)</p>
+<p>The firmware was more of a problem since my row and column pins were different than what would be on the nyquist PCB. This meant that I could not use the online configurator and I had to figure out how qmk works. I also didn't bother trying to get it all working on windows and just used my linux laptop to do all the programming and flashing.</p>
+<p>All things considered It was quite smooth sailing and the keyboard was up and running in 2 days (4 hours assembly and the rest debugging).</p>
+<p>My keycaps also got delayed in post so the keyboard sat on my desk for a few more weeks before I could fully test drive it.</p>
+<h3 id="improvements-for-future">7.2. improvements for future</h3>
+<p>for future builds I may opt for a pcb not because handwiring is difficult but because having the switches be pcb mounted would add to stability without the use of hot glue. the handwired board looks kinda messy</p>
+<p>I have seen cool stuff done using fr4 plates and bottoms this would allow the entire board to be made with the pcb. If I have the plates made using JLCPCB or something similar this could bring the cost down a bit compared to purchasing a pcb and having it shipped.</p>
+<p>If I do not adapt to the split I may try my hand at building a plank as they are also a little more portable. If I do not adapt the ortholinear layout I may try a columnar stagger or regular stagger board again (<a href="https://www.reddit.com/r/MechanicalKeyboards/comments/ksto32/chocolate_bar/">this compact "full" size board</a> has caught my attention).</p>
+<h2 id="some-photos">8. Some Photos</h2>
+<figure>
+<a href="/assets/images/lets-split-preonic/1.jpg"> <img src="/assets/images/lets-split-preonic/1-dithered.png" alt="laser cut plates" data-loading="lazy" /> </a>
+<figcaption>
+The acrylic plates, fresh off the laser cutter. (click for full resolution)
+</figcaption>
+</figure>
+<figure>
+<a href="/assets/images/lets-split-preonic/2.jpg"> <img src="/assets/images/lets-split-preonic/2-dithered.png" alt="soldering" data-loading="lazy" /> </a>
+<figcaption>
+Soldering away! (click for full resolution)
+</figcaption>
+</figure>
+<figure>
+<a href="/assets/images/lets-split-preonic/3.jpg"> <img src="/assets/images/lets-split-preonic/3-dithered.png" alt="first half done including microcontroller and trrs jack" data-loading="lazy" /> </a>
+<figcaption>
+First half done! (click for full resolution)
+</figcaption>
+</figure>
+<figure>
+<a href="/assets/images/lets-split-preonic/4.jpg"> <img src="/assets/images/lets-split-preonic/4-dithered.png" alt="assembled with bottom (no keycaps yet)" data-loading="lazy" /> </a>
+<figcaption>
+Half the board assembled but no keycaps. (click for full resolution)
+</figcaption>
+</figure>
+<figure>
+<a href="/assets/images/lets-split-preonic/5.jpg"> <img src="/assets/images/lets-split-preonic/5-dithered.png" alt="on the desk (still no keycaps 😢)" data-loading="lazy" /> </a>
+<figcaption>
+Finished but still no keycaps. (click for full resolution)
+</figcaption>
+</figure>
+<figure>
+<a href="/assets/images/lets-split-preonic/final.jpg"> <img src="/assets/images/lets-split-preonic/final-dithered.png" alt="final build with nice keycaps" data-loading="lazy" /> </a>
+<figcaption>
+Final build with some nice bright pink and purple dsa keycaps! (click for full resolution)
+</figcaption>
+</figure>
+<h2 id="references">9. References</h2>
+<h3 id="useful-links">9.1. Useful links</h3>
+<ul>
+<li><a href="http://www.keyboard-layout-editor.com/#/">KLE for making layouts</a></li>
+<li><a href="http://builder.swillkb.com/">builder.swillkb for making svgs of mounting plates</a></li>
+<li><a href="https://www.banggood.com/70Pcs-Kailh-BOX-Heavy-Pale-Blue-Switch-Clicky-Keyboard-Switches-for-Keyboard-Customization-p-1435806.html?cur_warehouse=CN&amp;rmmds=search">Kailh box heavy pale blues on Banggood</a></li>
+<li><a href="https://www.banggood.com/70PCS-Pack-3Pin-Gateron-Linear-Yellow-Switch-Keyboard-Switch-for-Mechanical-Gaming-Keyboard-p-1426530.html?rmmds=search&amp;cur_warehouse=CN">Gateron yellows on Banggood</a></li>
+<li><a href="https://www.banggood.com/DIY-60-pencent-Mechanical-Keyboard-Case-Universal-Customized-Plastic-Shell-Base-for-GH60-Poker2-p-1183414.html?rmmds=search&amp;ID=3868&amp;cur_warehouse=CN">60% case on Banggood</a></li>
+</ul>
+<h3 id="handwired-qmk-guide">9.2. handwired qmk guide</h3>
+<ul>
+<li><a href="https://docs.qmk.fm/#/hand_wire">qmk handwire build</a></li>
+<li><a href="https://kbfirmware.com/">firmware builder</a>, this will also make a wiring diagram</li>
+<li><a href="https://68keys.io/">another build guide</a></li>
+</ul>
+<h3 id="links-that-were-useful-during-the-build">9.3. Links that were useful during the build</h3>
+<ul>
+<li><a href="https://blog.roastpotatoes.co/guide/2015/11/04/how-to-handwire-a-planck/">roast potatoes wiring guide</a></li>
+<li><a href="https://docs.qmk.fm/#/hand_wire">qmk handwire guide</a></li>
+<li><a href="https://learn.sparkfun.com/tutorials/pro-micro--fio-v3-hookup-guide/hardware-overview-pro-micro">sparkfun pin names for pro micro</a></li>
+<li><a href="https://qmk.fm/keyboards/lets_split/">let's split qmk page</a></li>
+</ul>
+<footer>
+    <a rel="me" href="https://merveilles.town/@kevin"
+      ><img src="/assets/images/icons/mastodon.svg" class="icon" alt="Mastodon" title="link to my mastodon profile"
+    />Mastodon</a>
+  
+    <a href="https://webring.xxiivv.com/#random" target="_blank"
+      ><img src="/assets/images/icons/webring.svg" class="icon" alt="Webring" title="link to the Merveilles webring"
+    />Webring</a>
+  
+    <a rel="me" href="https://github.com/kevin-nel"
+      ><img src="/assets/images/icons/github.svg" class="icon" alt="Github" title="link to my Github page"
+    />Github</a>
+  
+    <a rel="me" href="https://halfdeep.bandcamp.com/releases"
+      ><img src="/assets/images/icons/bandcamp.svg" class="icon" alt="Bandcamp" title="link to my music on bandcamp"
+    />Bandcamp</a>
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0//"
+      ><img src="/assets/images/icons/cc.svg" alt="Creative Commons" title="CC BY-NC-SA 4.0" class="icon">CC</a
+    >
+    <a href="/"><img src="/assets/images/pfp.png" class="icon" alt="Homw" title="link back to the homepage"
+    />Home</a>
+</footer>
+</body>
+</html>

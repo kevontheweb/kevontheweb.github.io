@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>index</title>
+  <title>satellites</title>
   <style type="text/css">
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
@@ -30,12 +30,34 @@
     <li><a href="/blog/microblog/microblog-index.html">μ-blog</a></li>
   </ul>
 </nav>
-<h1 id="index">Index</h1>
-<p>Welcome to the root of my <a href="projects/pkms.html">personal wiki</a>.</p>
-<p>This is a place for my thoughts, projects, and other stuff, free from the rat race that is the modern web.</p>
-<p>visit the <a href="./blog/completed/blog-index.html">blog</a>, have a look at my <a href="gear/gearpage.html">gear</a>, or read through some of my <a href="projects/projects.html">projects</a>.</p>
-<p>I also keep track of my general <a href="knowledge/knowledge.html">knowledge</a> and keep some <a href="collections/collections.html">collections</a> of quotes and other things.</p>
-<p>A lot of stuff here is currently incomplete so please be kind.</p>
+<h1 id="satellites">satellites</h1>
+<p>Here is a collection of the satellite that I have decoded transmissions from.</p>
+<h2 id="noaa-15">NOAA 15</h2>
+<p>The NOAAx satellites are NASA weather satellites that broadcast a satellite image over VHF</p>
+<p>I used my baofeng uv5r to listen in on the frequency specified in the Look4Sat android app (137.62MHz in my case)</p>
+<p>I recorded the audio using my cellphone. (I recorded a video but audio only would probably work better)</p>
+<p>I then stripped the audio from the video using ffmpeg</p>
+<p><code>ffmpeg -i video.mp4 -c:v copy -vn audio.wav</code></p>
+<p>The audio then needs to be mixed down to mono and resampled to match the requirements for wxtoimg</p>
+<p>the audio then needs to be saved as a .wav file.</p>
+<p>This can be done using Audacity</p>
+<blockquote>
+<p>note: if you have ffmpeg installed audacity may be able to automatically extract the audio from a video file on import</p>
+</blockquote>
+<p><img src="../assets/images/other/noaa15-audacity.gif" alt="2021-06-25-20-06-20.png" /> preparing the audio for wxtoimg in audacity</p>
+<p>the audio can then be imported into wxtoimg and it will be automatically processed into an image</p>
+<p>wxtoimg is abandonware and getting hold of a copy can be a bit tricky with all the copies available. I used <a href="https://www.wraase.de/wxtoimg/">this link</a> to get my installer.</p>
+<p>The software is old enought that the windows version should work without issues in wine on linux.</p>
+<h3 id="results">results</h3>
+<h3 id="tips">tips</h3>
+<ol type="1">
+<li>try to get as long a recording as possible without too many interferences.</li>
+<li>recording the direct audio out from the headphone out into some kind of audio interface may provide cleaner recordings</li>
+</ol>
+<h3 id="references">references</h3>
+<p><a href="https://youtu.be/LUDOzCM0SRI">This video was quite helpfule</a></p>
+<h2 id="iss">iss</h2>
+<p>https://www.youtube.com/watch?v=HtC-BPcMruA</p>
 <footer>
     <a rel="me" href="https://merveilles.town/@kevin"
       ><img src="/assets/images/icons/mastodon.svg" class="icon" alt="Mastodon" title="link to my mastodon profile"

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Kevin Nel" />
+  <title>Rebuilding My Site As a Wiki</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="/assets/css/oldschool.css" />
+</head>
+<body>
+<header>
+  <img src="/assets/images/pfp.png" class="logo">
+  <h1>kevin's website</h1>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="/">home</a></li>
+    <li><a href="/about.html">about</a></li>
+    <li><a href="/now.html">now</a></li>
+    <li><a href="https://halfdeep.xyz/">music</a></li>
+    <li><a href="/projects/projects.html">projects</a></li>
+    <li><a href="/blog/completed/blog-index.html">blog</a></li>
+    <li><a href="/blog/microblog/microblog-index.html">μ-blog</a></li>
+  </ul>
+</nav>
+<header id="title-block-header">
+<h1 class="title">Rebuilding My Site As a Wiki</h1>
+<p class="author">Kevin Nel</p>
+</header>
+<p>I've been very interested in the concepts of digital gardens and <a href="/projects/pkms.html">personal knowledge management systems</a>, so i decided to try and build my own system that could help me be a little more productive when it comes to writing articles, completing projects and organizing information.</p>
+<p>This post is a little bit more technical.</p>
+<h2 id="pandoc-as-a-static-site-generator">pandoc as a static site generator</h2>
+<p>I wanted something simple and I really didn't want to mess with jekyll again so i decided to make a little wrapper script for pandoc.</p>
+<p>It takes in a folder full of markdown files that link each other where all the assests are in an assets folder. and converts it into a website with common header and footer.</p>
+<p>the site directory should look as follows</p>
+<pre><code>.
+├── pkms-site/
+│   ├── assets/
+│   ├── blog/
+│   ├── notes/
+│   ├── projects/
+│   └── index.md
+└── site/
+    ├── footer.html
+    ├── header.html
+    ├── links-to-html.lua
+    └── md-pan-wiki.sh</code></pre>
+<p><code>md-pan-wiki.sh</code> contains the following.</p>
+<pre class="bash"><code>#! /bin/bash
+
+# run in /site directory
+# this copies the directory structure into ./export/ without copying the files
+cd ../pkms-site;
+find ./ -type d &gt; ../site/dirs.txt;
+cd ../site;
+mkdir -p export;
+cd export;
+xargs mkdir -p &lt; ../dirs.txt;
+# this copies assests like images into the new export assests directory
+cp -r ../../pkms-site/assets/* assets/ ;
+
+# find all md files and feed them in to pandoc as input files.
+cd ../../pkms-site;
+
+find ./ -iname &quot;*.md&quot; -type f -exec sh -c &#39;pandoc -f markdown+tex_math_dollars-smart -t html5 &quot;${0}&quot; -so &quot;../site/export/${0%.*}.html&quot; --lua-filter=../site/links-to-html.lua --include-after-body=../site/footer.html --include-before-body=../site/header.html --css /assets/css/oldschool.css --html-q-tags --katex --no-highlight&#39; {} \;
+# ${0%.*} strips the file extension while leaving the path
+# the lua filter converts all relative links to .md files to .html files</code></pre>
+<p><code>links-to-html.lua</code> is a lua filter that changes all the relative links to .md files into links to .html files</p>
+<pre class="lua"><code>function Link(el)
+    el.target = string.gsub(el.target, &quot;%.md&quot;, &quot;.html&quot;)
+    return el
+end</code></pre>
+<footer>
+    <a rel="me" href="https://merveilles.town/@kevin"
+      ><img src="/assets/images/icons/mastodon.svg" class="icon" alt="Mastodon" title="link to my mastodon profile"
+    />Mastodon</a>
+  
+    <a href="https://webring.xxiivv.com/#random" target="_blank"
+      ><img src="/assets/images/icons/webring.svg" class="icon" alt="Webring" title="link to the Merveilles webring"
+    />Webring</a>
+  
+    <a rel="me" href="https://github.com/kevin-nel"
+      ><img src="/assets/images/icons/github.svg" class="icon" alt="Github" title="link to my Github page"
+    />Github</a>
+  
+    <a rel="me" href="https://halfdeep.bandcamp.com/releases"
+      ><img src="/assets/images/icons/bandcamp.svg" class="icon" alt="Bandcamp" title="link to my music on bandcamp"
+    />Bandcamp</a>
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0//"
+      ><img src="/assets/images/icons/cc.svg" alt="Creative Commons" title="CC BY-NC-SA 4.0" class="icon">CC</a
+    >
+    <a href="/"><img src="/assets/images/pfp.png" class="icon" alt="Homw" title="link back to the homepage"
+    />Home</a>
+</footer>
+</body>
+</html>

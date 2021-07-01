@@ -31,28 +31,103 @@
   </ul>
 </nav>
 <h1 id="amateur-radio">amateur radio</h1>
+<h2 id="why-amateur-radio-is-cool">Why amateur radio is cool</h2>
+<p>Here are a collection of cool stuff that you can do with amateur radio.</p>
+<p>This <a href="https://youtu.be/DREv1zpkVwM">excellent talk by Gerard de Jong</a> also goes over a lot of cool stuff you can do with sdr and amateur radio.</p>
+<ul>
+<li>receive signals from <a href="satellites.html">satellites</a>.
+<ul>
+<li>sstv on the iss</li>
+<li>images on the NOAA weather sattelites (using wxtoimg)</li>
+</ul></li>
+<li>"hack" gate motors and other keyfob systems
+<ul>
+<li>older systems use simple dit dah or on off transmissions</li>
+<li>newer systems use <a href="https://spencerwhyte.blogspot.com/2014/03/delay-attack-jam-intercept-and-replay.html">rolling codes</a></li>
+<li><a href="https://www.youtube.com/watch?v=UNgvShN4USU">this talk about car keyfob hacks</a></li>
+</ul></li>
+<li>visualise air traffic using <a href="https://en.wikipedia.org/wiki/Automatic_Dependent_Surveillance%E2%80%93Broadcast">ads-b</a></li>
+<li>visualise ship traffic</li>
+</ul>
+<p>you can also use a <a href="/knowledge/raspberrypi.html">raspberry pi</a> to transmit radio signals from 5KHz to 1.5MHz. here are a few projects that allow you to do that.</p>
+<ul>
+<li><a href="https://github.com/F5OEO/rpitx">rpitx</a></li>
+<li><a href="https://github.com/ChristopheJacquet/PiFmRds">pifmrds</a></li>
+</ul>
+<h2 id="resources">Resources</h2>
+<p>Some websites with good resources:</p>
+<ul>
+<li><a href="https://www.dxzone.com/">dxzone</a></li>
+<li><a href="https://www.rtl-sdr.com/">rtl-sdr</a></li>
+</ul>
+<p>Some great content on youtube (mainly sdr stuff):</p>
+<ul>
+<li><a href="https://youtube.com/playlist?list=PLZLsjPxmF1BEi7vH6Qo9lHMLW0WKdjDEV">thought emporium's radio videos</a></li>
+<li><a href="https://www.youtube.com/channel/UC9a8Z6Sp6eb2s3O79pX5Zvg">Tech Minds</a></li>
+<li><a href="https://www.youtube.com/watch?v=N0p3_ES2dBU">Hacking the Wireless World with Software Defined Radio - 2.0</a></li>
+</ul>
 <h2 id="sdr">SDR</h2>
 <p>rtl-sdr comes from a digital TV chip that was hacked and now we have cheap sdrs</p>
+<h3 id="sdr-software">SDR software</h3>
+<ul>
+<li><a href="https://batchdrake.github.io/SigDigger/">SigDigger</a></li>
+<li><a href="https://github.com/cjcliffe/CubicSDR">CubicSDR</a></li>
+<li><a href="https://github.com/AlexandreRouma/SDRPlusPlus">SDR++</a></li>
+<li><a href="https://gqrx.dk/">GQRX</a></li>
+</ul>
+<h3 id="gnu-radio">GNU-Radio</h3>
+<ul>
+<li><a href="https://greatscottgadgets.com/sdr/">michael ossmans gnu radio dsp sdr course</a></li>
+<li><a href="https://www.rtl-sdr.com/tag/gnu-radio/">using gnu radio with rtl sdr</a></li>
+</ul>
 <h2 id="gps">GPS</h2>
-<p>very cool concept for an open source off-grid mesh network using relatively inexpensive GPS radio microcontrollers</p>
+<p>very cool concept for an open source off-grid mesh network using relatively inexpensive GPS radio microcontrollers using the LoRa protocol</p>
 <p>https://meshtastic.org/</p>
 <h2 id="vhfuhf">VHF/UHF</h2>
 <p>A lot of <a href="satellites.html">satellites</a> and even the ISS use VHF/UHF</p>
-<h2 id="hf">HF</h2>
-<h2 id="modes">modes</h2>
-<h3 id="sstv">sstv</h3>
-<p>slow scan television</p>
-<h3 id="morse-code">morse code</h3>
-<h3 id="ft8">ft8</h3>
-<p>https://www.onallbands.com/ft8-what-is-it-and-how-can-i-get-started/</p>
-<h3 id="aprs">aprs</h3>
-<p>automatic packet reporting system</p>
-<p>https://www.curiouselectron.com/?p=595</p>
-<p>BTECH APRS-K1 Cable</p>
-<p>aprs droid</p>
+<h3 id="security-companies">Security Companies</h3>
+<p>In south africa a lot of radios targeted at security companies use the 464 and 446MHz UHF bands at 0.5 watts to avoid the need for a licence.</p>
+<figure>
+<img src="/assets/images/other/zartek-no-licence-freq.png" alt="an example of a radio with some no-licence bands pre programmed in" /><figcaption>an example of a radio with some no-licence bands pre programmed in</figcaption>
+</figure>
+<h2 id="modes">Modes</h2>
+<h3 id="sstv">SSTV</h3>
+<p>SSTV stands for slow scan television.</p>
+<p><a href="https://en.wikipedia.org/wiki/Slow-scan_television">SSTV on Wikipedia</a></p>
+<p><a href="satellites.html#ISS">The ISS</a> sometimes transmits an image over sstv that you can receive and decode.</p>
+<h3 id="ft-8">FT-8</h3>
+<p><a href="https://www.onallbands.com/ft8-what-is-it-and-how-can-i-get-started/">what is ft8?</a></p>
+<h3 id="aprs">APRS</h3>
+<p>APRS stands for automatic packet reporting system.</p>
+<p>see <a href="https://en.wikipedia.org/wiki/Automatic_Packet_Reporting_System">APRS on Wikipedia</a>.</p>
+<p><a href="https://www.curiouselectron.com/?p=595">Curious Electron article</a></p>
+<h4 id="aprs-on-the-baofeng-uv5-r">aprs on the <a href="/gear/ham.html">Baofeng uv5-r</a></h4>
+<p>In order to use aprs on the baofeng you need the appropriate cable and some software</p>
+<p>The cable: BTECH APRS-K1 Cable</p>
+<p>The software: aprs droid</p>
+<p>Traditionally aprs required a <a href="https://en.wikipedia.org/wiki/Terminal_node_controller">TNC (Terminal Node Controller)</a> in order to decode the signals, but today we have extremely powerful computers in our pockets.</p>
+<p>The aprs droid app is able to process the audio and decode aprs packets.</p>
+<p>I have yet to try this out in real life as I do not have the appropriate cable. There are some resources on making your own cable:</p>
+<ul>
+<li><a href="https://www.tnc-x.com/Baofeng.htm">tnc-x cable</a></li>
+<li><a href="https://willbradley.name/2015/08/09/aprs-via-rf-cable-for-connecting-aprsdroid-to-a-baofeng-radio/">aprsdroid baofeng cable</a></li>
+<li><a href="https://www.qsl.net/w6dps/APRSDroid.html">qsl.net</a></li>
+<li><a href="https://github.com/johnboiles/BaofengUV5R-TRRS">pcb adapter</a></li>
+</ul>
+<p>Here is also a really cool <a href="https://github.com/Rom3oDelta7/APRS-Mobile-Digipeater">mobile aprs digital repeater</a> built into a pelican case.</p>
 <h2 id="antennae">antennae</h2>
-<h3 id="yagi">yagi</h3>
-<h3 id="dipole">dipole</h3>
+<p>to make any of these antennae you can just search "$ANTENNANAME calculator". there are many different calculators that can assist in working out the measurements for the antennae.</p>
+<h3 id="yagi-uda">Yagi-Uda</h3>
+<figure>
+<img src="/assets/images/other/Yagi-Uda.png" alt="Yagi-Uda on Wikipedia" /><figcaption><a href="https://en.wikipedia.org/wiki/Yagi%E2%80%93Uda_antenna">Yagi-Uda on Wikipedia</a></figcaption>
+</figure>
+<p>The only decent calculator I could find was the <a href="https://www.changpuak.ch/electronics/yagi_uda_antenna_DL6WU.php">changpuak yagi-uda calculator based on the Rothammel / DL6WU design</a> as well as the <a href="https://www.changpuak.ch/electronics/yagi_uda_antenna.php">changpuak yagi-uda calculator based on a constant spacing of 0.2 λ</a></p>
+<p>It seems that the yagi-uda antenna is fairly complex and requires a good bit of fine tuning and adjustment with iterative analysis.</p>
+<p>The designs available online are therefore a lot more like "recipes" and there can be differences between 2 yagi-uda designs for the same frequency. Here is <a href="https://www.qsl.net/vk2kfj/DL6WU.html">some history about the DL6WU design</a>.</p>
+<h3 id="cross-dipole">Cross Dipole</h3>
+<p>4 dipole antennae angled at 30° arranged in a square across from each other.</p>
+<p>A cross dipole is omnidirectional.</p>
+<p><a href="https://www.qsl.net/py4zbz/DCA.pdf">qsl: designing a cross dipole for vhf and noaa sattelite receiving</a></p>
 <footer>
     <a rel="me" href="https://merveilles.town/@kevin"
       ><img src="/assets/images/icons/mastodon.svg" class="icon" alt="Mastodon" title="link to my mastodon profile"

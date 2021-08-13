@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>radio</title>
+  <title>amateur radio</title>
   <style type="text/css">
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,9 @@
     <li><a href="/blog/microblog/microblog-index.html">μ-blog</a></li>
   </ul>
 </nav>
-<h1 id="amateur-radio">amateur radio</h1>
+<header id="title-block-header">
+<h1 class="title">amateur radio</h1>
+</header>
 <h2 id="why-amateur-radio-is-cool">Why amateur radio is cool</h2>
 <p>Here are a collection of cool stuff that you can do with amateur radio.</p>
 <p>This <a href="https://youtu.be/DREv1zpkVwM">excellent talk by Gerard de Jong</a> also goes over a lot of cool stuff you can do with sdr and amateur radio.</p>
@@ -46,12 +48,20 @@
 <li>newer systems use <a href="https://spencerwhyte.blogspot.com/2014/03/delay-attack-jam-intercept-and-replay.html">rolling codes</a></li>
 <li><a href="https://www.youtube.com/watch?v=UNgvShN4USU">this talk about car keyfob hacks</a></li>
 </ul></li>
+<li><a href="https://www.rtl-sdr.com/tempestsdr-a-sdr-tool-for-eavesdropping-on-computer-screens-via-unintentionally-radiated-rf/">receive images from computer monitors over radiated RF</a>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=mBJ6uQZsF9c">video demo</a></li>
+</ul></li>
 <li>visualise air traffic using <a href="https://en.wikipedia.org/wiki/Automatic_Dependent_Surveillance%E2%80%93Broadcast">ads-b</a></li>
 <li>visualise ship traffic</li>
 </ul>
-<p>you can also use a <a href="/knowledge/raspberrypi.html">raspberry pi</a> to transmit radio signals from 5KHz to 1.5MHz. here are a few projects that allow you to do that.</p>
+<p>you can also use a <a href="/knowledge/raspberrypi.html">raspberry pi</a> to transmit radio signals. here are a few projects that allow you to do that.</p>
 <ul>
-<li><a href="https://github.com/F5OEO/rpitx">rpitx</a></li>
+<li><a href="https://github.com/F5OEO/rpitx">rpitx</a>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=Wsy-TAFNs90">rpitx tech minds</a></li>
+<li><a href="https://www.youtube.com/watch?v=ewY-woG1dNw">rpitx sdr-blog</a></li>
+</ul></li>
 <li><a href="https://github.com/ChristopheJacquet/PiFmRds">pifmrds</a></li>
 </ul>
 <h2 id="resources">Resources</h2>
@@ -67,7 +77,13 @@
 <li><a href="https://www.youtube.com/watch?v=N0p3_ES2dBU">Hacking the Wireless World with Software Defined Radio - 2.0</a></li>
 </ul>
 <h2 id="sdr">SDR</h2>
+<h3 id="rtl-sdr">rtl-sdr</h3>
 <p>rtl-sdr comes from a digital TV chip that was hacked and now we have cheap sdrs</p>
+<p>the rtl-sdr dongles can do hf with some work arounds:</p>
+<ul>
+<li><a href="http://www.radioforeveryone.com/p/the-new-smart-manufacturer-link-can-do.html">hf on rtl sdr using direct sampling</a></li>
+<li><a href="https://www.rtl-sdr.com/tag/upconverter/">hf on rtl sdr using up converter</a></li>
+</ul>
 <h3 id="sdr-software">SDR software</h3>
 <ul>
 <li><a href="https://batchdrake.github.io/SigDigger/">SigDigger</a></li>
@@ -82,8 +98,9 @@
 </ul>
 <h2 id="gps">GPS</h2>
 <p>very cool concept for an open source off-grid mesh network using relatively inexpensive GPS radio microcontrollers using the LoRa protocol</p>
-<p>https://meshtastic.org/</p>
+<p><a href="https://meshtastic.org/">meshtastic.org</a></p>
 <h2 id="vhfuhf">VHF/UHF</h2>
+<p>I have a <a href="/gear/ham.html">baofeng uv5-r</a> for VHF/UHF</p>
 <p>A lot of <a href="satellites.html">satellites</a> and even the ISS use VHF/UHF</p>
 <h3 id="security-companies">Security Companies</h3>
 <p>In south africa a lot of radios targeted at security companies use the 464 and 446MHz UHF bands at 0.5 watts to avoid the need for a licence.</p>
@@ -105,7 +122,13 @@
 <p>In order to use aprs on the baofeng you need the appropriate cable and some software</p>
 <p>The cable: BTECH APRS-K1 Cable</p>
 <p>The software: aprs droid</p>
-<p>Traditionally aprs required a <a href="https://en.wikipedia.org/wiki/Terminal_node_controller">TNC (Terminal Node Controller)</a> in order to decode the signals, but today we have extremely powerful computers in our pockets.</p>
+<p>Aprs required a <a href="https://en.wikipedia.org/wiki/Terminal_node_controller">TNC (Terminal Node Controller)</a> in order to decode the signals.</p>
+<p>TNC and AX.25 resources</p>
+<ul>
+<li><a href="http://www.mobilinkd.com/2014/09/11/arduino-kiss-tnc/">arduino nano diy tnc</a></li>
+<li><a href="https://github.com/wb2osz/direwolf">Dire Wolf - software "soundcard" AX.25 packet modem/TNC and APRS encoder/decoder</a></li>
+<li><a href="https://www.qbjnet.com/packet.html">linux ax.25 packet radio setup</a></li>
+</ul>
 <p>The aprs droid app is able to process the audio and decode aprs packets.</p>
 <p>I have yet to try this out in real life as I do not have the appropriate cable. There are some resources on making your own cable:</p>
 <ul>
@@ -128,6 +151,33 @@
 <p>4 dipole antennae angled at 30° arranged in a square across from each other.</p>
 <p>A cross dipole is omnidirectional.</p>
 <p><a href="https://www.qsl.net/py4zbz/DCA.pdf">qsl: designing a cross dipole for vhf and noaa sattelite receiving</a></p>
+<h3 id="planar-disk">Planar Disk</h3>
+<p><a href="https://www.wa5vjb.com/references/PlanarDiskAntennas.pdf">planar disk antenna build guide pdf</a></p>
+<h3 id="turnstile">Turnstile</h3>
+<p><a href="https://web.archive.org/web/20130827200955/http://www.digitalham.co.uk/weather/equipment/turnstile-antenna/">turnstile antenna design for 137MHz</a></p>
+<figure>
+<img src="/assets/images/other/turnstile-antenna.png" alt="Turnstile antenna on Wikipedia" /><figcaption><a href="https://en.wikipedia.org/wiki/Turnstile_antenna">Turnstile antenna on Wikipedia</a></figcaption>
+</figure>
+<h3 id="v-dipole">V Dipole</h3>
+<p><a href="https://lna4all.blogspot.com/2017/02/diy-137-mhz-wx-sat-v-dipole-antenna.html">V Dipole for 137MHz NOAA sattelites</a></p>
+<h3 id="qfh">QFH</h3>
+<p>QFH stands for quadrifilar helicoidal antenna</p>
+<p><a href="https://www.jcoppens.com/ant/qfh/calc.en.php">online calculator</a> <a href="https://www.thingiverse.com/thing:765794">3d printable bracket for 137MHz on thingiverse</a></p>
+<h2 id="components">Components</h2>
+<h3 id="connectors">connectors</h3>
+<ul>
+<li>bnc</li>
+<li>sma
+<ul>
+<li>rp sma : has a pin in the male connector</li>
+<li>sma : has a pin in the female connector</li>
+</ul></li>
+<li>mmcx/mxc</li>
+</ul>
+<h3 id="cable">cable</h3>
+<p>different types of coax are rated for different losses at different frequencies.</p>
+<p>you can use online calculators (<a href="https://www.net-comber.com/cable-loss.html">like this old one</a> or <a href="https://www.timesmicrowave.com/calculator">this one by times microwave systems</a>) to see what you need for your frequency and length.</p>
+<p><a href="https://www.jpole-antenna.com/2013/01/12/what-type-of-feedline-coax-should-i-use-for-my-antenna/">different kinds of coax for different purposes</a></p>
 <footer>
     <a rel="me" href="https://merveilles.town/@kevin"
       ><img src="/assets/images/icons/mastodon.svg" class="icon" alt="Mastodon" title="link to my mastodon profile"

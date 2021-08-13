@@ -30,8 +30,16 @@
     <li><a href="/blog/microblog/microblog-index.html">μ-blog</a></li>
   </ul>
 </nav>
-<h1 id="vim">vim</h1>
-<p><a href="/blog/completed/2020-10-10-touch-typing-and-vim.html">Don't get bad typing habits</a></p>
+<header id="title-block-header">
+<h1 class="title">vim</h1>
+</header>
+<ul>
+<li><p><a href="/blog/completed/2020-10-10-touch-typing-and-vim.html">Don't get bad typing habits</a></p></li>
+<li><p><a href="https://github.com/neovim/nvim-lspconfig">nvm language server</a></p></li>
+</ul>
+<h2 id="remove-trailing-whitespaces-on-save">remove trailing whitespaces on save</h2>
+<pre class="vim"><code>autocmd BufWritePre *.py :%s/\s\+$//e</code></pre>
+<p><a href="https://vim.fandom.com/wiki/Remove_unwanted_spaces">source</a></p>
 <footer>
     <a rel="me" href="https://merveilles.town/@kevin"
       ><img src="/assets/images/icons/mastodon.svg" class="icon" alt="Mastodon" title="link to my mastodon profile"

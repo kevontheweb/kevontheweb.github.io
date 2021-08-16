@@ -37,17 +37,29 @@
 <p>inspired by old tracker software and the few hardware trackers that are out now like the <a href="https://llllllll.co/t/polyend-tracker/30124">polyend</a> <a href="https://www.youtube.com/watch?v=P7xlaPDzF84">tracker</a> and the <a href="https://www.youtube.com/watch?v=9TquD64S8v0">nerdseq</a></p>
 <p>I have started playing around with <a href="https://www.youtube.com/watch?v=TNJzCaybzOk">renoise</a> <a href="https://www.youtube.com/watch?v=GSJKQ2B9R3Q">(mitch murder renoise fun)</a> and been listening to some old <a href="https://www.youtube.com/watch?v=cJJsWN8Afaw">tracker</a> <a href="https://www.youtube.com/watch?v=Z2dQxRy9df4">music</a> <a href="https://www.youtube.com/watch?v=3qBDrdZVCpQ">(even John Frusciante made some!)</a>.</p>
 <p>After hanging around on <a href="https://merveilles.town">merveilles</a> i discovered <a href="https://github.com/hundredrabbits/Orca-c">orca</a> and the <a href="https://100r.co/site/uxn.html">uxn virtual computer</a> (both by <a href="https://github.com/hundredrabbits">hundred rabbits</a>) and thought that it might be possible to run orca as a rom on an esp32 using uxn.</p>
+<p>Orca is an esoteric programming language used to sequence midi devices and is often used in <a href="https://www.youtube.com/watch?v=4VSrjp0w3jA">livecoding (video example)</a> <a href="https://en.wikipedia.org/wiki/Live_coding">(wikipedia)</a>.</p>
+<p>It is possible to build any style sequencer you can imagine even including things like randomness and <a href="https://www.youtube.com/watch?v=OHS3lN6snrE">euclidean rhythms (video explanation)</a> <a href="https://en.wikipedia.org/wiki/Euclidean_rhythm">(wikipedia)</a>. <a href="https://www.youtube.com/watch?v=nKAjx6n97IY">Tracker style sequencers have also been made with Orca</a></p>
 <h2 id="resources">resources</h2>
-<p>luckily there was already an <a href="https://github.com/max22-/uxn-esp32">eps32 uxn port for m5stack dev boards</a> and a well documented <a href="https://compudanzas.net/uxn_tutorial.html">uxn tutorial</a>. So all that was left to do was adapt the existing code for my hardware.</p>
-<p>UXN uses <a href="https://wiki.libsdl.org/">sdl</a> and <a href="http://portmedia.sourceforge.net/portmidi/">portmidi</a> to provide cross platform interface and midi device usage.</p>
+<p>luckily there was already a well documented <a href="https://compudanzas.et/uxn_tutorial.html">uxn tutorial</a>. The screen and mouse has already been implemented but audio and keyboard are still in progress.</p>
 <h2 id="hardware">hardware</h2>
-<p>I already had an <a href="https://link">esp32cam dev board</a> with an sd card slot and a 128*64 i2c oled.</p>
-<h2 id="todo">todo</h2>
+<p>I already had an esp32cam dev board with an sd card slot and a 128*64 i2c oled, but not all the pins are made available on this dev board and this screen is too small for most uses in uxn and is also only black and white.</p>
+<h3 id="processing">processing</h3>
+<p>an esp32 dev board will be used as the main processor</p>
+<h3 id="output">output</h3>
+<p>A better alternative would be to use an ILI9341 based (or similiar) SPI TFT LCD since SPI TFT displays are supported through the use of the <a href="https://github.com/Bodmer/TFT_eSPI">TFT_eSPI library</a></p>
+<h3 id="input">input</h3>
+<p>For user input USB keyboard/MIDI could be added with a MAX3421</p>
+<h2 id="software">software</h2>
+<p><a href="https://github.com/max22-/uxn-esp32">eps32 uxn port</a> is a port of <a href="https://git.sr.ht/~rabbits/uxn/tree/master/item/src/uxnemu.c">uxnemu</a> to the esp32 platform.</p>
+<p>UXN uses <a href="https://wiki.libsdl.org/">sdl</a> and <a href="http://portmedia.sourceforge.net/portmidi/">portmidi</a> to provide a cross platform interface (on computers) and midi device usage.</p>
+<p>Unfortunately sdl and portmidi are not available for esp32 so something else will have to take it's place:</p>
+<p>some other libraries that can be used to take the place of sdl and port midi:</p>
 <ul>
-<li>[ ] try make the oled work then get an lcd if necessary</li>
-<li>[ ] my esp32 has psram so it should be fine?</li>
+<li><a href="https://github.com/felis/USB_Host_Shield_2.0">This arduino library</a> for the <a href="https://datasheets.maximintegrated.com/en/ds/MAX3421E.pdf">MAX3421</a> could add usb peripheral support over SPI (including MIDI and HID).</li>
 </ul>
-<h2 id="controls">controls</h2>
+<h2 id="design">design</h2>
+<h3 id="controls">controls</h3>
+<h4 id="option-1">Option 1</h4>
 <p>Inspired by the LARGE multifunction encoder (knob) on the polyend tracker I thought it might be useful to use a rotary encoder with push button. It moves left/right when not pressed down and up and down when the encoder is pressed.</p>
 <p>a few common keys like</p>
 <ul>
@@ -57,35 +69,39 @@
 <li>backspace</li>
 </ul>
 <p>as well as a numpad with layers so that all 36 keys needed can be pressed without the need for a full size keyboard (though the ability to plug in a full size keyboard in the future would be nice.)</p>
+<h4 id="option-2">Option 2</h4>
+<p>Use a PS2 keyboard or serial</p>
+<h3 id="interface">interface</h3>
+<p>The visual user interface on the LCD will be provided by the UXN roms</p>
 <h2 id="usage">usage</h2>
 <p>The idea would be to be able to use it to sequence midi devices or use as part of a modular synth (if used in conjunction with a midi to cv device)</p>
+<h2 id="todo">todo</h2>
+<ul>
+<li>[ ] try make the oled work then get an lcd if necessary</li>
+<li>[ ] my esp32 has psram so it should be fine?</li>
+<li>[ ] figure out something for keyboard inputs</li>
+</ul>
 <h2 id="last-resort-just-use-a-pi">last resort (just use a pi)</h2>
 <ul>
 <li><a href="https://llllllll.co/t/diy-norns-shield/27638">diy norns</a></li>
 <li><a href="https://llllllll.co/t/teletype-diy-using-grid-keyboard-at-the-same-time-no-switch/39716">diy teletype</a></li>
 </ul>
 <footer>
-    <a rel="me" href="https://merveilles.town/@kevin"
-      ><img src="/assets/images/icons/mastodon.svg" class="icon" alt="Mastodon" title="link to my mastodon profile"
-    />Mastodon</a>
-  
-    <a href="https://webring.xxiivv.com/#random" target="_blank"
-      ><img src="/assets/images/icons/webring.svg" class="icon" alt="Webring" title="link to the Merveilles webring"
-    />Webring</a>
-  
-    <a rel="me" href="https://github.com/kevin-nel"
-      ><img src="/assets/images/icons/github.svg" class="icon" alt="Github" title="link to my Github page"
-    />Github</a>
-  
-    <a rel="me" href="https://halfdeep.bandcamp.com/releases"
-      ><img src="/assets/images/icons/bandcamp.svg" class="icon" alt="Bandcamp" title="link to my music on bandcamp"
-    />Bandcamp</a>
-  
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0//"
-      ><img src="/assets/images/icons/cc.svg" alt="Creative Commons" title="CC BY-NC-SA 4.0" class="icon">CC</a
-    >
-    <a href="/"><img src="/assets/images/pfp.png" class="icon" alt="Homw" title="link back to the homepage"
-    />Home</a>
+  <a rel="me" href="https://merveilles.town/@kevin"><img src="/assets/images/icons/mastodon.svg" class="icon"
+      width="48px" alt="Mastodon" title="link to my mastodon profile" />Mastodon</a>
+
+  <a href="https://webring.xxiivv.com/#random" target="_blank"><img src="/assets/images/icons/webring.svg" class="icon"
+      width="48px" alt="Webring" title="link to the Merveilles webring" />Webring</a>
+
+  <a rel="me" href="https://github.com/kevin-nel"><img src="/assets/images/icons/github.svg" class="icon" width="48px"
+      alt="Github" title="link to my Github page" />Github</a>
+
+  <a rel="me" href="https://halfdeep.bandcamp.com/releases"><img src="/assets/images/icons/bandcamp.svg" class="icon"
+      width="48px" alt="Bandcamp" title="link to my music on bandcamp" />Bandcamp</a>
+
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0//"><img src="/assets/images/icons/cc.svg"
+      alt="Creative Commons" title="CC BY-NC-SA 4.0" class="icon" width="48">CC</a>
+  <a href="/"><img src="/assets/images/pfp.png" class="icon" alt="Homw" title="link back to the homepage" />Home</a>
 </footer>
 </body>
 </html>

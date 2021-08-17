@@ -12,6 +12,68 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  { color: #cccccc; background-color: #303030; }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ffcfaf; } /* Alert */
+code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #dca3a3; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #f0dfaf; } /* ControlFlow */
+code span.ch { color: #dca3a3; } /* Char */
+code span.cn { color: #dca3a3; font-weight: bold; } /* Constant */
+code span.co { color: #7f9f7f; } /* Comment */
+code span.cv { color: #7f9f7f; font-weight: bold; } /* CommentVar */
+code span.do { color: #7f9f7f; } /* Documentation */
+code span.dt { color: #dfdfbf; } /* DataType */
+code span.dv { color: #dcdccc; } /* DecVal */
+code span.er { color: #c3bf9f; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #c0bed1; } /* Float */
+code span.fu { color: #efef8f; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #7f9f7f; font-weight: bold; } /* Information */
+code span.kw { color: #f0dfaf; } /* Keyword */
+code span.op { color: #f0efd0; } /* Operator */
+code span.ot { color: #efef8f; } /* Other */
+code span.pp { color: #ffcfaf; font-weight: bold; } /* Preprocessor */
+code span.sc { color: #dca3a3; } /* SpecialChar */
+code span.ss { color: #cc9393; } /* SpecialString */
+code span.st { color: #cc9393; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #cc9393; } /* VerbatimString */
+code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
+  </style>
   <link rel="stylesheet" href="/assets/css/oldschool.css" />
 </head>
 <body>
@@ -54,30 +116,30 @@
     ├── links-to-html.lua
     └── md-pan-wiki.sh</code></pre>
 <p><code>md-pan-wiki.sh</code> contains the following.</p>
-<pre class="bash"><code>#! /bin/bash
-
-# run in /site directory
-# this copies the directory structure into ./export/ without copying the files
-cd ../pkms-site;
-find ./ -type d &gt; ../site/dirs.txt;
-cd ../site;
-mkdir -p export;
-cd export;
-xargs mkdir -p &lt; ../dirs.txt;
-# this copies assests like images into the new export assests directory
-cp -r ../../pkms-site/assets/* assets/ ;
-
-# find all md files and feed them in to pandoc as input files.
-cd ../../pkms-site;
-
-find ./ -iname &quot;*.md&quot; -type f -exec sh -c &#39;pandoc -f markdown+tex_math_dollars-smart -t html5 &quot;${0}&quot; -so &quot;../site/export/${0%.*}.html&quot; --lua-filter=../site/links-to-html.lua --include-after-body=../site/footer.html --include-before-body=../site/header.html --css /assets/css/oldschool.css --html-q-tags --katex --no-highlight&#39; {} \;
-# ${0%.*} strips the file extension while leaving the path
-# the lua filter converts all relative links to .md files to .html files</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="co">#! /bin/bash</span></a>
+<a class="sourceLine" id="cb2-2" title="2"></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="co"># run in /site directory</span></a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="co"># this copies the directory structure into ./export/ without copying the files</span></a>
+<a class="sourceLine" id="cb2-5" title="5"><span class="bu">cd</span> ../pkms-site<span class="kw">;</span></a>
+<a class="sourceLine" id="cb2-6" title="6"><span class="fu">find</span> ./ -type d <span class="op">&gt;</span> ../site/dirs.txt<span class="kw">;</span></a>
+<a class="sourceLine" id="cb2-7" title="7"><span class="bu">cd</span> ../site<span class="kw">;</span></a>
+<a class="sourceLine" id="cb2-8" title="8"><span class="fu">mkdir</span> -p export<span class="kw">;</span></a>
+<a class="sourceLine" id="cb2-9" title="9"><span class="bu">cd</span> export<span class="kw">;</span></a>
+<a class="sourceLine" id="cb2-10" title="10"><span class="fu">xargs</span> mkdir -p <span class="op">&lt;</span> ../dirs.txt<span class="kw">;</span></a>
+<a class="sourceLine" id="cb2-11" title="11"><span class="co"># this copies assests like images into the new export assests directory</span></a>
+<a class="sourceLine" id="cb2-12" title="12"><span class="fu">cp</span> -r ../../pkms-site/assets/* assets/ <span class="kw">;</span></a>
+<a class="sourceLine" id="cb2-13" title="13"></a>
+<a class="sourceLine" id="cb2-14" title="14"><span class="co"># find all md files and feed them in to pandoc as input files.</span></a>
+<a class="sourceLine" id="cb2-15" title="15"><span class="bu">cd</span> ../../pkms-site<span class="kw">;</span></a>
+<a class="sourceLine" id="cb2-16" title="16"></a>
+<a class="sourceLine" id="cb2-17" title="17"><span class="fu">find</span> ./ -iname <span class="st">&quot;*.md&quot;</span> -type f -exec sh -c <span class="st">&#39;pandoc -f markdown+tex_math_dollars-smart -t html5 &quot;${0}&quot; -so &quot;../site/export/${0%.*}.html&quot; --lua-filter=../site/links-to-html.lua --include-after-body=../site/footer.html --include-before-body=../site/header.html --css /assets/css/oldschool.css --html-q-tags --katex --no-highlight&#39;</span> {} <span class="dt">\;</span></a>
+<a class="sourceLine" id="cb2-18" title="18"><span class="co"># ${0%.*} strips the file extension while leaving the path</span></a>
+<a class="sourceLine" id="cb2-19" title="19"><span class="co"># the lua filter converts all relative links to .md files to .html files</span></a></code></pre></div>
 <p><code>links-to-html.lua</code> is a lua filter that changes all the relative links to .md files into links to .html files</p>
-<pre class="lua"><code>function Link(el)
-    el.target = string.gsub(el.target, &quot;%.md&quot;, &quot;.html&quot;)
-    return el
-end</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode lua"><code class="sourceCode lua"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">function</span> Link<span class="op">(</span>el<span class="op">)</span></a>
+<a class="sourceLine" id="cb3-2" title="2">    el<span class="op">.</span>target <span class="op">=</span> <span class="fu">string.gsub</span><span class="op">(</span>el<span class="op">.</span>target<span class="op">,</span> <span class="st">&quot;%.md&quot;</span><span class="op">,</span> <span class="st">&quot;.html&quot;</span><span class="op">)</span></a>
+<a class="sourceLine" id="cb3-3" title="3">    <span class="cf">return</span> el</a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="cf">end</span></a></code></pre></div>
 <footer>
   <a rel="me" href="https://merveilles.town/@kevin"><img src="/assets/images/icons/mastodon.svg" class="icon"
       width="48px" alt="Mastodon" title="link to my mastodon profile" />Mastodon</a>

@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>ERS VHDL notes</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  { color: #cccccc; background-color: #303030; }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ffcfaf; } /* Alert */
+code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #dca3a3; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #f0dfaf; } /* ControlFlow */
+code span.ch { color: #dca3a3; } /* Char */
+code span.cn { color: #dca3a3; font-weight: bold; } /* Constant */
+code span.co { color: #7f9f7f; } /* Comment */
+code span.cv { color: #7f9f7f; font-weight: bold; } /* CommentVar */
+code span.do { color: #7f9f7f; } /* Documentation */
+code span.dt { color: #dfdfbf; } /* DataType */
+code span.dv { color: #dcdccc; } /* DecVal */
+code span.er { color: #c3bf9f; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #c0bed1; } /* Float */
+code span.fu { color: #efef8f; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #7f9f7f; font-weight: bold; } /* Information */
+code span.kw { color: #f0dfaf; } /* Keyword */
+code span.op { color: #f0efd0; } /* Operator */
+code span.ot { color: #efef8f; } /* Other */
+code span.pp { color: #ffcfaf; font-weight: bold; } /* Preprocessor */
+code span.sc { color: #dca3a3; } /* SpecialChar */
+code span.ss { color: #cc9393; } /* SpecialString */
+code span.st { color: #cc9393; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #cc9393; } /* VerbatimString */
+code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="/assets/css/oldschool.css" />
+</head>
+<body>
+<header>
+  <img src="/assets/images/pfp.png" class="logo">
+  <h1>kevin's website</h1>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="/">home</a></li>
+    <li><a href="/about.html">about</a></li>
+    <li><a href="/now.html">now</a></li>
+    <li><a href="https://halfdeep.xyz/">music</a></li>
+    <li><a href="/projects/projects.html">projects</a></li>
+    <li><a href="/blog/completed/blog-index.html">blog</a></li>
+    <li><a href="/blog/microblog/microblog-index.html">μ-blog</a></li>
+  </ul>
+</nav>
+<header id="title-block-header">
+<h1 class="title">ERS VHDL notes</h1>
+</header>
+<h2 id="general-introduction">General Introduction</h2>
+<ol type="1">
+<li>These notes are summaries of the "Free Range VHDL" open source textboook which can be found <a href="https://github.com/fabriziotappero/Free-Range-VHDL-book">on github here</a> and as a <a href="http://freerangefactory.org/">pdf download here</a>.</li>
+<li>All examples come directly from the textbook unless otherwise stated.</li>
+<li>These summaries also only cover up until chapter 5 since I became quite busy later in the semester and the fundamentals of vhdl were for the most part figured out by then.</li>
+<li>these notes may not be used to present a course for money or be sold in any way. they are free.</li>
+</ol>
+<h2 id="table-of-contents">Table of contents</h2>
+<ul>
+<li><a href="#general-introduction">General Introduction</a></li>
+<li><a href="#table-of-contents">Table of contents</a></li>
+<li><a href="#chapter-1">Chapter 1</a>
+<ul>
+<li><a href="#golden-rules-of-vhdl">Golden Rules of VHDL</a></li>
+<li><a href="#tools-needed">Tools Needed</a></li>
+</ul></li>
+<li><a href="#chapter-2-vhdl-invariants">Chapter 2 VHDL Invariants</a>
+<ul>
+<li><a href="#case-sensitivity">Case Sensitivity</a></li>
+<li><a href="#white-space">White Space</a></li>
+<li><a href="#comments">Comments</a></li>
+<li><a href="#parentheses">Parentheses</a></li>
+<li><a href="#vhdl-statements">VHDL Statements</a></li>
+<li><a href="#if-case-and-loop-statements">if, case and loop Statements</a></li>
+<li><a href="#identifiers">Identifiers</a></li>
+<li><a href="#reserved-words">Reserved Words</a></li>
+<li><a href="#vhdl-coding-style">VHDL Coding Style</a>
+<ul>
+<li><a href="#example-1">Example 1</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#chapter-3-vhdl-design-units">Chapter 3 VHDL Design Units</a>
+<ul>
+<li><a href="#black-box-approach">Black Box Approach</a></li>
+<li><a href="#entity">Entity</a>
+<ul>
+<li><a href="#example-2">Example 2</a></li>
+</ul></li>
+<li><a href="#vhdl-standard-libraries">VHDL Standard Libraries</a></li>
+<li><a href="#architecture">Architecture</a></li>
+<li><a href="#signal-and-variable-assignments-object-types">Signal and Variable Assignments (object types)</a>
+<ul>
+<li><a href="#example-3">Example 3</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#chapter-4-vhdl-paradigm">Chapter 4 VHDL Paradigm</a>
+<ul>
+<li><a href="#concurrent-statements">Concurrent Statements</a></li>
+<li><a href="#signal-assignment-operator">Signal Assignment Operator</a></li>
+<li><a href="#concurrent-signal-assignment-statements">Concurrent Signal Assignment Statements</a>
+<ul>
+<li><a href="#example-4">Example 4</a></li>
+</ul></li>
+<li><a href="#conditional-signal-assignment-when">Conditional Signal Assignment <code>when</code></a>
+<ul>
+<li><a href="#example-5">Example 5</a></li>
+<li><a href="#example-6">Example 6</a></li>
+</ul></li>
+<li><a href="#selected-signal-assignment-with-select">Selected Signal Assignment <code>with select</code></a>
+<ul>
+<li><a href="#example-7">Example 7</a></li>
+<li><a href="#example-8">Example 8</a></li>
+</ul></li>
+<li><a href="#process-statement">Process Statement</a></li>
+</ul></li>
+<li><a href="#chapter-5-standard-models-in-vhdl-architectures">Chapter 5 Standard Models in VHDL Architectures</a>
+<ul>
+<li><a href="#data-flow-style-architecture">Data flow Style Architecture</a></li>
+<li><a href="#behavioral-style-architecture">Behavioral Style Architecture</a></li>
+<li><a href="#process-statement-1">Process Statement</a>
+<ul>
+<li><a href="#example-9">Example 9</a></li>
+</ul></li>
+<li><a href="#sequential-statements">Sequential Statements</a>
+<ul>
+<li><a href="#example-10">Example 10</a></li>
+</ul></li>
+<li><a href="#caveats-regarding-sequential-statements">Caveats Regarding Sequential Statements</a></li>
+</ul></li>
+<li><a href="#chapter-6-vhdl-operators">Chapter 6 VHDL Operators</a>
+<ul>
+<li><a href="#logical">Logical</a></li>
+<li><a href="#relational">Relational</a></li>
+<li><a href="#shift">Shift</a></li>
+<li><a href="#other">Other</a></li>
+<li><a href="#concatenation">Concatenation</a></li>
+<li><a href="#modulus-and-remainder">Modulus and Remainder</a></li>
+</ul></li>
+</ul>
+<h2 id="chapter-1">Chapter 1</h2>
+<h3 id="golden-rules-of-vhdl">Golden Rules of VHDL</h3>
+<ol type="1">
+<li>VHDL is a hardware-design language you are designing circuits not making programs</li>
+<li>Have a general concept of what your hardware should look like.</li>
+</ol>
+<h3 id="tools-needed">Tools Needed</h3>
+<p><em>This section is mostly unimportant, just understand what an FPGA is and how most of the stuff surrounding them is proprietery and that there are open source ways to do it</em></p>
+<hr />
+<h2 id="chapter-2-vhdl-invariants">Chapter 2 VHDL Invariants</h2>
+<h3 id="case-sensitivity">Case Sensitivity</h3>
+<ol type="1">
+<li>VHDL is not case sensitive</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode vhdl"><code class="sourceCode vhdl"><a class="sourceLine" id="cb1-1" title="1">Dout <span class="ot">&lt;=</span> A and B;</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="co">--is the same as:</span></a>
+<a class="sourceLine" id="cb1-3" title="3">dOuT <span class="ot">&lt;=</span> a aNd B;</a></code></pre></div>
+<ol start="2" type="1">
+<li>but the second example is not good practice</li>
+</ol>
+<h3 id="white-space">White Space</h3>
+<ol type="1">
+<li>VHDL is not sensitive to white space</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode vhdl"><code class="sourceCode vhdl"><a class="sourceLine" id="cb2-1" title="1">Dout <span class="ot">&lt;=</span> A and B;</a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="co">--is the same as:</span></a>
+<a class="sourceLine" id="cb2-3" title="3">dOuT    <span class="ot">&lt;=</span>a aNd         B  ;</a></code></pre></div>
+<ol start="2" type="1">
+<li>again the second example is not good practice</li>
+</ol>
+<h3 id="comments">Comments</h3>
+<ol type="1">
+<li>a comment begins and ends with 2 dashes (<strong>-</strong>) as seen above</li>
+<li>there are no block style comments</li>
+</ol>
+<h3 id="parentheses">Parentheses</h3>
+<ol type="1">
+<li>Use brackets wherever possible then you don't have to worry about order of operations</li>
+<li>Use as many parentheses as necessary to clearly display functions</li>
+</ol>
+<figure>
+<img src="https://revaustinmiles.com/images/uploads/ThinkingMan.jpg" alt="in a world with parentheses why bother with precedence?" /><figcaption>in a world with parentheses why bother with precedence?</figcaption>
+</figure>
+<h3 id="vhdl-statements">VHDL Statements</h3>
+<ol type="1">
+<li>Every VHDL statement is terminated with a semicolon (<strong>;</strong>)</li>
+<li>There are some exceptions to this rule</li>
+</ol>
+<h3 id="if-case-and-loop-statements">if, case and loop Statements</h3>
+<ol type="1">
+<li>Every <code>if</code> statement has a corresponding <code>then</code> component</li>
+<li>Each <code>if</code> statement is terminated with an <code>end if;</code></li>
+<li>If you need to use an <code>else if</code> construct, the VHDL version is <code>elsif</code></li>
+<li>Each <code>case</code> statement is terminated with an <code>end case;</code></li>
+<li>Each <code>loop</code> statement has a corresponding end <code>loop;</code> statement</li>
+</ol>
+<h3 id="identifiers">Identifiers</h3>
+<ol type="1">
+<li>the term used to describe variable names, signal names and port names in VHDL (similar to identifiers use to describe variable names and function names in other languages)</li>
+<li>Identifiers should be self-describing</li>
+<li>Identifiers can be as long as you want</li>
+<li>Identifiers can only contain a combination of letters (A-Z and a-z), digits (0-9) and the underscore character (“_”)</li>
+<li>Identifiers must start with an alphabetic character</li>
+<li>Identifiers must not end with an underscore and must never have two consecutive underscores</li>
+<li>examples of good identifiers are:
+<ul>
+<li>CalcEarthPosition or calc_earth_position</li>
+<li>AgeMyCar or age_my_car</li>
+</ul></li>
+</ol>
+<blockquote>
+<p>note: it is important to remain consistent in your style of identifier names. If you use <code>CalcEarthPosition</code> you should then also use <code>AgeMyCar</code>, similarly if you use <code>calc_earth_position</code> you should then also use <code>age_my_car</code></p>
+</blockquote>
+<h3 id="reserved-words">Reserved Words</h3>
+<ol type="1">
+<li>Reserved words cannot be used as identifiers</li>
+<li>the following is a list of the most common reserved words in vhdl</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode vhdl"><code class="sourceCode vhdl"><a class="sourceLine" id="cb3-1" title="1">access   after      alias       all        attribute    block</a>
+<a class="sourceLine" id="cb3-2" title="2">body     buffer     bus         constant   exit         <span class="kw">file</span></a>
+<a class="sourceLine" id="cb3-3" title="3">for      function   generic     group      in           is</a>
+<a class="sourceLine" id="cb3-4" title="4">label    loop       mod         new        next         null</a>
+<a class="sourceLine" id="cb3-5" title="5">of       on         open        out        range        rem</a>
+<a class="sourceLine" id="cb3-6" title="6">return   signal     shared      then       to           type</a>
+<a class="sourceLine" id="cb3-7" title="7">until    <span class="kw">use</span>        variable    wait       while        with</a></code></pre></div>
+<h3 id="vhdl-coding-style">VHDL Coding Style</h3>
+<ol type="1">
+<li>make your code neat so that anyone can read and understand what your were trying to do</li>
+<li>use comments to present info about your design that woulsd not be apparent otherwise as well as any info that would make your code more clear.</li>
+<li>if you struggling figuring out what <em>good</em> VHDL looks liek just model your programs after the examples in a good book/document</li>
+<li>the following is an example of good code</li>
+</ol>
+<h4 id="example-1">Example 1</h4>
+<div class="sourceCode" id="cb4"><pre class="sourceCode vhdl"><code class="sourceCode vhdl"><a class="sourceLine" id="cb4-1" title="1"><span class="co">-- library declaration</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="kw">library</span> IEEE;</a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="kw">use</span> IEEE<span class="ot">.</span>std_logic_1164<span class="ot">.</span>all;</a>
+<a class="sourceLine" id="cb4-4" title="4"></a>
+<a class="sourceLine" id="cb4-5" title="5"><span class="co">-- entity</span></a>
+<a class="sourceLine" id="cb4-6" title="6"><span class="kw">entity</span> <span class="kw">my_4t1_mux</span> <span class="kw">is</span></a>
+<a class="sourceLine" id="cb4-7" title="7">    <span class="kw">port</span> (D3<span class="ot">,</span>D2<span class="ot">,</span>D1<span class="ot">,</span>D0   <span class="ot">:</span> <span class="kw">in</span> <span class="dt">std_logic</span>;</a>
+<a class="sourceLine" id="cb4-8" title="8">    SEL                 <span class="ot">:</span> <span class="kw">in</span> <span class="dt">std_logic_vector</span>(<span class="dv">1</span> <span class="ot">downto</span> <span class="dv">0</span>);</a>
+<a class="sourceLine" id="cb4-9" title="9">    MX_OUT              <span class="ot">:</span> <span class="kw">out</span> <span class="dt">std_logic</span>);</a>
+<a class="sourceLine" id="cb4-10" title="10"><span class="kw">end my_4t1_mux;</span></a>
+<a class="sourceLine" id="cb4-11" title="11"></a>
+<a class="sourceLine" id="cb4-12" title="12"><span class="co">-- architecture</span></a>
+<a class="sourceLine" id="cb4-13" title="13"><span class="kw">architecture</span> <span class="kw">mux4t1_2</span> <span class="kw">of</span> <span class="kw">my_4t1_mux</span> <span class="kw">is</span></a>
+<a class="sourceLine" id="cb4-14" title="14"><span class="kw">begin</span></a>
+<a class="sourceLine" id="cb4-15" title="15">    <span class="kw">with</span> SEL <span class="kw">select</span></a>
+<a class="sourceLine" id="cb4-16" title="16">        MX_OUT <span class="ot">&lt;=</span> D3  <span class="kw">when</span> <span class="st">&quot;11&quot;</span><span class="ot">,</span></a>
+<a class="sourceLine" id="cb4-17" title="17">        D2  <span class="kw">when</span> <span class="st">&quot;10&quot;</span><span class="ot">,</span></a>
+<a class="sourceLine" id="cb4-18" title="18">        D1  <span class="kw">when</span> <span class="st">&quot;01&quot;</span><span class="ot">,</span></a>
+<a class="sourceLine" id="cb4-19" title="19">        D0  <span class="kw">when</span> <span class="st">&quot;00&quot;</span><span class="ot">,</span></a>
+<a class="sourceLine" id="cb4-20" title="20">        <span class="bn">&#39;0&#39;</span> <span class="kw">when</span> <span class="ot">others</span>;</a>
+<a class="sourceLine" id="cb4-21" title="21"><span class="er">end mux4t1_2;</span></a></code></pre></div>
+<hr />
+<h2 id="chapter-3-vhdl-design-units">Chapter 3 VHDL Design Units</h2>
+<h3 id="black-box-approach">Black Box Approach</h3>
+<ol type="1">
+<li>the "Black Box Approach" describes a heirarchy
+<ol start="2" type="1">
+<li>the black box is the <strong>Entity</strong></li>
+<li>the stuff inside the box is the <strong>Architecture</strong></li>
+</ol></li>
+</ol>
+<figure>
+<img src="https://images.slideplayer.com/25/7642651/slides/slide_5.jpg" alt="Black Box Approach in VHDL" /><figcaption>Black Box Approach in VHDL</figcaption>
+</figure>
+<h3 id="entity">Entity</h3>
+<ol type="1">
+<li>Lists all the inputs and outputs</li>
+</ol>
+<h4 id="example-2">Example 2</h4>
+<div class="sourceCode" id="cb5"><pre class="sourceCode vhdl"><code class="sourceCode vhdl"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">entity</span> <span class="kw">my_entity</span> <span class="kw">is</span></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="kw">port</span>(</a>
+<a class="sourceLine" id="cb5-3" title="3">    <span class="kw">port</span>_name_<span class="dv">1</span><span class="ot">,</span> <span class="kw">port</span>_name_<span class="dv">2</span>    <span class="ot">:</span> <span class="kw">in</span> <span class="dt">std_logic</span>;</a>
+<a class="sourceLine" id="cb5-4" title="4">    bundle_name                 <span class="ot">:</span> <span class="kw">out</span> <span class="dt">std_logic_vector</span>(<span class="dv">0</span> <span class="ot">downto</span> <span class="dv">7</span>);</a>
+<a class="sourceLine" id="cb5-5" title="5">    <span class="kw">port</span>_name_<span class="dv">3</span>                 <span class="ot">:</span> <span class="kw">inout</span> <span class="dt">std_logic</span>); <span class="co">--note the semicolon</span></a>
+<a class="sourceLine" id="cb5-6" title="6"><span class="kw">end my_entity;</span></a></code></pre></div>
+<ol start="2" type="1">
+<li><code>port_name_x</code> is an identifier used to differentiate the various signals</li>
+<li><code>in</code>, <code>out</code>, and <code>inout</code> indicates direction of the signal</li>
+<li><code>std_logic</code> and <code>std_logic_vector</code> are the data types being handled by the port
+<ul>
+<li>the <code>std_logic</code> and <code>std_logic_vector</code> datatypes are only available after the declaration of the IEE library<br />
+</li>
+<li>the <code>bit</code> data type is available without this library and contains only the logic values 1 and 0</li>
+</ul></li>
+<li><p><code>to</code> and <code>downto</code> indicate a <em>bundle</em></p>
+<blockquote>
+<p><strong>bundles</strong> or bus signals:</p>
+<ul>
+<li>Data type</li>
+<li>Essentially multiple signals that can utilise the same port</li>
+<li>Multiple signals (elements) differing by only one numeric character that share a similar purpose.</li>
+<li>Listed with <code>to</code> and <code>downto</code> keywords.</li>
+</ul>
+<p>note the representation of bundles on a block diagram</p>
+<figure>
+<img src="muxblockdiagrawithbundles.PNG" title="Block Diagram of a Mutiplexer with 8 Bit Bundles as Inputs" alt="Block Diagram of a Mutiplexer with 8 Bit Bundles as Inputs" /><figcaption>Block Diagram of a Mutiplexer with 8 Bit Bundles as Inputs</figcaption>
+</figure>
+</blockquote></li>
+<li>Some rules regarding the entity
+<ol type="1">
+<li>Each port name is unique and has an associated mode and data type</li>
+<li>Multiple port names can be included on a single line</li>
+</ol></li>
+</ol>
+<blockquote>
+<p><strong>note</strong>: in Quartus Prime the first entity name, name of project and name of the VHDL filemust be the same</p>
+</blockquote>
+<h3 id="vhdl-standard-libraries">VHDL Standard Libraries</h3>
+<ol type="1">
+<li>the <code>IEEE Standard 1164</code> package was an import standardization</li>
+<li>for ERS220 the main package libraries will be
+<ul>
+<li><code>std_logic_1164</code></li>
+<li><code>numeric_std</code></li>
+</ul></li>
+<li>see the <a href="#example-1">code example</a> at the end of chapter 1's summary for the implementation.</li>
+</ol>
+<h3 id="architecture">Architecture</h3>
+<ol type="1">
+<li>the meat of the code</li>
+<li>there are 3 main ways to code vhdl in the architecture
+<ol type="1">
+<li><a href="#data-flow-style-architecture">dataflow</a>- concurrent logic</li>
+<li><a href="#behavioral-style-architecture">behavioral</a> - procedural logic (similar to other languages like c++ or python)</li>
+<li><a href="#structural">structural</a></li>
+</ol>
+<ul>
+<li>Structural modeling is essentially a method to combine an existing set of VHDL models. it supports the interconnection of black boxes but does not have the ability to describe the logic functions used to model the circuit operation.</li>
+</ul></li>
+</ol>
+<h3 id="signal-and-variable-assignments-object-types">Signal and Variable Assignments (object types)</h3>
+<ol type="1">
+<li>signal
+<ul>
+<li>software representation of a wire</li>
+<li>used like an intermediary variable in other languages</li>
+<li>declared like a port but without an <code>in</code>, <code>out</code>, or <code>inout</code> underneath the architecture heading</li>
+<li>use '&lt;=' for assignments</li>
+<li>signal assignments can happen after some time</li>
+</ul></li>
+<li>variable
+<ul>
+<li>you should know this one</li>
+<li>declared inside the <em>process construct</em></li>
+<li><strong>NB</strong> use ':=' for assignments</li>
+<li>variable assignmnets are instant</li>
+</ul></li>
+<li>constant
+<ul>
+<li>like a variable but value cannot be changed</li>
+</ul></li>
+</ol>
+<h4 id="example-3">Example 3</h4>
+<div class="sourceCode" id="cb6"><pre class="sourceCode vhdl"><code class="sourceCode vhdl"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">architecture</span> <span class="kw">circuit1_arc</span> <span class="kw">of</span> <span class="kw">circuit1</span> <span class="kw">is</span></a>
+<a class="sourceLine" id="cb6-2" title="2">    <span class="ot">signal</span> sig_<span class="dv">1</span><span class="ot">:</span> <span class="dt">std_logic</span>;                <span class="co">-- signal definition</span></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="kw">begin</span></a>
+<a class="sourceLine" id="cb6-4" title="4">    <span class="kw">process</span> (a<span class="ot">,</span>b<span class="ot">,</span>c)                         <span class="co">-- process construct (i.e. procedural logic</span></a>
+<a class="sourceLine" id="cb6-5" title="5">                                            <span class="co">-- or behavioural model)</span></a>
+<a class="sourceLine" id="cb6-6" title="6">        <span class="ot">variable</span> var_<span class="dv">1</span> <span class="ot">:</span> <span class="dt">integer</span>;           <span class="co">-- var definition</span></a>
+<a class="sourceLine" id="cb6-7" title="7">    <span class="kw">begin</span></a>
+<a class="sourceLine" id="cb6-8" title="8">        F       <span class="ot">&lt;=</span>  <span class="kw">not</span> (A <span class="kw">and</span> B <span class="kw">and</span> C);    <span class="co">-- signal assignment</span></a>
+<a class="sourceLine" id="cb6-9" title="9">        sig_<span class="dv">1</span>   <span class="ot">&lt;=</span> A;                       <span class="co">-- signal assignment</span></a>
+<a class="sourceLine" id="cb6-10" title="10">        var_<span class="dv">1</span>   <span class="ot">:=</span> <span class="dv">34</span>;                      <span class="co">-- variable asignment</span></a>
+<a class="sourceLine" id="cb6-11" title="11">    <span class="er">end process</span>;</a>
+<a class="sourceLine" id="cb6-12" title="12"></a>
+<a class="sourceLine" id="cb6-13" title="13">    G <span class="ot">&lt;=</span> <span class="kw">not</span> (A <span class="kw">and</span> B);                     <span class="co">-- concurrent assignment</span></a>
+<a class="sourceLine" id="cb6-14" title="14"><span class="er">end circuit1_arc;</span></a></code></pre></div>
+<hr />
+<h2 id="chapter-4-vhdl-paradigm">Chapter 4 VHDL Paradigm</h2>
+<h3 id="concurrent-statements">Concurrent Statements</h3>
+<ol type="1">
+<li>all steps occur at the same time (in parallel)</li>
+<li>statements are updted when signals change</li>
+<li>this is the core of VHDL</li>
+</ol>
+<h3 id="signal-assignment-operator">Signal Assignment Operator</h3>
+<ol type="1">
+<li><p>takes the form</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode vhdl"><code class="sourceCode vhdl"><a class="sourceLine" id="cb7-1" title="1"><span class="ot">&lt;</span>target<span class="ot">&gt;</span> <span class="ot">&lt;=</span> <span class="ot">&lt;</span>expression<span class="ot">&gt;</span>;</a></code></pre></div></li>
+<li>the signal on the left-hand side of the signal assignment operator is dependent upon the signals on the right-hand side of the operator</li>
+<li>there are multiple ways to solve the same problems</li>
+<li><p>Signals declared as outputs cannot be on the right-hand side of a signal assignment operator, This problem is solved by using <strong>intermediate signals</strong></p></li>
+</ol>
+<h3 id="concurrent-signal-assignment-statements">Concurrent Signal Assignment Statements</h3>
+<ol type="1">
+<li>intermediate signals provide us with intermediate results andhelp us to simplify complicated problems</li>
+<li>for concurrent statements the outputs are updates when a signal is changed</li>
+</ol>
+<h4 id="example-4">Example 4</h4>
+<p>for the equation <code>F3=L'M'N+LM</code></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode vhdl"><code class="sourceCode vhdl"><a class="sourceLine" id="cb8-1" title="1"><span class="co">-- library declaration</span></a>
+<a class="sourceLine" id="cb8-2" title="2"><span class="kw">library</span> IEEE;</a>
+<a class="sourceLine" id="cb8-3" title="3"><span class="kw">use</span> IEEE<span class="ot">.</span>std_logic_1164<span class="ot">.</span>all;</a>
+<a class="sourceLine" id="cb8-4" title="4"><span class="co">-- entity</span></a>
+<a class="sourceLine" id="cb8-5" title="5"><span class="kw">entity</span> <span class="kw">my_ckt_f3</span> <span class="kw">is</span></a>
+<a class="sourceLine" id="cb8-6" title="6"><span class="kw">port</span> (  L<span class="ot">,</span>M<span class="ot">,</span>N  <span class="ot">:</span> <span class="kw">in</span> <span class="dt">std_logic</span>;</a>
+<a class="sourceLine" id="cb8-7" title="7">        F3     <span class="ot">:</span> <span class="kw">out</span> <span class="dt">std_logic</span>);</a>
+<a class="sourceLine" id="cb8-8" title="8"><span class="kw">end my_ckt_f3;</span></a>
+<a class="sourceLine" id="cb8-9" title="9"><span class="co">-- architecture</span></a>
+<a class="sourceLine" id="cb8-10" title="10"><span class="kw">architecture</span> <span class="kw">f3_1</span> <span class="kw">of</span> <span class="kw">my_ckt_f3</span> <span class="kw">is</span></a>
+<a class="sourceLine" id="cb8-11" title="11">    <span class="ot">signal</span> A1<span class="ot">,</span> A2 <span class="ot">:</span><span class="dt">std_logic</span>; <span class="co">-- intermediate signals</span></a>
+<a class="sourceLine" id="cb8-12" title="12"><span class="kw">begin</span></a>
+<a class="sourceLine" id="cb8-13" title="13">    A1 <span class="ot">&lt;=</span> ((<span class="kw">NOT</span> L) <span class="kw">AND</span> (<span class="kw">NOT</span> M) <span class="kw">AND</span> N);</a>
+<a class="sourceLine" id="cb8-14" title="14">    A2 <span class="ot">&lt;=</span> L <span class="kw">AND</span> M;</a>
+<a class="sourceLine" id="cb8-15" title="15">    F3 <span class="ot">&lt;=</span> A1 <span class="kw">OR</span> A2;</a>
+<a class="sourceLine" id="cb8-16" title="16"><span class="kw">end</span> f3_<span class="dv">1</span></a></code></pre></div>
+<h3 id="conditional-signal-assignment-when">Conditional Signal Assignment <code>when</code></h3>
+<ol type="1">
+<li>like the <code>if</code> statement of concurent assignments</li>
+<li>good practice to 'catch' errors with a 0 at the end (called a 'catch-all condition')</li>
+<li><p>takes the form:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode vhdl"><code class="sourceCode vhdl"><a class="sourceLine" id="cb9-1" title="1"><span class="ot">&lt;</span>target<span class="ot">&gt;</span> <span class="ot">&lt;=</span> <span class="ot">&lt;</span>expression<span class="ot">&gt;</span> when <span class="ot">&lt;</span>condition<span class="ot">&gt;</span> else</a>
+<a class="sourceLine" id="cb9-2" title="2">            <span class="ot">&lt;</span>expression<span class="ot">&gt;</span> when <span class="ot">&lt;</span>condition<span class="ot">&gt;</span> else</a>
+<a class="sourceLine" id="cb9-3" title="3">            <span class="ot">&lt;</span>expression<span class="ot">&gt;</span>;</a></code></pre></div></li>
+<li>only one signal assignment operator for each conditional assignmnent statement</li>
+<li>very useful to implement multiplexers
+<ul>
+<li>the conditions become values of the select inputs</li>
+<li>see <a href="#example-6">Example 6</a></li>
+</ul></li>
+</ol>
+<h4 id="example-5">Example 5</h4>
+<p>for the same equation as in <a href="#example-4">Example 4</a></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode vhdl"><code class="sourceCode vhdl"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">architecture</span> <span class="kw">f3_3</span> <span class="kw">of</span> <span class="kw">my_ckt_f3</span> <span class="kw">is</span></a>
+<a class="sourceLine" id="cb10-2" title="2"><span class="kw">begin</span></a>
+<a class="sourceLine" id="cb10-3" title="3">    F3 <span class="ot">&lt;=</span>   <span class="bn">&#39;1&#39;</span> <span class="kw">when</span> (L <span class="ot">=</span> <span class="bn">&#39;0&#39;</span> <span class="kw">AND</span> M <span class="ot">=</span> <span class="bn">&#39;0&#39;</span> <span class="kw">AND</span> N <span class="ot">=</span> <span class="bn">&#39;1&#39;</span>) else</a>
+<a class="sourceLine" id="cb10-4" title="4">            <span class="bn">&#39;1&#39;</span> <span class="kw">when</span> (L <span class="ot">=</span> <span class="bn">&#39;1&#39;</span> <span class="kw">AND</span> M <span class="ot">=</span> <span class="bn">&#39;1&#39;</span>) else</a>
+<a class="sourceLine" id="cb10-5" title="5">            <span class="bn">&#39;0&#39;</span>;</a>
+<a class="sourceLine" id="cb10-6" title="6"><span class="er">end f3_3;</span></a></code></pre></div>
+<h4 id="example-6">Example 6</h4>
+<div class="sourceCode" id="cb11"><pre class="sourceCode vhdl"><code class="sourceCode vhdl"><a class="sourceLine" id="cb11-1" title="1"><span class="co">-- library declaration</span></a>
+<a class="sourceLine" id="cb11-2" title="2"><span class="kw">library</span> IEEE;</a>
+<a class="sourceLine" id="cb11-3" title="3"><span class="kw">use</span> IEEE<span class="ot">.</span>std_logic_1164<span class="ot">.</span>all;</a>
+<a class="sourceLine" id="cb11-4" title="4"><span class="co">-- entity</span></a>
+<a class="sourceLine" id="cb11-5" title="5"><span class="kw">entity</span> <span class="kw">my_4t1_mux</span> <span class="kw">is</span></a>
+<a class="sourceLine" id="cb11-6" title="6"><span class="kw">port</span>(   D3<span class="ot">,</span>D2<span class="ot">,</span>D1<span class="ot">,</span>D0 <span class="ot">:</span> <span class="kw">in</span> <span class="dt">std_logic</span>;</a>
+<a class="sourceLine" id="cb11-7" title="7">        SEL         <span class="ot">:</span> <span class="kw">in</span> <span class="dt">std_logic_vector</span>(<span class="dv">1</span> <span class="ot">downto</span> <span class="dv">0</span>);</a>
+<a class="sourceLine" id="cb11-8" title="8">        MX_OUT      <span class="ot">:</span> <span class="kw">out</span> <span class="dt">std_logic</span>);</a>
+<a class="sourceLine" id="cb11-9" title="9"><span class="kw">end my_4t1_mux;</span></a>
+<a class="sourceLine" id="cb11-10" title="10"><span class="co">-- architecture</span></a>
+<a class="sourceLine" id="cb11-11" title="11"><span class="kw">architecture</span> <span class="kw">mux4t1</span> <span class="kw">of</span> <span class="kw">my_4t1_mux</span> <span class="kw">is</span></a>
+<a class="sourceLine" id="cb11-12" title="12"><span class="kw">begin</span></a>
+<a class="sourceLine" id="cb11-13" title="13">    MX_OUT <span class="ot">&lt;=</span> D3 <span class="kw">when</span> (SEL <span class="ot">=</span> <span class="st">&quot;11&quot;</span>) else</a>
+<a class="sourceLine" id="cb11-14" title="14">    D2 <span class="kw">when</span> (SEL <span class="ot">=</span> <span class="st">&quot;10&quot;</span>) else       <span class="co">-- is equivalent to &#39;D2 when (SEL(1) = &#39;1&#39; and SEL(0)&#39; =&#39;0&#39;) else</span></a>
+<a class="sourceLine" id="cb11-15" title="15">    D1 <span class="kw">when</span> (SEL <span class="ot">=</span> <span class="st">&quot;01&quot;</span>) else</a>
+<a class="sourceLine" id="cb11-16" title="16">    D0 <span class="kw">when</span> (SEL <span class="ot">=</span> <span class="st">&quot;00&quot;</span>) else</a>
+<a class="sourceLine" id="cb11-17" title="17">    <span class="bn">&#39;0&#39;</span>;</a>
+<a class="sourceLine" id="cb11-18" title="18"><span class="er">end mux4t1;</span></a></code></pre></div>
+<h3 id="selected-signal-assignment-with-select">Selected Signal Assignment <code>with select</code></h3>
+<ol type="1">
+<li>like the switch stament in regular programming languages</li>
+<li>similar conditional signal assignment but based on the evaluation of one expression</li>
+<li><p>takes the form: <code>vhdl  with &lt;choose_expression&gt; select      target &lt;=   &lt;expression&gt; when &lt;choices&gt;,                  &lt;expression&gt; when &lt;choices&gt;;</code></p></li>
+<li>the catch all statement is implemented with <code>when others</code></li>
+<li><p>
+multiple options for the same output can be made simple with a selection character, namely '|'
+</p>
+<ul>
+<li>see <a href="#example-8">Example 8</a></li>
+</ul></li>
+</ol>
+<h4 id="example-7">Example 7</h4>
+<p>implementing the same multiplexer as <a href="#example-6">Example 6</a></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode vhdl"><code class="sourceCode vhdl"><a class="sourceLine" id="cb12-1" title="1"><span class="co">-- library declaration</span></a>
+<a class="sourceLine" id="cb12-2" title="2"><span class="kw">library</span> IEEE;</a>
+<a class="sourceLine" id="cb12-3" title="3"><span class="kw">use</span> IEEE<span class="ot">.</span>std_logic_1164<span class="ot">.</span>all;</a>
+<a class="sourceLine" id="cb12-4" title="4"><span class="co">-- entity</span></a>
+<a class="sourceLine" id="cb12-5" title="5"><span class="kw">entity</span> <span class="kw">my_4t1_mux</span> <span class="kw">is</span></a>
+<a class="sourceLine" id="cb12-6" title="6">    <span class="kw">port</span> (  D3<span class="ot">,</span>D2<span class="ot">,</span>D1<span class="ot">,</span>D0 <span class="ot">:</span> <span class="kw">in</span> <span class="dt">std_logic</span>;</a>
+<a class="sourceLine" id="cb12-7" title="7">            SEL         <span class="ot">:</span> <span class="kw">in</span> <span class="dt">std_logic_vector</span>(<span class="dv">1</span> <span class="ot">downto</span> <span class="dv">0</span>);</a>
+<a class="sourceLine" id="cb12-8" title="8">            MX_OUT      <span class="ot">:</span> <span class="kw">out</span> <span class="dt">std_logic</span>);</a>
+<a class="sourceLine" id="cb12-9" title="9"><span class="kw">end my_4t1_mux;</span></a>
+<a class="sourceLine" id="cb12-10" title="10"><span class="co">-- architecture</span></a>
+<a class="sourceLine" id="cb12-11" title="11"><span class="kw">architecture</span> <span class="kw">mux4t1_2</span> <span class="kw">of</span> <span class="kw">my_4t1_mux</span> <span class="kw">is</span></a>
+<a class="sourceLine" id="cb12-12" title="12"><span class="kw">begin</span></a>
+<a class="sourceLine" id="cb12-13" title="13">    <span class="kw">with</span> SEL <span class="kw">select</span></a>
+<a class="sourceLine" id="cb12-14" title="14">        MX_OUT <span class="ot">&lt;=</span> D3  <span class="kw">when</span> <span class="st">&quot;11&quot;</span><span class="ot">,</span></a>
+<a class="sourceLine" id="cb12-15" title="15">        D2  <span class="kw">when</span> <span class="st">&quot;10&quot;</span><span class="ot">,</span></a>
+<a class="sourceLine" id="cb12-16" title="16">        D1  <span class="kw">when</span> <span class="st">&quot;01&quot;</span><span class="ot">,</span></a>
+<a class="sourceLine" id="cb12-17" title="17">        D0  <span class="kw">when</span> <span class="st">&quot;00&quot;</span><span class="ot">,</span></a>
+<a class="sourceLine" id="cb12-18" title="18">        <span class="bn">&#39;0&#39;</span> <span class="kw">when</span> <span class="ot">others</span>;</a>
+<a class="sourceLine" id="cb12-19" title="19"><span class="er">end mux4t1_2;</span></a></code></pre></div>
+<h4 id="example-8">Example 8</h4>
+<div class="sourceCode" id="cb13"><pre class="sourceCode vhdl"><code class="sourceCode vhdl"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">architecture</span> <span class="kw">spec_dec</span> <span class="kw">of</span> <span class="kw">my_sz_ckt</span> <span class="kw">is</span></a>
+<a class="sourceLine" id="cb13-2" title="2"><span class="kw">begin</span></a>
+<a class="sourceLine" id="cb13-3" title="3">    <span class="kw">with</span> D_IN <span class="kw">select</span></a>
+<a class="sourceLine" id="cb13-4" title="4">        SZ_OUT <span class="ot">&lt;=</span>   <span class="st">&quot;100&quot;</span> <span class="kw">when</span> <span class="st">&quot;0000&quot;</span><span class="ot">|</span><span class="st">&quot;0001&quot;</span><span class="ot">|</span><span class="st">&quot;0010&quot;</span><span class="ot">|</span><span class="st">&quot;0011&quot;</span><span class="ot">,</span></a>
+<a class="sourceLine" id="cb13-5" title="5">                    <span class="st">&quot;010&quot;</span> <span class="kw">when</span> <span class="st">&quot;0100&quot;</span><span class="ot">|</span><span class="st">&quot;0101&quot;</span><span class="ot">|</span><span class="st">&quot;0110&quot;</span><span class="ot">|</span><span class="st">&quot;0111&quot;</span><span class="ot">|</span><span class="st">&quot;1000&quot;</span><span class="ot">|</span><span class="st">&quot;1001&quot;</span><span class="ot">,</span></a>
+<a class="sourceLine" id="cb13-6" title="6">                    <span class="st">&quot;001&quot;</span> <span class="kw">when</span> <span class="st">&quot;1010&quot;</span><span class="ot">|</span><span class="st">&quot;1011&quot;</span><span class="ot">|</span><span class="st">&quot;1100&quot;</span><span class="ot">|</span><span class="st">&quot;1101&quot;</span><span class="ot">|</span><span class="st">&quot;1110&quot;</span><span class="ot">|</span><span class="st">&quot;1111&quot;</span><span class="ot">,</span></a>
+<a class="sourceLine" id="cb13-7" title="7">                    <span class="st">&quot;000&quot;</span> <span class="kw">when</span> <span class="ot">others</span>;</a>
+<a class="sourceLine" id="cb13-8" title="8"><span class="er">end spec_dec;</span></a></code></pre></div>
+<h3 id="process-statement">Process Statement</h3>
+<ol type="1">
+<li>the process statement itself is concurrent although its contents are executed sequentially</li>
+</ol>
+<hr />
+<h2 id="chapter-5-standard-models-in-vhdl-architectures">Chapter 5 Standard Models in VHDL Architectures</h2>
+<h3 id="data-flow-style-architecture">Data flow Style Architecture</h3>
+<ol type="1">
+<li>everything upuntil this point has been data flow (apart from the process statementexample used in <a href="#example-2">Example 2</a>)</li>
+<li>specifies a circuit as a concurrent representation oftheflowof data through a circuit</li>
+<li>three forms of concurrent statements
+<ol type="1">
+<li><a href="#concurrent-signal-assignment-statements">Concurrent Signal Assignment (CSA) Statements</a></li>
+<li><a href="#conditional-signal-assignment">Conditional Signal Assignment</a></li>
+<li><a href="#selected-signal-assignment">Selected Signal Assignment</a></li>
+</ol></li>
+<li>better for small/simple circuits</li>
+</ol>
+<blockquote>
+<p>note: Concurrentm, Conditional, and Selected aiganl asignments <strong>cannot</strong> be nested</p>
+</blockquote>
+<h3 id="behavioral-style-architecture">Behavioral Style Architecture</h3>
+<ol type="1">
+<li>doesnt reflect how the circuit is implemented when synthesized</li>
+<li>dont need to fully understand how the circuit should look in order to implement using behavioral style, leaves the figuring out to the VHDL synthesizer</li>
+<li>initiated with a process statement</li>
+</ol>
+<h3 id="process-statement-1">Process Statement</h3>
+<ol type="1">
+<li><p>takes the form:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode vhdl"><code class="sourceCode vhdl"><a class="sourceLine" id="cb14-1" title="1">my_label <span class="ot">:</span> process(sensitivity_list) is</a>
+<a class="sourceLine" id="cb14-2" title="2">    <span class="ot">&lt;</span>item_declaration<span class="ot">&gt;</span></a>
+<a class="sourceLine" id="cb14-3" title="3">begin</a>
+<a class="sourceLine" id="cb14-4" title="4">    <span class="ot">&lt;</span>sequential_statements<span class="ot">&gt;</span></a>
+<a class="sourceLine" id="cb14-5" title="5">end process my_label;</a></code></pre></div></li>
+<li><p>every time there is a signal change in the process <strong>sensitivity list</strong> all of the sequential statements are re-evaluated</p></li>
+</ol>
+<blockquote>
+<p><strong>remember</strong>: the process statement itself is concurrent although its contents are executed sequentially</p>
+</blockquote>
+<h4 id="example-9">Example 9</h4>
+<p>for an XOR</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode vhdl"><code class="sourceCode vhdl"><a class="sourceLine" id="cb15-1" title="1"><span class="co">-- library declaration</span></a>
+<a class="sourceLine" id="cb15-2" title="2"><span class="kw">library</span> IEEE;</a>
+<a class="sourceLine" id="cb15-3" title="3"><span class="kw">use</span> IEEE<span class="ot">.</span>std_logic_1164<span class="ot">.</span>all;</a>
+<a class="sourceLine" id="cb15-4" title="4"><span class="co">-- entity</span></a>
+<a class="sourceLine" id="cb15-5" title="5"><span class="kw">entity</span> <span class="kw">my_xor</span> <span class="kw">is</span></a>
+<a class="sourceLine" id="cb15-6" title="6">    <span class="kw">port</span> (  A<span class="ot">,</span>B <span class="ot">:</span> <span class="kw">in</span> <span class="dt">std_logic</span>;</a>
+<a class="sourceLine" id="cb15-7" title="7">            F   <span class="ot">:</span> <span class="kw">out</span> <span class="dt">std_logic</span>);</a>
+<a class="sourceLine" id="cb15-8" title="8"><span class="kw">end my_xor;</span></a>
+<a class="sourceLine" id="cb15-9" title="9"><span class="co">-- architecture</span></a>
+<a class="sourceLine" id="cb15-10" title="10"><span class="kw">architecture</span> <span class="kw">behav</span> <span class="kw">of</span> <span class="kw">my_xor</span> <span class="kw">is</span></a>
+<a class="sourceLine" id="cb15-11" title="11"><span class="kw">begin</span></a>
+<a class="sourceLine" id="cb15-12" title="12">    <span class="kw">xor_proc</span><span class="ot">:</span> <span class="kw">process</span>(A<span class="ot">,</span>B) <span class="kw">is</span></a>
+<a class="sourceLine" id="cb15-13" title="13">    <span class="kw">begin</span></a>
+<a class="sourceLine" id="cb15-14" title="14">    F <span class="ot">&lt;=</span> A <span class="kw">XOR</span> B;</a>
+<a class="sourceLine" id="cb15-15" title="15">    <span class="er">end process xor_proc</span>;</a>
+<a class="sourceLine" id="cb15-16" title="16"><span class="er">end behav;</span></a></code></pre></div>
+<h3 id="sequential-statements">Sequential Statements</h3>
+<ol type="1">
+<li>works similar to regular programming labnguages</li>
+<li>due to concurrent nature of the process statement which contains sequestial statements it is important to keep the sequential statements as simple a possible</li>
+<li><a href="#signal-assignment-operator">Signal Assignment Statement</a></li>
+<li>if statement
+<ul>
+<li>takes form:</li>
+</ul>
+<div class="sourceCode" id="cb16"><pre class="sourceCode vhdl"><code class="sourceCode vhdl"><a class="sourceLine" id="cb16-1" title="1">if (condition) then</a>
+<a class="sourceLine" id="cb16-2" title="2">    <span class="ot">&lt;</span>statements<span class="ot">&gt;</span></a>
+<a class="sourceLine" id="cb16-3" title="3">elsif (condition) then</a>
+<a class="sourceLine" id="cb16-4" title="4">    <span class="ot">&lt;</span>statements<span class="ot">&gt;</span></a>
+<a class="sourceLine" id="cb16-5" title="5">else</a>
+<a class="sourceLine" id="cb16-6" title="6">    <span class="ot">&lt;</span>statements<span class="ot">&gt;</span></a>
+<a class="sourceLine" id="cb16-7" title="7">end if;</a></code></pre></div>
+<ul>
+<li>can be nested</li>
+</ul></li>
+<li>case statement
+<ul>
+<li>takes form:</li>
+</ul>
+<div class="sourceCode" id="cb17"><pre class="sourceCode vhdl"><code class="sourceCode vhdl"><a class="sourceLine" id="cb17-1" title="1">case (expression) is</a>
+<a class="sourceLine" id="cb17-2" title="2">when choices <span class="ot">=&gt;</span></a>
+<a class="sourceLine" id="cb17-3" title="3">    <span class="ot">&lt;</span>sequential statements<span class="ot">&gt;</span></a>
+<a class="sourceLine" id="cb17-4" title="4">when choices <span class="ot">=&gt;</span></a>
+<a class="sourceLine" id="cb17-5" title="5">    <span class="ot">&lt;</span>sequential statements<span class="ot">&gt;</span></a>
+<a class="sourceLine" id="cb17-6" title="6">when others <span class="ot">=&gt;</span></a>
+<a class="sourceLine" id="cb17-7" title="7">    <span class="ot">&lt;</span>sequential statements<span class="ot">&gt;</span></a>
+<a class="sourceLine" id="cb17-8" title="8">end case;</a></code></pre></div>
+<ul>
+<li>can be nested</li>
+<li><a href="#example-10">Example 10</a></li>
+</ul></li>
+</ol>
+<h4 id="example-10">Example 10</h4>
+<div class="sourceCode" id="cb18"><pre class="sourceCode vhdl"><code class="sourceCode vhdl"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">architecture</span> <span class="kw">my_soln_exam</span> <span class="kw">of</span> <span class="kw">my_example</span> <span class="kw">is</span></a>
+<a class="sourceLine" id="cb18-2" title="2">    <span class="ot">signal</span> ABC<span class="ot">:</span><span class="dt">std_logic_vector</span>(<span class="dv">2</span> <span class="ot">downto</span> <span class="dv">0</span>);</a>
+<a class="sourceLine" id="cb18-3" title="3"><span class="kw">begin</span></a>
+<a class="sourceLine" id="cb18-4" title="4">    ABC <span class="ot">&lt;=</span> A <span class="ot">&amp;</span> B <span class="ot">&amp;</span> C; <span class="co">-- group signals for case statement</span></a>
+<a class="sourceLine" id="cb18-5" title="5">    <span class="kw">my_proc</span><span class="ot">:</span> <span class="kw">process</span> (ABC)</a>
+<a class="sourceLine" id="cb18-6" title="6">    <span class="kw">begin</span></a>
+<a class="sourceLine" id="cb18-7" title="7">        <span class="kw">case</span> (ABC) <span class="kw">is</span></a>
+<a class="sourceLine" id="cb18-8" title="8">        <span class="kw">when</span> <span class="st">&quot;100&quot;</span>  <span class="ot">=&gt;</span> F_OUT <span class="ot">&lt;=</span> <span class="bn">&#39;1&#39;</span>;</a>
+<a class="sourceLine" id="cb18-9" title="9">        <span class="kw">when</span> <span class="st">&quot;-11&quot;</span>  <span class="ot">=&gt;</span> F_OUT <span class="ot">&lt;=</span> <span class="bn">&#39;1&#39;</span>;    <span class="co">-- the &#39;-&#39; is a dont care operator</span></a>
+<a class="sourceLine" id="cb18-10" title="10">        <span class="kw">when</span> <span class="ot">others</span> <span class="ot">=&gt;</span> F_OUT <span class="ot">&lt;=</span> <span class="bn">&#39;0&#39;</span>;</a>
+<a class="sourceLine" id="cb18-11" title="11">        <span class="kw">end case;</span></a>
+<a class="sourceLine" id="cb18-12" title="12">    <span class="kw">end process </span>my_proc;</a>
+<a class="sourceLine" id="cb18-13" title="13"><span class="er">end my_soln_exam;</span></a></code></pre></div>
+<blockquote>
+<p><strong>note</strong>: <em>dont care operator</em> '-'</p>
+<p>the character in its place can be a 1 or a 0 without affecting the following statement</p>
+</blockquote>
+<h3 id="caveats-regarding-sequential-statements">Caveats Regarding Sequential Statements</h3>
+<ol type="1">
+<li>your implementations can become too similar to that of a higher level language</li>
+<li>keep models simple to avoid most problems</li>
+</ol>
+<hr />
+<h2 id="chapter-6-vhdl-operators">Chapter 6 VHDL Operators</h2>
+<h3 id="logical">Logical</h3>
+<ol type="1">
+<li>AND</li>
+<li>NOR</li>
+<li>OR</li>
+<li>NAND</li>
+<li>XOR</li>
+<li>XNOR</li>
+<li>NOT</li>
+</ol>
+<h3 id="relational">Relational</h3>
+<ol type="1">
+<li>= is equal to</li>
+<li>/= is not equal to</li>
+<li>&lt;</li>
+<li>&lt;=</li>
+<li>&gt;</li>
+<li>&gt;=</li>
+</ol>
+<h3 id="shift">Shift</h3>
+<ol type="1">
+<li>basically shift bits either left or right</li>
+</ol>
+<figure>
+<img src="shiftoperators.png" alt="Shift Operators" /><figcaption>Shift Operators</figcaption>
+</figure>
+<h3 id="other">Other</h3>
+<h3 id="concatenation">Concatenation</h3>
+<h3 id="modulus-and-remainder">Modulus and Remainder</h3>
+<p>...</p>
+<footer>
+  <a rel="me" href="https://merveilles.town/@kevin"><img src="/assets/images/icons/mastodon.svg" class="icon"
+      width="48px" alt="Mastodon" title="link to my mastodon profile" />Mastodon</a>
+
+  <a href="https://webring.xxiivv.com/#random" target="_blank"><img src="/assets/images/icons/webring.svg" class="icon"
+      width="48px" alt="Webring" title="link to the Merveilles webring" />Webring</a>
+
+  <a rel="me" href="https://github.com/kevin-nel"><img src="/assets/images/icons/github.svg" class="icon" width="48px"
+      alt="Github" title="link to my Github page" />Github</a>
+
+  <a rel="me" href="https://halfdeep.bandcamp.com/releases"><img src="/assets/images/icons/bandcamp.svg" class="icon"
+      width="48px" alt="Bandcamp" title="link to my music on bandcamp" />Bandcamp</a>
+
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0//"><img src="/assets/images/icons/cc.svg"
+      alt="Creative Commons" title="CC BY-NC-SA 4.0" class="icon" width="48">CC</a>
+  <a href="/"><img src="/assets/images/pfp.png" class="icon" alt="Homw" title="link back to the homepage" />Home</a>
+</footer>
+</body>
+</html>

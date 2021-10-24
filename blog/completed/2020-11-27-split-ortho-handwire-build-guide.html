@@ -6,13 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Kevin Nel" />
   <title>Building a Custom Split Mechanical Keyboard</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
   </style>
   <link rel="stylesheet" href="/assets/css/oldschool.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 <body>
 <header>
@@ -25,7 +30,7 @@
     <li><a href="/">home</a></li>
     <li><a href="/about.html">about</a></li>
     <li><a href="/now.html">now</a></li>
-    <li><a href="https://halfdeep.xyz/">music</a></li>
+    <li><a href="https://halfdeep.bandcamp.com/">music</a></li>
     <li><a href="/projects/projects.html">projects</a></li>
     <li><a href="/knowledge/knowledge.html">knowledge</a></li>
     <li><a href="/blog/completed/blog-index.html">blog</a></li>
@@ -36,7 +41,7 @@
 <h1 class="title">Building a Custom Split Mechanical Keyboard</h1>
 <p class="author">Kevin Nel</p>
 </header>
-<p><a href="/assets/images/lets-split-preonic/final.jpg"> <img src="/assets/images/lets-split-preonic/final-dithered.png" alt="final build with nice keycaps" data-loading="lazy" /> </a></p>
+<p><a href="/assets/images/lets-split-preonic/final.jpg"> <img src="/assets/images/lets-split-preonic/final-dithered.png" loading="lazy" alt="final build with nice keycaps" /> </a></p>
 <h2 id="table-of-contents">1. Table of Contents</h2>
 <ul>
 <li><a href="#1-table-of-contents">1. Table of Contents</a></li>
@@ -92,12 +97,14 @@
 </ol>
 I ended up going with the idea of a split ortholinear keyboard with the same amount of keys as a preonic.
 <details>
-<p><summary>See all the options I considered</summary></p>
+<summary>
+See all the options I considered
+</summary>
 <div data-markdown="1">
 <p>Here are the options I considered with pros and cons. I also included KLE json for each of them for convenience sake.</p>
 <h3 id="ortho">2.1. 75% ortho</h3>
 <figure>
-<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2F9xtys3toscg21.jpg&amp;f=1&amp;nofb=1" alt="above examples photo" data-loading="lazy" /><figcaption>above examples photo</figcaption>
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2F9xtys3toscg21.jpg&amp;f=1&amp;nofb=1" loading="lazy" alt="above examples photo" /><figcaption aria-hidden="true">above examples photo</figcaption>
 </figure>
 <p>pros: - fits in 60% case - dedicated number row - space for 2x2u keys on bottom row (shift and space)</p>
 <p>cons: - larger than 40% (same size as 60%) - number row on ortholinear might be weird - more switches</p>
@@ -108,7 +115,7 @@ I ended up going with the idea of a split ortholinear keyboard with the same amo
 [&quot;meme&quot;,&quot;Ctrl&quot;,&quot;Alt&quot;,&quot;Super&quot;,&quot;&amp;dArr;&quot;,&quot;sp1&quot;,&quot;sp2&quot;,&quot;&amp;uArr;&quot;,&quot;&amp;larr;&quot;,&quot;&amp;darr;&quot;,&quot;&amp;uarr;&quot;,&quot;&amp;rarr;&quot;,&quot;fn&quot;]</code></pre>
 <h3 id="planck">2.2. planck</h3>
 <figure>
-<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.BlxyzbZuZDw9NrBThqR7vAHaE8%26pid%3DApi&amp;f=1" alt="planck" data-loading="lazy" /><figcaption>planck</figcaption>
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.BlxyzbZuZDw9NrBThqR7vAHaE8%26pid%3DApi&amp;f=1" loading="lazy" alt="planck" /><figcaption aria-hidden="true">planck</figcaption>
 </figure>
 <p>pros: - relatively standardized layout - really small - looks cool</p>
 <p>cons: - really small - will have to build own case</p>
@@ -119,13 +126,13 @@ I ended up going with the idea of a split ortholinear keyboard with the same amo
 <h3 id="diy-kit-option-kbdfans-niu-mini">2.3. DIY kit option (KBDFans NIU Mini)</h3>
 <p><a href="https://kbdfans.com/products/niu-mini-40-diy-kit">kbdfans niu mini diy kit</a></p>
 <figure>
-<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2F3o9d8dkfeoe31.jpg&amp;f=1&amp;nofb=1" alt="niu mini" data-loading="lazy" /><figcaption>niu mini</figcaption>
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2F3o9d8dkfeoe31.jpg&amp;f=1&amp;nofb=1" loading="lazy" alt="niu mini" /><figcaption aria-hidden="true">niu mini</figcaption>
 </figure>
 <p>pros: - easier build - nicer case than I could make</p>
 <p>cons: - expensive</p>
 <h3 id="split-ortho-75">2.4. Split ortho 75%</h3>
 <figure>
-<img src="https://cdn.thingiverse.com/assets/74/60/71/08/d9/large_display_1_-_Fvgm3Y5.jpg" alt="split 75%" data-loading="lazy" /><figcaption>split 75%</figcaption>
+<img src="https://cdn.thingiverse.com/assets/74/60/71/08/d9/large_display_1_-_Fvgm3Y5.jpg" loading="lazy" alt="split 75%" /><figcaption aria-hidden="true">split 75%</figcaption>
 </figure>
 <p><a href="https://www.thingiverse.com/thing:4565609">guide</a></p>
 <p>pros: - split (ergo) - ortho means easier diy/plate</p>
@@ -134,14 +141,14 @@ I ended up going with the idea of a split ortholinear keyboard with the same amo
 <p>wood case acrylic plates hand wired</p>
 <h3 id="iris-mini-ergodox-also-40">2.5. iris (mini ergodox also 40%)</h3>
 <figure>
-<img src="https://jonathanbayless.com/assets/img/640/iris1.jpg" alt="IMAGE" data-loading="lazy" /><figcaption>IMAGE</figcaption>
+<img src="https://jonathanbayless.com/assets/img/640/iris1.jpg" loading="lazy" alt="IMAGE" /><figcaption aria-hidden="true">IMAGE</figcaption>
 </figure>
 <p><a href="https://jonathanbayless.com/2020/06/09/iris-handwire.html">link to a build guide</a></p>
 <p>pros: - ergonomics - less switches = cheaper (more than a 40% though) - looks <strong>really</strong> cool - case has an interesting shape</p>
 <p>cons: - 2 pro micros and trs needed - will have to build own case - quite involved build process - slightly bigger case</p>
 <h3 id="split-40">2.6. split 40%</h3>
 <figure>
-<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2Fb6ne0b69ztg21.jpg&amp;f=1&amp;nofb=1" alt="split 40" data-loading="lazy" /><figcaption>split 40</figcaption>
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2Fb6ne0b69ztg21.jpg&amp;f=1&amp;nofb=1" loading="lazy" alt="split 40" /><figcaption aria-hidden="true">split 40</figcaption>
 </figure>
 <p><a href="https://johannes-jansson.github.io/projects/2018/07/23/hand-wiring-lets-split.html">a very thorough build guide</a></p>
 <p>pros: - ergonomics - less switches = cheaper - looks really cool</p>
@@ -166,7 +173,7 @@ I ended up going with the idea of a split ortholinear keyboard with the same amo
 <p>The case and plate where generated using <a href="builder.swillkb.com/">swillkb builder</a> I had the case and plate laser cut in 3mm acrylic by my uncle. who graciously didn't charge me.</p>
 <blockquote>
 <figure>
-<img src="/assets/images/lets-split-preonic/0.svg" alt="plate" data-loading="lazy" /><figcaption>plate</figcaption>
+<img src="/assets/images/lets-split-preonic/0.svg" loading="lazy" alt="plate" /><figcaption aria-hidden="true">plate</figcaption>
 </figure>
 </blockquote>
 <h3 id="bom">4.2. BOM</h3>
@@ -212,7 +219,7 @@ I ended up going with the idea of a split ortholinear keyboard with the same amo
 <h3 id="communication-between-the-two-halves">6.2. communication between the two halves</h3>
 <p>I opted for I2C over a TRRS cable. This required me to solder 2 pull up 4k7 ohm resistors on the sda and scl lines (pin 2 and pin 3). You can see a schematic below.</p>
 <figure>
-<img src="https://qmk.fm/keyboards/lets_split/i2c_wiring.png" alt="I2C wiring" data-loading="lazy" /><figcaption>I2C wiring</figcaption>
+<img src="https://qmk.fm/keyboards/lets_split/i2c_wiring.png" loading="lazy" alt="I2C wiring" /><figcaption aria-hidden="true">I2C wiring</figcaption>
 </figure>
 <h3 id="firmware">6.3. firmware</h3>
 <p>this is how I wired my rows and columns to the Pro-Micro</p>
@@ -258,37 +265,37 @@ cols:
 <p>If I do not adapt to the split I may try my hand at building a plank as they are also a little more portable. If I do not adapt the ortholinear layout I may try a columnar stagger or regular stagger board again (<a href="https://www.reddit.com/r/MechanicalKeyboards/comments/ksto32/chocolate_bar/">this compact "full" size board</a> has caught my attention).</p>
 <h2 id="some-photos">8. Some Photos</h2>
 <figure>
-<a href="/assets/images/lets-split-preonic/1.jpg"> <img src="/assets/images/lets-split-preonic/1-dithered.png" alt="laser cut plates" data-loading="lazy" /> </a>
+<a href="/assets/images/lets-split-preonic/1.jpg"> <img src="/assets/images/lets-split-preonic/1-dithered.png" loading="lazy" alt="laser cut plates" /> </a>
 <figcaption>
 The acrylic plates, fresh off the laser cutter. (click for full resolution)
 </figcaption>
 </figure>
 <figure>
-<a href="/assets/images/lets-split-preonic/2.jpg"> <img src="/assets/images/lets-split-preonic/2-dithered.png" alt="soldering" data-loading="lazy" /> </a>
+<a href="/assets/images/lets-split-preonic/2.jpg"> <img src="/assets/images/lets-split-preonic/2-dithered.png" loading="lazy" alt="soldering" /> </a>
 <figcaption>
 Soldering away! (click for full resolution)
 </figcaption>
 </figure>
 <figure>
-<a href="/assets/images/lets-split-preonic/3.jpg"> <img src="/assets/images/lets-split-preonic/3-dithered.png" alt="first half done including microcontroller and trrs jack" data-loading="lazy" /> </a>
+<a href="/assets/images/lets-split-preonic/3.jpg"> <img src="/assets/images/lets-split-preonic/3-dithered.png" loading="lazy" alt="first half done including microcontroller and trrs jack" /> </a>
 <figcaption>
 First half done! (click for full resolution)
 </figcaption>
 </figure>
 <figure>
-<a href="/assets/images/lets-split-preonic/4.jpg"> <img src="/assets/images/lets-split-preonic/4-dithered.png" alt="assembled with bottom (no keycaps yet)" data-loading="lazy" /> </a>
+<a href="/assets/images/lets-split-preonic/4.jpg"> <img src="/assets/images/lets-split-preonic/4-dithered.png" loading="lazy" alt="assembled with bottom (no keycaps yet)" /> </a>
 <figcaption>
 Half the board assembled but no keycaps. (click for full resolution)
 </figcaption>
 </figure>
 <figure>
-<a href="/assets/images/lets-split-preonic/5.jpg"> <img src="/assets/images/lets-split-preonic/5-dithered.png" alt="on the desk (still no keycaps 😢)" data-loading="lazy" /> </a>
+<a href="/assets/images/lets-split-preonic/5.jpg"> <img src="/assets/images/lets-split-preonic/5-dithered.png" loading="lazy" alt="on the desk (still no keycaps 😢)" /> </a>
 <figcaption>
 Finished but still no keycaps. (click for full resolution)
 </figcaption>
 </figure>
 <figure>
-<a href="/assets/images/lets-split-preonic/final.jpg"> <img src="/assets/images/lets-split-preonic/final-dithered.png" alt="final build with nice keycaps" data-loading="lazy" /> </a>
+<a href="/assets/images/lets-split-preonic/final.jpg"> <img src="/assets/images/lets-split-preonic/final-dithered.png" loading="lazy" alt="final build with nice keycaps" /> </a>
 <figcaption>
 Final build with some nice bright pink and purple dsa keycaps! (click for full resolution)
 </figcaption>

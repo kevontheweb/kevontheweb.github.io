@@ -5,13 +5,18 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>ERS VHDL notes</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
   </style>
   <link rel="stylesheet" href="/assets/css/oldschool.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 <body>
 <header>
@@ -24,7 +29,7 @@
     <li><a href="/">home</a></li>
     <li><a href="/about.html">about</a></li>
     <li><a href="/now.html">now</a></li>
-    <li><a href="https://halfdeep.xyz/">music</a></li>
+    <li><a href="https://halfdeep.bandcamp.com/">music</a></li>
     <li><a href="/projects/projects.html">projects</a></li>
     <li><a href="/knowledge/knowledge.html">knowledge</a></li>
     <li><a href="/blog/completed/blog-index.html">blog</a></li>
@@ -164,7 +169,7 @@ dOuT    &lt;=a aNd         B  ;</code></pre>
 <li>Use as many parentheses as necessary to clearly display functions</li>
 </ol>
 <figure>
-<img src="https://revaustinmiles.com/images/uploads/ThinkingMan.jpg" alt="in a world with parentheses why bother with precedence?" /><figcaption>in a world with parentheses why bother with precedence?</figcaption>
+<img src="https://revaustinmiles.com/images/uploads/ThinkingMan.jpg" alt="in a world with parentheses why bother with precedence?" /><figcaption aria-hidden="true">in a world with parentheses why bother with precedence?</figcaption>
 </figure>
 <h3 id="vhdl-statements">VHDL Statements</h3>
 <ol type="1">
@@ -248,7 +253,7 @@ end mux4t1_2;</code></pre>
 </ol></li>
 </ol>
 <figure>
-<img src="https://images.slideplayer.com/25/7642651/slides/slide_5.jpg" alt="Black Box Approach in VHDL" /><figcaption>Black Box Approach in VHDL</figcaption>
+<img src="https://images.slideplayer.com/25/7642651/slides/slide_5.jpg" alt="Black Box Approach in VHDL" /><figcaption aria-hidden="true">Black Box Approach in VHDL</figcaption>
 </figure>
 <h3 id="entity">Entity</h3>
 <ol type="1">
@@ -262,9 +267,9 @@ port(
     port_name_3                 : inout std_logic); --note the semicolon
 end my_entity;</code></pre>
 <ol start="2" type="1">
-<li><code>port_name_x</code> is an identifier used to differentiate the various signals</li>
-<li><code>in</code>, <code>out</code>, and <code>inout</code> indicates direction of the signal</li>
-<li><code>std_logic</code> and <code>std_logic_vector</code> are the data types being handled by the port
+<li><p><code>port_name_x</code> is an identifier used to differentiate the various signals</p></li>
+<li><p><code>in</code>, <code>out</code>, and <code>inout</code> indicates direction of the signal</p></li>
+<li><p><code>std_logic</code> and <code>std_logic_vector</code> are the data types being handled by the port</p>
 <ul>
 <li>the <code>std_logic</code> and <code>std_logic_vector</code> datatypes are only available after the declaration of the IEE library<br />
 </li>
@@ -281,10 +286,10 @@ end my_entity;</code></pre>
 </ul>
 <p>note the representation of bundles on a block diagram</p>
 <figure>
-<img src="muxblockdiagrawithbundles.PNG" title="Block Diagram of a Mutiplexer with 8 Bit Bundles as Inputs" alt="Block Diagram of a Mutiplexer with 8 Bit Bundles as Inputs" /><figcaption>Block Diagram of a Mutiplexer with 8 Bit Bundles as Inputs</figcaption>
+<img src="muxblockdiagrawithbundles.PNG" title="Block Diagram of a Mutiplexer with 8 Bit Bundles as Inputs" alt="Block Diagram of a Mutiplexer with 8 Bit Bundles as Inputs" /><figcaption aria-hidden="true">Block Diagram of a Mutiplexer with 8 Bit Bundles as Inputs</figcaption>
 </figure>
 </blockquote></li>
-<li>Some rules regarding the entity
+<li><p>Some rules regarding the entity</p>
 <ol type="1">
 <li>Each port name is unique and has an associated mode and data type</li>
 <li>Multiple port names can be included on a single line</li>
@@ -365,8 +370,8 @@ end circuit1_arc;</code></pre>
 <ol type="1">
 <li><p>takes the form</p>
 <pre class="vhdl"><code>&lt;target&gt; &lt;= &lt;expression&gt;;</code></pre></li>
-<li>the signal on the left-hand side of the signal assignment operator is dependent upon the signals on the right-hand side of the operator</li>
-<li>there are multiple ways to solve the same problems</li>
+<li><p>the signal on the left-hand side of the signal assignment operator is dependent upon the signals on the right-hand side of the operator</p></li>
+<li><p>there are multiple ways to solve the same problems</p></li>
 <li><p>Signals declared as outputs cannot be on the right-hand side of a signal assignment operator, This problem is solved by using <strong>intermediate signals</strong></p></li>
 </ol>
 <h3 id="concurrent-signal-assignment-statements">Concurrent Signal Assignment Statements</h3>
@@ -394,14 +399,14 @@ begin
 end f3_1</code></pre>
 <h3 id="conditional-signal-assignment-when">Conditional Signal Assignment <code>when</code></h3>
 <ol type="1">
-<li>like the <code>if</code> statement of concurent assignments</li>
-<li>good practice to 'catch' errors with a 0 at the end (called a 'catch-all condition')</li>
+<li><p>like the <code>if</code> statement of concurent assignments</p></li>
+<li><p>good practice to 'catch' errors with a 0 at the end (called a 'catch-all condition')</p></li>
 <li><p>takes the form:</p>
 <pre class="vhdl"><code>&lt;target&gt; &lt;= &lt;expression&gt; when &lt;condition&gt; else
             &lt;expression&gt; when &lt;condition&gt; else
             &lt;expression&gt;;</code></pre></li>
-<li>only one signal assignment operator for each conditional assignmnent statement</li>
-<li>very useful to implement multiplexers
+<li><p>only one signal assignment operator for each conditional assignmnent statement</p></li>
+<li><p>very useful to implement multiplexers</p>
 <ul>
 <li>the conditions become values of the select inputs</li>
 <li>see <a href="#example-6">Example 6</a></li>
@@ -436,12 +441,12 @@ begin
 end mux4t1;</code></pre>
 <h3 id="selected-signal-assignment-with-select">Selected Signal Assignment <code>with select</code></h3>
 <ol type="1">
-<li>like the switch stament in regular programming languages</li>
-<li>similar conditional signal assignment but based on the evaluation of one expression</li>
-<li><p>takes the form: <code>vhdl  with &lt;choose_expression&gt; select      target &lt;=   &lt;expression&gt; when &lt;choices&gt;,                  &lt;expression&gt; when &lt;choices&gt;;</code></p></li>
-<li>the catch all statement is implemented with <code>when others</code></li>
+<li><p>like the switch stament in regular programming languages</p></li>
+<li><p>similar conditional signal assignment but based on the evaluation of one expression</p></li>
+<li><p>takes the form: <code>vhdl     with &lt;choose_expression&gt; select         target &lt;=   &lt;expression&gt; when &lt;choices&gt;,                     &lt;expression&gt; when &lt;choices&gt;;</code></p></li>
+<li><p>the catch all statement is implemented with <code>when others</code></p></li>
 <li><p>
-multiple options for the same output can be made simple with a selection character, namely '|'
+<p>multiple options for the same output can be made simple with a selection character, namely '|'</p>
 </p>
 <ul>
 <li>see <a href="#example-8">Example 8</a></li>

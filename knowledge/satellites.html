@@ -5,13 +5,18 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>satellites</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
   </style>
   <link rel="stylesheet" href="/assets/css/oldschool.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 <body>
 <header>
@@ -24,7 +29,7 @@
     <li><a href="/">home</a></li>
     <li><a href="/about.html">about</a></li>
     <li><a href="/now.html">now</a></li>
-    <li><a href="https://halfdeep.xyz/">music</a></li>
+    <li><a href="https://halfdeep.bandcamp.com/">music</a></li>
     <li><a href="/projects/projects.html">projects</a></li>
     <li><a href="/knowledge/knowledge.html">knowledge</a></li>
     <li><a href="/blog/completed/blog-index.html">blog</a></li>
@@ -42,7 +47,7 @@
 <h3 id="finding-out-when-its-passing">Finding out when its passing</h3>
 <p>for that you can use the <a href="https://heavens-above.com/AmateurSats.aspx">heavens above site</a> or the <a href="https://github.com/rt-bishop/Look4Sat">Look4Sat android app</a>.</p>
 <figure>
-<img src="/assets/images/other/heavens-above.png" alt="example view for the NOAA 19 satellite on heavens-above.com" /><figcaption>example view for the NOAA 19 satellite on heavens-above.com</figcaption>
+<img src="/assets/images/other/heavens-above.png" alt="example view for the NOAA 19 satellite on heavens-above.com" /><figcaption aria-hidden="true">example view for the NOAA 19 satellite on heavens-above.com</figcaption>
 </figure>
 <p>The start and end times are when the satellite is passing and the altitude and azimuth are the angle and direction respectively. a 90° azimuth is directly over your head. you can use this information to help you orient yourself when you try to record the signal.</p>
 <h3 id="recording-the-signal">recording the signal</h3>
@@ -62,7 +67,7 @@
 <p>note: if you have ffmpeg installed audacity may be able to automatically extract the audio from a video file on import</p>
 </blockquote>
 <figure>
-<img src="/assets/images/other/noaa15-audacity.gif" alt="GIF showing the processing of the audio preparing it for wxtoimg in audacity" /><figcaption>GIF showing the processing of the audio preparing it for wxtoimg in audacity</figcaption>
+<img src="/assets/images/other/noaa15-audacity.gif" alt="GIF showing the processing of the audio preparing it for wxtoimg in audacity" /><figcaption aria-hidden="true">GIF showing the processing of the audio preparing it for wxtoimg in audacity</figcaption>
 </figure>
 <p>the audio can then be imported into wxtoimg and it will be automatically processed into an image</p>
 <h3 id="using-noaa-apt">using noaa-apt</h3>
@@ -70,18 +75,18 @@
 <h3 id="results">results</h3>
 <p>My first attempt went quite poorly</p>
 <figure>
-<img src="/assets/images/other/noaa-first-attempt.png" alt="My first attempt at getting a sattelite image from one of the NOAA weather sattelites using my Baofeng uv5r" /><figcaption>My first attempt at getting a sattelite image from one of the NOAA weather sattelites using my Baofeng uv5r</figcaption>
+<img src="/assets/images/other/noaa-first-attempt.png" alt="My first attempt at getting a sattelite image from one of the NOAA weather sattelites using my Baofeng uv5r" /><figcaption aria-hidden="true">My first attempt at getting a sattelite image from one of the NOAA weather sattelites using my Baofeng uv5r</figcaption>
 </figure>
 <p>On my second attempt i was able to see some border informaiton and part of an image on the left</p>
 <figure>
-<img src="/assets/images/other/noaa-second-attempt.png" alt="My second attempt at getting a sattelite image from one of the NOAA weather sattelites using my Baofeng uv5r" /><figcaption>My second attempt at getting a sattelite image from one of the NOAA weather sattelites using my Baofeng uv5r</figcaption>
+<img src="/assets/images/other/noaa-second-attempt.png" alt="My second attempt at getting a sattelite image from one of the NOAA weather sattelites using my Baofeng uv5r" /><figcaption aria-hidden="true">My second attempt at getting a sattelite image from one of the NOAA weather sattelites using my Baofeng uv5r</figcaption>
 </figure>
 <p>but after giving it few more shots and taking a much longer recording I was able to decode a pretty decent image.</p>
 <figure>
-<img src="/assets/images/other/noaa-19-boafeng-best-false-color.png" alt="The best result I got from the baofeng (false color)" /><figcaption>The best result I got from the baofeng (false color)</figcaption>
+<img src="/assets/images/other/noaa-19-boafeng-best-false-color.png" alt="The best result I got from the baofeng (false color)" /><figcaption aria-hidden="true">The best result I got from the baofeng (false color)</figcaption>
 </figure>
 <figure>
-<img src="/assets/images/other/noaa-19-boafeng-best.png" alt="The best result I got from the baofeng (raw+IR)" /><figcaption>The best result I got from the baofeng (raw+IR)</figcaption>
+<img src="/assets/images/other/noaa-19-boafeng-best.png" alt="The best result I got from the baofeng (raw+IR)" /><figcaption aria-hidden="true">The best result I got from the baofeng (raw+IR)</figcaption>
 </figure>
 <p>Here is a false color image and the raw+infrared image (you can make out some clouds as well as the west side of Africa)</p>
 <p>The <a href="/gear/ham.html#baofeng-uv5r-uhfvhf-radio">boafeng</a> doesn't really have enough bandwidth to get a full quality image and it's really easy to accidentally move and mess up the signal (which you can see in the vertical lines)</p>

@@ -6,13 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Kevin Nel" />
   <title>Better Zen Mode for VSCode</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
   </style>
   <link rel="stylesheet" href="/assets/css/oldschool.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 <body>
 <header>
@@ -25,7 +30,7 @@
     <li><a href="/">home</a></li>
     <li><a href="/about.html">about</a></li>
     <li><a href="/now.html">now</a></li>
-    <li><a href="https://halfdeep.xyz/">music</a></li>
+    <li><a href="https://halfdeep.bandcamp.com/">music</a></li>
     <li><a href="/projects/projects.html">projects</a></li>
     <li><a href="/knowledge/knowledge.html">knowledge</a></li>
     <li><a href="/blog/completed/blog-index.html">blog</a></li>
@@ -39,7 +44,7 @@
 <p>If you, like me, moved over to VSCode after using sublime you probably miss the very uncluttered interface and simple design, but can't give up all the great features and extensions of Visual Studio Code.</p>
 <p>Well as with most problems regarding VSCode <em>There's an extension for that</em>.</p>
 <figure>
-<img src="/assets/images/zenmode.gif" alt="zen" data-loading="lazy" /><figcaption>zen</figcaption>
+<img src="/assets/images/zenmode.gif" loading="lazy" alt="zen" /><figcaption aria-hidden="true">zen</figcaption>
 </figure>
 <h2 id="step-1">Step 1</h2>
 <p>So step 1 is to download the <a href="https://marketplace.visualstudio.com/items?itemName=hoovercj.vscode-settings-cycler">vscode settings cycler</a> extension which will allow you to cycle between sets of settings in VSCode.</p>
@@ -47,7 +52,7 @@
 <p>Step 2 is to add the following lines to your <code>settings.json</code>.</p>
 <p>If you dont know how to open your <code>settings.json</code> you can open it by pressing <code>ctrl+shift+p</code> and then typing <code>settings</code> this bring up the option to either open your settings.json or open settings UI. select the settings.json and hit enter.</p>
 <figure>
-<img src="/assets/images/settingsjson.gif" alt="VSCode Settings" data-loading="lazy" /><figcaption>VSCode Settings</figcaption>
+<img src="/assets/images/settingsjson.gif" loading="lazy" alt="VSCode Settings" /><figcaption aria-hidden="true">VSCode Settings</figcaption>
 </figure>
 <pre class="json"><code>&quot;settings.cycle&quot;: [
         {
@@ -81,7 +86,7 @@
 <p>in order to assign a keyboard shortcut to these sets of settings you have to add the following to your <code>keybindings.json</code>.</p>
 <p>You can open the <code>keybindings.json</code> file the same way as for <code>settings.json</code>. Just search for <code>keyboard shortcut</code></p>
 <figure>
-<img src="/assets/images/keybindingsjson.gif" alt="VSCode Keybindings" data-loading="lazy" /><figcaption>VSCode Keybindings</figcaption>
+<img src="/assets/images/keybindingsjson.gif" loading="lazy" alt="VSCode Keybindings" /><figcaption aria-hidden="true">VSCode Keybindings</figcaption>
 </figure>
 <pre class="json"><code>{
 &quot;key&quot;: &quot;shift+f11&quot;,

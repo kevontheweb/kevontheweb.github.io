@@ -5,13 +5,18 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>uxn on esp32 for a hardware orca sequencer</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
   </style>
   <link rel="stylesheet" href="/assets/css/oldschool.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 <body>
 <header>
@@ -24,7 +29,7 @@
     <li><a href="/">home</a></li>
     <li><a href="/about.html">about</a></li>
     <li><a href="/now.html">now</a></li>
-    <li><a href="https://halfdeep.xyz/">music</a></li>
+    <li><a href="https://halfdeep.bandcamp.com/">music</a></li>
     <li><a href="/projects/projects.html">projects</a></li>
     <li><a href="/knowledge/knowledge.html">knowledge</a></li>
     <li><a href="/blog/completed/blog-index.html">blog</a></li>
@@ -36,7 +41,7 @@
 </header>
 <h2 id="inspiration">inspiration</h2>
 <p>I have recently been quite inspired by old tracker software and the few <a href="/knowledge/music/trackers.html">hardware trackers</a> that are out now.</p>
-<p>After hanging around on <a href="https://merveilles.town">merveilles</a> i discovered <a href="https://github.com/hundredrabbits/Orca-c">orca</a> and the <a href="https://100r.co/site/uxn.html">uxn virtual computer</a> (both by <a href="https://github.com/hundredrabbits">hundred rabbits</a>) and thought that it might be possible to run orca as a rom on an esp32 using uxn.</p>
+<p>After hanging around on <a href="https://merveilles.town">merveilles</a> i discovered <a href="https://github.com/hundredrabbits/Orca-c">orca</a> and the <a href="https://100r.co/site/uxn.html">uxn virtual computer</a> (both by <a href="https://github.com/hundredrabbits">hundred rabbits</a>) and thought that it might be possible to run orca as a rom on an esp32 using uxn. Especially since the esp32 is such a capable microcontroller <a href="https://hackaday.com/2021/07/28/emulating-the-ibm-pc-on-an-esp32/">(even IBM PC DOS has been emulated on it!)</a></p>
 <p>Orca is an esoteric programming language used to sequence midi devices and is often used in <a href="https://www.youtube.com/watch?v=4VSrjp0w3jA">livecoding (video example)</a> <a href="https://en.wikipedia.org/wiki/Live_coding">(wikipedia)</a>.</p>
 <p>It is possible to build any style sequencer you can imagine even including things like randomness and <a href="https://www.youtube.com/watch?v=OHS3lN6snrE">euclidean rhythms (video explanation)</a> <a href="https://en.wikipedia.org/wiki/Euclidean_rhythm">(wikipedia)</a>. <a href="https://www.youtube.com/watch?v=nKAjx6n97IY">Tracker style sequencers have also been made with Orca</a></p>
 <h2 id="resources">resources</h2>
@@ -76,10 +81,13 @@
 <h2 id="usage">usage</h2>
 <p>The idea would be to be able to use it to sequence midi devices or use as part of a modular synth (if used in conjunction with a midi to cv device)</p>
 <h2 id="todo">todo</h2>
-<ul>
-<li>[ ] try make the oled work then get an lcd if necessary</li>
-<li>[ ] my esp32 has psram so it should be fine?</li>
-<li>[ ] figure out something for keyboard inputs</li>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" />
+try make the oled work then get an lcd if necessary</li>
+<li><input type="checkbox" disabled="" />
+my esp32 has psram so it should be fine?</li>
+<li><input type="checkbox" disabled="" />
+figure out something for keyboard inputs</li>
 </ul>
 <h2 id="last-resort-just-use-a-pi">last resort (just use a pi)</h2>
 <ul>

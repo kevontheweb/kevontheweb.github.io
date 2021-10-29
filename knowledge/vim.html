@@ -39,13 +39,113 @@
 <header id="title-block-header">
 <h1 class="title">vim</h1>
 </header>
+<p>This page contains a bunch of vim related stuff.</p>
+<p>Here is an article I wrote about my mistake when first learning vim: <a href="/blog/completed/2020-10-10-touch-typing-and-vim.html">Don't get bad typing habits</a></p>
+<h2 id="plugins-i-use">plugins i use</h2>
+<p>I currently use <a href="https://github.com/junegunn/vim-plug">vim-plug</a> to manage plugins but I do want to give the native vim8 plugin manager a try. Plugins:</p>
 <ul>
-<li><p><a href="/blog/completed/2020-10-10-touch-typing-and-vim.html">Don't get bad typing habits</a></p></li>
-<li><p><a href="https://github.com/neovim/nvim-lspconfig">nvm language server</a></p></li>
+<li><a href="https://github.com/junegunn/goyo.vim">goyo</a> is a "zen mode" plugin that centers the content and removes extra ui elements. I like to use it when I am taking notes or writing in english but not really for writing code</li>
+<li><a href="https://github.com/junegunn/vim-easy-align">vim-easy-align</a>, I only use this to format markdown tables.</li>
+<li><a href="https://github.com/sheerun/vim-polyglot">vim-polyglot</a> improves the syntax highlighting for a lot of languages.</li>
+<li><a href="https://github.com/ackyshake/VimCompletesMe">VimCompletesMe</a> sets up tab completion using native vim completion like omnicomplete based on the context.</li>
 </ul>
-<h2 id="remove-trailing-whitespaces-on-save">remove trailing whitespaces on save</h2>
+<p>Themes: - <a href="https://github.com/rakr/vim-two-firewatch">vim two firewatch</a> is a duo tone theme that i very much like. - <a href="https://github.com/jeffkreeftmeijer/vim-dim">vim dim</a> uses ansi color codes so that vim uses your terminal colors.</p>
+<h2 id="useful-stuff-in-my-vimrc">useful stuff in my vimrc</h2>
+<p>Below is some of the stuff that took me some time to figure out. I have left out the simpler stuff like displaying whitespace, setting up clipboard and mouse, and my autocmds and macros.</p>
+<h3 id="remove-trailing-whitespaces-on-save">remove trailing whitespaces on save</h3>
 <pre class="vim"><code>autocmd BufWritePre *.py :%s/\s\+$//e</code></pre>
 <p><a href="https://vim.fandom.com/wiki/Remove_unwanted_spaces">source</a></p>
+<h3 id="nicer-shortcuts-to-switch-between-splits">nicer shortcuts to switch between splits</h3>
+<pre class="vim"><code>&quot; swithing panes
+nnoremap &lt;c-j&gt; &lt;c-w&gt;j
+nnoremap &lt;c-k&gt; &lt;c-w&gt;k
+nnoremap &lt;c-h&gt; &lt;c-w&gt;h
+nnoremap &lt;c-l&gt; &lt;c-w&gt;l</code></pre>
+<h3 id="save-markdown-files-on-insert-leave">save markdown files on insert leave</h3>
+<p>You can use this for any file type but i only want it to happen for markdown.</p>
+<pre class="vim"><code>autocmd InsertLeave *.md silent! execute &quot;:w&quot;</code></pre>
+<h3 id="spellchecking-for-text-documents">spellchecking for text documents</h3>
+<p>You can navigate to the next, <code>]s</code> and previous <code>[s</code> spelling mistake in normal mode and then bring up a list of corrections with <code>z=</code> when your cursor is over the word. I also remove the highlighting and opted to make the errors bold and underlined to be slightly less obnoxious</p>
+<pre class="vim"><code>autocmd filetype markdown,tex,latex,groff set spell
+hi clear SpellBad
+hi SpellBad cterm=underline,bold</code></pre>
+<h3 id="my-own-vim-statusline">my own vim statusline</h3>
+<p>I didn't want to use a plugin for my status line but wanted a few more things added.</p>
+<pre class="vim"><code>&quot;statusline
+set laststatus=2
+set statusline=
+set statusline+=%#PmenuSel#
+set statusline+=%#LineNr#
+set statusline+=\ %f
+set statusline+=%m
+set statusline+=%=
+set statusline+=%#LineNr#
+set statusline+=\ %y
+set statusline+=\ %{&amp;fileencoding?&amp;fileencoding:&amp;encoding}
+set statusline+=\[%{&amp;fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ %l:%c</code></pre>
+<h3 id="type-emojis-and-unicode-characters-with-digraphs">type emojis and unicode characters with digraphs</h3>
+<p>Using <code>&lt;Ctr&gt;+k</code> in insert mode will allow you to insert unicode characters using two character shorthand. You can see all the digraphs by entering <code>:digraphs</code> or <code>:help digraph-table</code> in normal mode</p>
+<p>Some installs of vim contain some emojis by default but my vim install did not have emojis so I added the following to my <code>.vimrc</code>.</p>
+<blockquote>
+<p>note: when you search online for <a href="https://unicode.org/emoji/charts/full-emoji-list.html">emoji codes</a> the codes are given in hexadecimal (base 16) and vim wants them in decimal (base 10). You can use <a href="https://www.binaryhexconverter.com/hex-to-decimal-converter">an online tool</a> to convert hex to dec.</p>
+</blockquote>
+<pre class="vim"><code>dig rb 128997 &quot; 🟥
+dig bb 128998 &quot; 🟦
+dig ob 128999 &quot; 🟧
+dig yb 129000 &quot; 🟨
+dig gb 129001 &quot; 🟩
+dig pb 129002 &quot; 🟪
+dig cf 9749   &quot; ☕
+dig lt 9889   &quot; ⚡
+dig st 10024  &quot; ✨
+dig ck 9989   &quot; ✅
+dig cs 10062  &quot; ❎
+dig &lt;3 129293 &quot; 🤍
+dig :) 128578 &quot; 🙂
+dig :( 128577 &quot; 🙁
+dig ;) 128521 &quot; 😉
+dig :P 128523 &quot; 😋
+dig xD 128514 &quot; 😂
+dig B) 128526 &quot; 😎
+dig :/ 128528 &quot; 😐
+dig (: 128579 &quot; 🙃
+dig 3) 128522 &quot; 😊
+dig 3( 128532 &quot; 😔
+dig :L 128530 &quot; 😒
+dig ;P 128540 &quot; 😜
+dig &gt;: 128545 &quot; 😡
+dig :; 128546 &quot; 😢
+dig :&lt; 128548 &quot; 😤
+dig :I 128556 &quot; 😬
+dig := 128557 &quot; 😭
+dig :o 128558 &quot; 😮
+dig :O 128561 &quot; 😱
+dig 8/ 128563 &quot; 😳
+dig z: 128564 &quot; 😴
+dig xo 128565 &quot; 😵
+dig &lt;/ 128580 &quot; 🙄
+dig hn 128588 &quot; 🙌
+dig tx 128591 &quot; 🙏
+dig ok 128076 &quot; 👌
+dig mm 129292 &quot; 🤌</code></pre>
+<blockquote>
+<p>note: you could also use abbreviations with <code>ab</code> if you want vim to always replace that text in insert mode and don't want to enter a new mode.</p>
+</blockquote>
+<p><a href="https://lual.dev/blog/how-to-use-emojis-with-vim/">source</a></p>
+<h2 id="useful-links">useful links</h2>
+<ul>
+<li><a href="https://github.com/neovim/nvim-lspconfig">nvm language server</a></li>
+<li><a href="https://www.vi-improved.org/plugins/">collection of good vim plugins</a></li>
+<li><a href="https://blog.samwhited.com/2015/04/the-dharma-of-vi/">some funny</a> <a href="https://blog.sanctum.geek.nz/vim-koans/">vim koans</a> on the 'zen' of vim.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+</ul>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p><a href="https://en.wikipedia.org/wiki/Koan">What is a koan?</a> - <a href="https://shapeshed.com/vim-packages/">using the native vim8 package manager</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 <footer>
   <a rel="me" href="https://merveilles.town/@kevin"><img src="/assets/images/icons/mastodon.svg" class="icon"
       width="48px" alt="Mastodon" title="link to my mastodon profile" />Mastodon</a>

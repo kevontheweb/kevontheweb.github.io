@@ -1,0 +1,222 @@
+:root {
+  --text-color: #b2b6b9;
+  --bg-color: #141414;
+  --accent-color: #222222;
+  --alt-text-color: #b2b6b9;
+  --selection-color: #b2b6b9;
+  --content-width: 80ch;
+  --icon-size: 2em;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --text-color: #141414;
+    --bg-color: #f0f0f0;
+    --accent-color: #b2b6b9;
+    --alt-text-color: #b2b6b9;
+    --selection-color: #141414;
+  }
+  .icon{
+    filter: invert(1);
+    filter: brightness(0.1);
+  }
+}
+
+::selection {
+  background: var(--selection-color);
+  color: var(--bg-color);
+}
+
+html {
+  background: var(--bg-color);
+  height: 100%;
+  width: 100%;
+  background-image: radial-gradient(var(--accent-color) 15%, transparent 16%), radial-gradient(var(--accent-color) 15%, transparent 16%);
+  background-size: 8px 16px;
+  background-position: 10px 2px, 5px 10px;
+}
+
+/* layout of page */
+body {
+  max-width: var(--content-width);
+  margin: 3em auto;
+  padding: 3em;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font: 1em /1.6 "Roboto Slab", "Georgia", serif;
+}
+
+main {
+  padding: 1em;
+}
+
+/* general styling */
+blockquote,
+code,
+pre {
+  background-color: var(--accent-color);
+  max-width: 90%;
+  margin: 1em auto;
+}
+
+blockquote,
+pre {
+  padding: 1em;
+}
+
+pre,
+code {
+  font-family: mononoki, "Inconsolata", "Consolas", monospace;
+  font-size: 1em;
+}
+
+blockquote {
+  font-style: italic;
+  border-left: 1px solid var(--text-color);
+}
+
+pre {
+  overflow: auto;
+}
+
+code {
+  padding: 0.1em;
+}
+
+table,
+th,
+td {
+  border: 0.1em solid;
+  padding: 0.3em;
+}
+
+table,
+thead,
+tbody {
+  max-width: 90%;
+  margin: 10px auto;
+  border-collapse: collapse;
+}
+
+ul {
+  list-style-type: "- ";
+}
+
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  padding-right: 1em;
+}
+nav ul {
+  padding-left: 1em;
+}
+
+img {
+  max-width: 75%;
+  display: block;
+  margin: 1em auto;
+  object-fit: scale-down;
+}
+
+figcaption {
+  text-align: center;
+  font-style: italic;
+}
+
+hr {
+  color: var(--text-color);
+  border-width: 0.5px;
+  width: 70%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-style: italic;
+  font-variant-caps: all-small-caps;
+  font-weight: bold;
+  line-height: 1.2;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: underline;
+  font-style: italic;
+  font-variant-caps: all-small-caps;
+  font-weight: bold;
+  color: var(--text-color);
+  font-family: "Roboto", sans-serif;
+}
+
+a > img:not(.icon) {
+  /*images surrounded by links will usually be dithered with a link to full quality img */
+  image-rendering: crisp-edges;
+}
+
+a:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  text-decoration: none;
+}
+
+a:hover > img.icon {
+  filter: invert(1);
+  filter: brightness(0.1);
+}
+
+.post-info {
+  margin: 0 0;
+}
+
+article {
+  max-width: calc(0.8 * var(--content-width));
+}
+
+footer {
+  margin: 1em 0px;
+  text-align: right;
+}
+
+footer > * {
+  display: inline-block;
+  padding-right: 1em;
+}
+
+.icon {
+  display: inline;
+  vertical-align: middle;
+  width: var(--icon-size);
+  padding: 0 0.3em;
+}
+
+.logo {
+    display: inline;
+    max-width: 8em;
+    vertical-align: middle;
+    margin-right: 2em;
+    border-radius: 50%;
+}
+
+header > h1 {
+  display: inline;
+}
+
+@media only screen and (max-width: 800px) {
+  nav ul li {
+    display: inline-block;
+  }
+  body {
+    display: block;
+    padding: 0;
+    padding-left: 1em;
+  }
+  nav {
+    border: none;
+  }
+  html {
+    background: initial;
+  }
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Kevin Nel" />
+  <title>Samson SR850 First Impressions and a Foray Into EQ Using EqualizerAPO</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="/assets/css/oldschool.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+  <img src="/assets/images/pfp.png" class="logo">
+  <h1>kevin's website</h1>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="/">home</a></li>
+    <li><a href="/about.html">about</a></li>
+    <li><a href="/now.html">now</a></li>
+    <li><a href="https://halfdeep.bandcamp.com/">music</a></li>
+    <li><a href="/projects/projects.html">projects</a></li>
+    <li><a href="/knowledge/knowledge.html">knowledge</a></li>
+    <li><a href="/blog/completed/blog-index.html">blog</a></li>
+    <li><a href="/blog/microblog/microblog-index.html">μ-blog</a></li>
+  </ul>
+</nav>
+<header id="title-block-header">
+<h1 class="title">Samson SR850 First Impressions and a Foray Into EQ Using EqualizerAPO</h1>
+<p class="author">Kevin Nel</p>
+</header>
+<p>I have always cared for accuracy in music and love it when I can hear music through something and it just feels like it's the way the artist intended. For the past couple of years I have mostly used IEMs and have never had a decent set of over ear headphones. Not wanting to spend ridiculous amounts of money on a first set of headphones, I opted to purchase a set of the Samson SR850 (for only around $8 as I won a voucher online that covered most of the cost)</p>
+<h2 id="first-impressions">First Impressions</h2>
+<h3 id="sound-stage">Sound Stage</h3>
+<p>Lots of width to the sound! Coming from mainly using IEMs this was the the biggest improvement over my current listening setup. Panned sounds and instruments sound much further away and things in the centre aren't fighting with other instruments. Its absolutely stunning!</p>
+<h3 id="sound">Sound</h3>
+<h4 id="bass">Bass</h4>
+<p>There is not a huge amount of sub bass, but it is perfectly fine for me as I really dont enjoy a bass boosted sound and would rather have an articulation and clarity in the low end. Stuff like bass guitars and synth bass sounds really pop and punch very well, and kicks are present but not overwhelming.</p>
+<h4 id="mids">Mids</h4>
+<p>The mids are nice and clear although the excess high end can make vocals and guitars sit further back than I prefer. These headphones also benefit from a subtle boost between 2 and 5kHz.</p>
+<h4 id="treble">Treble</h4>
+<p>This is the only real negative that I have encountered so far. Cymbals and female vocals can be very pokey and brighter songs are not very pleasant. This brings me to discuss EQ.</p>
+<h2 id="eq">EQ</h2>
+<p>I have never been fond of EQ as I always used to think it was tainting the sound that the artist was trying to create but after lurking on the rand rsubreddits for a while and learning about compensation EQ and stuff like the harmon target I have grown much more fond of it. Seaching online I found <a href="https://www.reddit.com/r/headphones/comments/9xe0ss/samson_sr850_equalizer_profile_peace/">this</a> PEACE config by u/PilotFlying that attempts to compensate based on the Superlux 668B measurements from rtings. After loading this profile up I found the lower mids seemed more recessed than before and the treble was still a bit too much for me. I then loaded up a screen shot of <a href="https://www.rtings.com/headphones/1-3-1/graph#439/3182">the Superlux 668B measurements from rtings</a> and did my own compensation to try and match rtings target response (which is basically the harmon target). I tried to use fewer bands and lower Qs, shaved off some more treble and added a low shelf bass boost at 30Hz to make up for the lack of sub bass. One issue I wasn't able to correct was a narrowing of the stereo image when reducing the High frequencies. I tried to remedy this by boosting over 17kHz with a shelf to help with the <em>"air"</em></p>
+<p>You can download my profile <a href="%7B%7B%20site.url%20%7D%7D%7B%7B%20site.baseurl%20%7D%7D/assets/other/Samson-SR850-rtings-superlux-668B-compensation.peace">here</a>. Just copy it into <code>C:\Program Files\EqualizerAPO\config</code></p>
+<figure>
+<img src="%7B%7B%20site.url%20%7D%7D%7B%7B%20site.baseurl%20%7D%7D/assets/images/samson-SR850-correction.png" loading="lazy" alt="EQ curve overlayed with the Superlux 668B measurements from rtings" /><figcaption aria-hidden="true">EQ curve overlayed with the Superlux 668B measurements from rtings</figcaption>
+</figure>
+<h2 id="resources">Resources</h2>
+<p>The songs I used for testing were:</p>
+<p>Tycho - Awake (I know the way this song sounds very well)</p>
+<p>Tori Kelly - Kid I used to Know (this is just a lovely balanced mix that I enjoy the sound of)</p>
+<p>Vulfpeck - Concious Club (keeping that nice popping bass guitar sound)</p>
+<p>CHVRCHES - Gun (improving the sibilance and upper midrange)</p>
+<p>ACDC - Back in Black (upper midrange for the guitars)</p>
+<p>Highway Tune - Greta Van Fleet (same as Back in Black)</p>
+<p>FKJ - Better Give U Up (mostly focussing on the sub bass)</p>
+<h3 id="isolation">Isolation</h3>
+<p>As a semi open headset they actually block out sound pretty well (especially voices). But dont expect to drown out construction work or anything.</p>
+<h2 id="verdict">Verdict</h2>
+<p>Although these headphones have some excess high end it's really nothing major considering the price of the headphones. The lack of sub bass is not as bad as other reviews make it out to seem and I would wholeheartedly recommend these headphones to anyone interested in dipping their toes into the audiophile world. Overall My corections are relatively subtle as I generally like the sound of this pair of headphones. I mostly wanted to get rid of sibilance, pull the upper mids forward and attempt to get a bit more sub bass. The relatively decent isolation along with great soundstage also make these headphones great for gaming. They will easily outperform most other <em>"gaming"</em> headsets in the same price range. The exagerated high end also makes foley sounds really pop out and can give games an enhanced ambience.</p>
+<footer>
+  <a rel="me" href="https://merveilles.town/@kevin"><img src="/assets/images/icons/mastodon.svg" class="icon"
+      width="48px" alt="Mastodon" title="link to my mastodon profile" />Mastodon</a>
+
+  <a href="https://webring.xxiivv.com/#random" target="_blank"><img src="/assets/images/icons/webring.svg" class="icon"
+      width="48px" alt="Webring" title="link to the Merveilles webring" />Webring</a>
+
+  <a rel="me" href="https://github.com/kevin-nel"><img src="/assets/images/icons/github.svg" class="icon" width="48px"
+      alt="Github" title="link to my Github page" />Github</a>
+
+  <a rel="me" href="https://halfdeep.bandcamp.com/releases"><img src="/assets/images/icons/bandcamp.svg" class="icon"
+      width="48px" alt="Bandcamp" title="link to my music on bandcamp" />Bandcamp</a>
+
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0//"><img src="/assets/images/icons/cc.svg"
+      alt="Creative Commons" title="CC BY-NC-SA 4.0" class="icon" width="48">CC</a>
+  <a href="/"><img src="/assets/images/pfp.png" class="icon" alt="Homw" title="link back to the homepage" />Home</a>
+</footer>
+</body>
+</html>

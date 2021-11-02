@@ -39,6 +39,22 @@
 <header id="title-block-header">
 <h1 class="title">Unix</h1>
 </header>
+<h2 id="infrequently-needed-but-very-helpful-commands.">Infrequently needed but very helpful commands.</h2>
+<p>Really useful stuff that I often forget how to do when I need it.</p>
+<h3 id="convert-mkv-file-to-mp4-with-ffmpeg">Convert mkv file to mp4 with ffmpeg</h3>
+<pre class="bash"><code>ffmpeg -i input_file.mkv -c out_file.mp4</code></pre>
+<h3 id="convert-images-to-pdf-with-imagemagick">Convert images to pdf with ImageMagick</h3>
+<pre class="bash"><code>convert img1.jpg img2.bmp img3.png file.pdf</code></pre>
+<h3 id="search-for-a-command-in-your-bash-history">Search for a command in your bash history</h3>
+<pre class="bash"><code>history | grep &quot;cp -r /file&quot;</code></pre>
+<h3 id="clone-modify-commit-and-push-to-a-git-repo">clone, modify, commit and push to a git repo</h3>
+<pre class="bash"><code>git clone https://github.com/username/repository
+cd repository
+# make your changes
+git add * #adds all files
+git commit -a -m &quot;commit message&quot;
+git status #double check what you modified
+git push -u origin main #main is the branch to push commit to and -u sets it as default so you can just use git push for future commits</code></pre>
 <h2 id="linux">Linux</h2>
 <p><a href="/blog/completed/2021-06-30-why-i-think-linux-is-great.html">why i think linux is great</a></p>
 <h3 id="distributions">distributions</h3>

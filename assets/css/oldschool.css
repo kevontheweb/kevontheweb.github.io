@@ -55,6 +55,8 @@ blockquote,
 code,
 pre {
   background-color: var(--accent-color);
+  max-width: 90%;
+  margin: 1em auto;
 }
 
 blockquote,

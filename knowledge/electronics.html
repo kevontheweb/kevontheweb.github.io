@@ -43,20 +43,56 @@
 <h2 id="connectors">connectors</h2>
 <p>crimp connectors often have a lip that can be pressed in order to remove the wires from the connector.</p>
 <p>some common connectors are: - jst - dupont - molex</p>
-<p>this video is a very thorough explanation of how to crimp many types of connectors.</p>
-<p>https://www.youtube.com/watch?v=GZOh1NzqzzU</p>
+<p><a href="https://www.youtube.com/watch?v=GZOh1NzqzzU">This video</a> is a very thorough explanation of how to crimp many types of connectors.</p>
 <h2 id="digital-electronics">digital electronics</h2>
 <h3 id="bitwise-operations">bitwise operations</h3>
-<p>multiplication by 2 can be accomplished by shifting the bits in a register to the left by 1</p>
-<p>division by 2 can be accomplished by shifting the bits in a register to the right by 1</p>
-<p>modulo as well as many other operations can be done similarly</p>
-<p>see <a href="https://mastodon.social/@elbosso/106767096728015399">this post</a> and <a href="https://graphics.stanford.edu/~seander/bithacks.html">this article</a></p>
-<p>this <a href="https://bisqwit.iki.fi/story/howto/bitmath/">wiki on bitmath</a> is also really good</p>
+<p>Multiplication by 2 can be accomplished by shifting the bits in a register to the left by 1</p>
+<p>Division by 2 can be accomplished by shifting the bits in a register to the right by 1</p>
+<p>Modulo as well as many other operations can be done similarly</p>
+<p>See <a href="https://mastodon.social/@elbosso/106767096728015399">this post</a> and <a href="https://graphics.stanford.edu/~seander/bithacks.html">this article</a></p>
+<p>This <a href="https://bisqwit.iki.fi/story/howto/bitmath/">wiki on bitmath</a> is also really good</p>
 <h2 id="esp32">esp32</h2>
-<p><a href="https://hackaday.com/2016/10/27/basic-interpreter-hidden-in-esp32-silicon/">esp32 basic interpreter</a></p>
-<p><a href="https://esp32forth.appspot.com/ESP32forth.html">esp32 forth</a></p>
+<ul>
+<li><a href="https://hackaday.com/2016/10/27/basic-interpreter-hidden-in-esp32-silicon/">esp32 basic interpreter</a></li>
+<li><a href="https://esp32forth.appspot.com/ESP32forth.html">esp32 forth</a></li>
+</ul>
 <h2 id="software-tools">Software Tools</h2>
-<p><a href="https://wokwi.com/">wokwi arduino simulator</a> <a href="https://www.flux.ai/p">flux - collaborative EDA</a></p>
+<ul>
+<li><a href="https://wokwi.com/">wokwi arduino simulator</a></li>
+<li><a href="https://www.flux.ai/p">flux - collaborative EDA</a></li>
+</ul>
+<h2 id="bugs-that-i-want-to-document-because-it-wasted-a-lot-of-my-time">bugs that i want to document because it wasted a lot of my time</h2>
+<h3 id="unable-to-communicate-over-serial-with-hardware-arduino-ch341-serial-etc-on-linux">unable to communicate over serial with hardware (arduino, ch341 serial etc) on linux</h3>
+<ol type="1">
+<li>Make sure you are in the <code>uucp</code> group.</li>
+</ol>
+<pre class="bash"><code>usermod -aG uucp $USER</code></pre>
+<ol start="2" type="1">
+<li>Check if you have <code>orca</code> installed. <code>brltty</code>, a dependency of orca, conflicts with the udev rules that assign <code>/dev/ttyUSB*</code> and other serial devices) uninstall <code>orca</code> and <code>brltty</code> and check if your problem is resolved.</li>
+</ol>
+<blockquote>
+<p>You may need to log out and log back in for these fixes (definitely for number 1)</p>
+</blockquote>
+<ol start="3" type="1">
+<li>check dmesg output to see what is happening. (it may help if you still don't come right)</li>
+</ol>
+<pre class="bash"><code>dmesg -k | grep &quot;ftdi&quot;
+dmesg -k | grep &quot;ttyUSB&quot;
+dmesg -k | grep &quot;ch34&quot;</code></pre>
+<p><a href="https://www.ftdichip.com/Support/Documents/TechnicalNotes/TN_102_Customising_FTDI_VID_PID_In_Linux(FT_000081).pdf">source</a> that helped me figure it out</p>
+<h3 id="intel-quartus-prime-jtag-hardware-not-showing">intel quartus prime jtag, hardware not showing</h3>
+<p>The following script I wrote will help to reset the quartus jtag daemon</p>
+<p>This quirk can be found documented <a href="https://ecen3350.rocks/static/usb-blaster.pdf">here</a> and the <a href="https://wiki.archlinux.org/title/Intel_Quartus_Prime#Error_when_scanning_hardware_-_Server_error">arch wiki page</a> was also helpful</p>
+<pre class="bash"><code>#!/bin/bash
+
+DIR=$(pwd)
+cd ~/intelFPGA_lite/20.1/quartus/bin/;
+sudo killall -9 jtagd;
+sleep 2;
+sudo ./jtagd;
+sleep 3;
+./jtagconfig;
+cd $DIR;</code></pre>
 <footer>
   <a rel="me" href="https://merveilles.town/@kevin"><img src="/assets/images/icons/mastodon.svg" class="icon"
       width="48px" alt="Mastodon" title="link to my mastodon profile" />Mastodon</a>

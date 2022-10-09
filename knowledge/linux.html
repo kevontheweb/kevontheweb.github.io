@@ -39,14 +39,18 @@
 <header id="title-block-header">
 <h1 class="title">Unix</h1>
 </header>
-<h2 id="infrequently-needed-but-very-helpful-commands.">Infrequently needed but very helpful commands.</h2>
+<h2 id="infrequently-needed-but-very-helpful-commands">Infrequently needed but very helpful commands</h2>
 <p>Really useful stuff that I often forget how to do when I need it.</p>
 <h3 id="convert-mkv-file-to-mp4-with-ffmpeg">Convert mkv file to mp4 with ffmpeg</h3>
 <pre class="bash"><code>ffmpeg -i input_file.mkv -c out_file.mp4</code></pre>
 <h3 id="convert-images-to-pdf-with-imagemagick">Convert images to pdf with ImageMagick</h3>
 <pre class="bash"><code>convert img1.jpg img2.bmp img3.png file.pdf</code></pre>
+<h3 id="merge-multiple-images">Merge multiple images</h3>
+<pre class="bash"><code>convert -append img_in_*.jpg img_out.jpg #vertically
+convert +append img_in_*.jpg img_out.jpg #horizontally</code></pre>
 <h3 id="search-for-a-command-in-your-bash-history">Search for a command in your bash history</h3>
 <pre class="bash"><code>history | grep &quot;cp -r /file&quot;</code></pre>
+<p><strong>OR USE <C-r> and start typing to reverse search through your history 😱</strong></p>
 <h3 id="clone-modify-commit-and-push-to-a-git-repo">clone, modify, commit and push to a git repo</h3>
 <pre class="bash"><code>git clone https://github.com/username/repository
 cd repository
@@ -56,31 +60,49 @@ git commit -a -m &quot;commit message&quot;
 git status #double check what you modified
 git push -u origin main #main is the branch to push commit to and -u sets it as default so you can just use git push for future commits</code></pre>
 <h2 id="linux">Linux</h2>
-<p><a href="/blog/completed/2021-06-30-why-i-think-linux-is-great.html">why i think linux is great</a></p>
-<h3 id="distributions">distributions</h3>
-<h4 id="debian">debian</h4>
-<p>point release distribution that has been around forever. many other distributions are based on it (ubuntu etc). uses the apt package manager</p>
-<h4 id="arch">arch</h4>
-<p>Rolling release distribution, strives to be bleeding edge. 64 bit support only with community support for arm and other architectures. uses the pacman package manager. has a community run packaging systems (AUR arch user repositories) where users can package sofware not available in the official repositories, this makes a lot of software available for the platform.</p>
 <ul>
-<li><a href="https://roosnaflak.com/tech-and-research/setting-up-arch-linux-on-asus-a15/#sound">arch setup guide</a></li>
-<li><a href="https://wiki.archlinux.org/">arch wiki</a></li>
-</ul>
-<h2 id="plan-9">Plan 9</h2>
-<p>Bell labs successor to UNIX. never really took off has very interesting and novel ways of dealing with multi-users and networks.</p>
-<ul>
-<li><a href="http://doc.cat-v.org/plan_9/2nd_edition/plan9.att.com/">cat v plan 9</a></li>
-<li><a href="http://doc.cat-v.org/plan_9/4th_edition/papers/9">plan9 fourth edition papers</a></li>
-<li><a href="https://ftrv.se/8">ftrv.se</a></li>
-<li><a href="http://9p.zone/">9p.zone</a></li>
-</ul>
-<h2 id="software">software</h2>
-<p>collection of great <a href="https://circle.gnome.org/">gnome</a> apps</p>
-<h3 id="audio">audio</h3>
-<ul>
-<li>pavucontrol (pulse audio volume control)</li>
+<li><a href="/blog/completed/2021-06-30-why-i-think-linux-is-great.html">why i think linux is great</a></li>
 <li>my guide to setting up <a href="/blog/completed/2021-07-16-windows-vsts-on-linux.html">windows vsts on linux</a> using yabridge</li>
 </ul>
+<!--
+### distributions
+
+#### debian
+
+point release distribution that has been around forever. many other distributions are based on it (ubuntu etc).
+uses the apt package manager
+
+#### arch
+
+Rolling release distribution, strives to be bleeding edge.
+64 bit support only with community support for arm and other architectures.
+uses the pacman package manager.
+has a community run packaging systems (AUR arch user repositories) where users can package sofware not available in the official repositories, this makes a lot of software available for the platform.
+
+- [arch setup guide](https://roosnaflak.com/tech-and-research/setting-up-arch-linux-on-asus-a15/#sound)
+- [arch wiki](https://wiki.archlinux.org/)
+
+## Plan 9
+
+Bell labs successor to UNIX.
+never really took off
+has very interesting and novel ways of dealing with multi-users and networks.
+
+- [cat v plan 9](http://doc.cat-v.org/plan_9/2nd_edition/plan9.att.com/)
+- [plan9 fourth edition papers](http://doc.cat-v.org/plan_9/4th_edition/papers/9)
+- [ftrv.se](https://ftrv.se/8)
+- [9p.zone](http://9p.zone/)
+
+## software
+
+collection of great [gnome](https://circle.gnome.org/) apps
+
+### audio
+
+- pavucontrol (pulse audio volume control)
+- my guide to setting up [windows vsts on linux](/blog/completed/2021-07-16-windows-vsts-on-linux.md) using yabridge
+
+-->
 <footer>
   <a rel="me" href="https://merveilles.town/@kevin"><img src="/assets/images/icons/mastodon.svg" class="icon"
       width="48px" alt="Mastodon" title="link to my mastodon profile" />Mastodon</a>

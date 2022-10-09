@@ -39,9 +39,11 @@
 <header id="title-block-header">
 <h1 class="title">amateur radio</h1>
 </header>
+<p>I am currently in the process of acquiring my amateur radio licence but I have still had a chance to play around a bit. On of my biggest interests is software defined radio which can be super powerful and makes it very easy (and cheap) to visualise the RF spectrum over really wide bandwidths.</p>
 <h2 id="why-amateur-radio-is-cool">Why amateur radio is cool</h2>
-<p>Here are a collection of cool stuff that you can do with amateur radio.</p>
-<p>This <a href="https://youtu.be/DREv1zpkVwM">excellent talk by Gerard de Jong</a> also goes over a lot of cool stuff you can do with sdr and amateur radio.</p>
+<p>Here is a collection of cool stuff that you can do with amateur radio.</p>
+<p>This <a href="https://youtu.be/DREv1zpkVwM">excellent talk by Gerard de Jong</a> goes over a lot of cool stuff you can do with sdr and amateur radio.</p>
+<p>Here are some of my favorites (not all of these are from the above video):</p>
 <ul>
 <li>receive signals from <a href="satellites.html">satellites</a>.
 <ul>
@@ -61,7 +63,7 @@
 <li>visualise air traffic using <a href="https://en.wikipedia.org/wiki/Automatic_Dependent_Surveillance%E2%80%93Broadcast">ads-b</a></li>
 <li>visualise ship traffic</li>
 </ul>
-<p>you can also use a <a href="/knowledge/raspberrypi.html">raspberry pi</a> to transmit radio signals. here are a few projects that allow you to do that.</p>
+<p>You can also use a <a href="/knowledge/raspberrypi.html">raspberry pi</a> to transmit radio signals. Here are a few projects that allow you to do that.</p>
 <ul>
 <li><a href="https://github.com/F5OEO/rpitx">rpitx</a>
 <ul>
@@ -84,13 +86,15 @@
 </ul>
 <h2 id="sdr">SDR</h2>
 <h3 id="rtl-sdr">rtl-sdr</h3>
-<p>rtl-sdr comes from a digital TV chip that was hacked and now we have cheap sdrs</p>
-<p>the rtl-sdr dongles can do hf with some work arounds:</p>
+<p>The rtl-sdr comes from a digital TV chip that was "hacked" to receive a much wider range of signals than originally intended and now we have really cheap (receive only) sdrs</p>
+<p>The rtl-sdr dongles can do hf with some work arounds, but are most comfortable in the range of 500 kHz - 1766 MHz, Depending on what <a href="#sdr-software">sdr software</a> you use it can sample up to 24MHz but is most stable at 2.4MHz:</p>
 <ul>
 <li><a href="http://www.radioforeveryone.com/p/the-new-smart-manufacturer-link-can-do.html">hf on rtl sdr using direct sampling</a></li>
 <li><a href="https://www.rtl-sdr.com/tag/upconverter/">hf on rtl sdr using up converter</a></li>
 </ul>
+<p>the rtl-sdr-blog radio has <a href="https://www.rtl-sdr.com/wp-content/uploads/2018/02/RTL-SDR-Blog-V3-Datasheet.pdf">a great datasheet</a></p>
 <h3 id="sdr-software">SDR software</h3>
+<p>Here are some SDR softwares. Personally, I User SDR++ and GQRX.</p>
 <ul>
 <li><a href="https://batchdrake.github.io/SigDigger/">SigDigger</a></li>
 <li><a href="https://github.com/cjcliffe/CubicSDR">CubicSDR</a></li>
@@ -100,21 +104,20 @@
 <li><a href="">sdr sharp</a> *windows only</li>
 </ul>
 <h3 id="gnu-radio">GNU-Radio</h3>
+<p>I have not dedicated the time to learn gnu-radio but it seems like an extremely powerful toolkit for processing of RF signal (and signals in general).</p>
 <ul>
 <li><a href="https://greatscottgadgets.com/sdr/">michael ossmans gnu radio dsp sdr course</a></li>
 <li><a href="https://www.rtl-sdr.com/tag/gnu-radio/">using gnu radio with rtl sdr</a></li>
 </ul>
 <h2 id="gps">GPS</h2>
-<p>very cool concept for an open source off-grid mesh network using relatively inexpensive GPS radio microcontrollers using the LoRa protocol</p>
-<p><a href="https://meshtastic.org/">meshtastic.org</a></p>
+<p><a href="https://meshtastic.org/">meshtastic.org</a> is a very cool concept for an open source off-grid mesh network, powered by LoRa-WAN, that uses relatively inexpensive microcontrollers.</p>
 <h2 id="vhfuhf">VHF/UHF</h2>
 <p>I have a <a href="/gear/ham.html">baofeng uv5-r</a> for VHF/UHF</p>
 <p>A lot of <a href="satellites.html">satellites</a> and even the ISS use VHF/UHF</p>
 <h3 id="security-companies">Security Companies</h3>
 <p>In south africa a lot of radios targeted at security companies use the 464 and 446MHz UHF bands at 0.5 watts to avoid the need for a licence.</p>
-<figure>
-<img src="/assets/images/other/zartek-no-licence-freq.png" alt="an example of a radio with some no-licence bands pre programmed in" /><figcaption aria-hidden="true">an example of a radio with some no-licence bands pre programmed in</figcaption>
-</figure>
+<!-- ![an example of a radio with some no-licence bands pre programmed in](/assets/images/other/zartek-no-licence-freq.png)
+ -->
 <h2 id="modes">Modes</h2>
 <p>you can use the <a href="https://www.sigidwiki.com/wiki/Database">sigid wiki</a> to help identify a signal and aid in decoding it.</p>
 <h3 id="sstv">SSTV</h3>
@@ -150,6 +153,7 @@
 <h2 id="antennae">antennae</h2>
 <p>to make any of these antennae you can just search "$ANTENNANAME calculator". there are many different calculators that can assist in working out the measurements for the antennae.</p>
 <h3 id="yagi-uda">Yagi-Uda</h3>
+<p>The Yagi-Uda antenna has a bit of a thomas edison/nikola tesla telephone thing going on, it seems that Uda was largely responsible for it's creation but He worked under Yagi and thus the Yagi-Uda antenna was born. It is most commonly just referred to as a Yagi.</p>
 <figure>
 <img src="/assets/images/other/Yagi-Uda.png" alt="Yagi-Uda on Wikipedia" /><figcaption aria-hidden="true"><a href="https://en.wikipedia.org/wiki/Yagi%E2%80%93Uda_antenna">Yagi-Uda on Wikipedia</a></figcaption>
 </figure>

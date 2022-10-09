@@ -44,7 +44,14 @@
 <h2 id="cool-vim-things-i-like-to-use.">cool vim things i like to use.</h2>
 <ul>
 <li><code>gf</code> to go to open file under cursor and <code>C-O</code> to return back to last open file</li>
+<li><code>g;</code> to go to the line where you last made an edit</li>
+<li><code>ci(</code> to change the text inside the parenthesis that the cursor is withing (also works for other bracket types as well as closing brackets <code>{,},[,],)</code>)</li>
 <li><code>f</code> and <code>t</code> to move the cursor to next occurence of a character on the current line (capital <code>F</code> and <code>T</code> move to previous)</li>
+<li><code>V</code> to select the current line</li>
+<li>searching for a word with <code>/</code> and then using <code>n</code> to go to next occurrence and <code>N</code> to go to previous occurrence</li>
+<li>scrolling by a full page with forward (<code>&lt;c-f&gt;</code>) back (<code>&lt;c-b&gt;</code>)</li>
+<li>centering line at cursor in the view with <code>zz</code></li>
+<li>I also like to use vim substitutions using the <code>:s</code> command.</li>
 </ul>
 <h2 id="plugins-i-use">plugins i use</h2>
 <p>I currently use <a href="https://github.com/junegunn/vim-plug">vim-plug</a> to manage plugins but I do want to give the native vim8 plugin manager a try. Plugins:</p>
@@ -54,7 +61,7 @@
 <li><a href="https://github.com/sheerun/vim-polyglot">vim-polyglot</a> improves the syntax highlighting for a lot of languages.</li>
 <li><a href="https://github.com/ackyshake/VimCompletesMe">VimCompletesMe</a> sets up tab completion using native vim completion like omnicomplete based on the context.</li>
 </ul>
-<p>Themes: - <a href="https://github.com/rakr/vim-two-firewatch">vim two firewatch</a> is a duo tone theme that i very much like. - <a href="https://github.com/jeffkreeftmeijer/vim-dim">vim dim</a> uses ansi color codes so that vim uses your terminal colors.</p>
+<p>Themes: - <a href="https://github.com/jeffkreeftmeijer/vim-dim">vim dim</a> uses ansi color codes so that vim uses your terminal colors.</p>
 <h2 id="useful-stuff-in-my-vimrc">useful stuff in my vimrc</h2>
 <p>Below is some of the stuff that took me some time to figure out. I have left out the simpler stuff like displaying whitespace, setting up clipboard and mouse, and my autocmds and macros.</p>
 <h3 id="remove-trailing-whitespaces-on-save">remove trailing whitespaces on save</h3>
@@ -96,18 +103,7 @@ set statusline+=\ %l:%c</code></pre>
 <blockquote>
 <p>note: when you search online for <a href="https://unicode.org/emoji/charts/full-emoji-list.html">emoji codes</a> the codes are given in hexadecimal (base 16) and vim wants them in decimal (base 10). You can use <a href="https://www.binaryhexconverter.com/hex-to-decimal-converter">an online tool</a> to convert hex to dec.</p>
 </blockquote>
-<pre class="vim"><code>dig rb 128997 &quot; 🟥
-dig bb 128998 &quot; 🟦
-dig ob 128999 &quot; 🟧
-dig yb 129000 &quot; 🟨
-dig gb 129001 &quot; 🟩
-dig pb 129002 &quot; 🟪
-dig cf 9749   &quot; ☕
-dig lt 9889   &quot; ⚡
-dig st 10024  &quot; ✨
-dig ck 9989   &quot; ✅
-dig cs 10062  &quot; ❎
-dig &lt;3 129293 &quot; 🤍
+<pre class="vim"><code>dig &lt;3 129293 &quot; 🤍
 dig :) 128578 &quot; 🙂
 dig :( 128577 &quot; 🙁
 dig ;) 128521 &quot; 😉

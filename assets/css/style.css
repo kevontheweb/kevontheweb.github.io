@@ -32,7 +32,7 @@ body {
   color: var(--text-color);
   padding: 3em;
   font: 1.03em /1.5 var(--font), sans-serif;
-  border-radius: 1rem;
+  border-radius: 10px;
 }
 
 header {
@@ -47,7 +47,7 @@ header {
   max-width: 8em;
   vertical-align: middle;
   margin-right: 2em;
-  border-radius: 10%;
+  border-radius: 10px;
 }
 
 main {
@@ -165,9 +165,12 @@ section.posts {
 }
 
 #mastodon-section {
-  max-height: 50vh;
+  max-height: 60vh;
   max-width: 35%;
   margin-left: 1rem;
+  background: var(--bg-2);
+  padding: 0rem 2rem 0.25rem 2rem;
+  border-radius: 10px;
   flex-basis: 35%;
 }
 

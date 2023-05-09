@@ -1,11 +1,11 @@
 :root {
   --text-color: #b2b6b9;
   --bg-color: #141414;
-  --accent-color: #222222;
+  --accent-color: #1b1b1b;
   --alt-text-color: #b2b6b9;
   --selection-color: #b2b6b9;
-  --content-width: 80ch;
-  --icon-size: 2em;
+  --content-width: 1200px;
+  --icon-size: 3em;
 }
 
 @media (prefers-color-scheme: light) {
@@ -16,10 +16,6 @@
     --alt-text-color: #b2b6b9;
     --selection-color: #141414;
   }
-  .icon{
-    filter: invert(1);
-    filter: brightness(0.1);
-  }
 }
 
 ::selection {
@@ -28,26 +24,47 @@
 }
 
 html {
-  background: var(--bg-color);
-  height: 100%;
-  width: 100%;
-  background-image: radial-gradient(var(--accent-color) 15%, transparent 16%), radial-gradient(var(--accent-color) 15%, transparent 16%);
-  background-size: 8px 16px;
-  background-position: 10px 2px, 5px 10px;
+  background: linear-gradient(90deg, var(--bg-color) 15%, transparent 1%) center,
+    linear-gradient(var(--bg-color) 15%, transparent 1%) center, var(--accent-color);
+  background-size: 20px 20px;
 }
 
 /* layout of page */
 body {
   max-width: var(--content-width);
   margin: 3em auto;
+  display: flex;
+  flex-wrap: wrap;
   padding: 3em;
   background-color: var(--bg-color);
   color: var(--text-color);
-  font: 1em /1.6 "Roboto Slab", "Georgia", serif;
+  font: 18px /1.4 "Roboto Slab", "Georgia", serif;
+}
+
+header {
+  flex-basis: 100%;
+  flex-shrink: 0;
+  padding: 2em 0;
 }
 
 main {
+  flex-basis: 75%;
   padding: 1em;
+}
+
+footer {
+  flex-basis: 100%;
+  flex-shrink: 0;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+body > nav {
+  flex-basis: content;
+  padding-right: 2em;
 }
 
 /* general styling */
@@ -55,8 +72,6 @@ blockquote,
 code,
 pre {
   background-color: var(--accent-color);
-  max-width: 90%;
-  margin: 1em auto;
 }
 
 blockquote,
@@ -67,7 +82,7 @@ pre {
 pre,
 code {
   font-family: mononoki, "Inconsolata", "Consolas", monospace;
-  font-size: 1em;
+  font-size: 14px;
 }
 
 blockquote {
@@ -102,17 +117,16 @@ ul {
   list-style-type: "- ";
 }
 
-nav ul li {
-  list-style: none;
-  display: inline-block;
-  padding-right: 1em;
+nav {
+  border-right: 1px solid var(--text-color);
 }
+
 nav ul {
   padding-left: 1em;
 }
 
 img {
-  max-width: 75%;
+  max-width: 90%;
   display: block;
   margin: 1em auto;
   object-fit: scale-down;
@@ -136,7 +150,7 @@ h4,
 h5,
 h6 {
   font-style: italic;
-  font-variant-caps: all-small-caps;
+  font-variant-caps: small-caps;
   font-weight: bold;
   line-height: 1.2;
   font-family: "Roboto", sans-serif;
@@ -145,7 +159,7 @@ h6 {
 a {
   text-decoration: underline;
   font-style: italic;
-  font-variant-caps: all-small-caps;
+  font-variant-caps: small-caps;
   font-weight: bold;
   color: var(--text-color);
   font-family: "Roboto", sans-serif;
@@ -182,14 +196,12 @@ footer {
 
 footer > * {
   display: inline-block;
-  padding-right: 1em;
 }
 
 .icon {
   display: inline;
   vertical-align: middle;
   width: var(--icon-size);
-  padding: 0 0.3em;
 }
 
 .logo {
@@ -197,7 +209,7 @@ footer > * {
     max-width: 8em;
     vertical-align: middle;
     margin-right: 2em;
-    border-radius: 50%;
+    border-radius: 50%; 
 }
 
 header > h1 {

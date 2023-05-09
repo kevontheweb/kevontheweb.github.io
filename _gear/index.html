@@ -1,0 +1,20 @@
+---
+title: Gear
+permalink: /:collection/
+---
+
+{{ site.gear.description }}
+
+<p>{{site.gear.title}}</p>
+
+<section class="posts">
+  <ul>
+    {% for page in site.gear %}
+      {% unless page.title contains "Gear" %}
+        <li>
+            <a class="page-link" href="{{ page.url }}">{{ page.title | escape }}</a>
+        </li>
+        {% endunless %}
+    {% endfor %}
+  </ul>
+</section>

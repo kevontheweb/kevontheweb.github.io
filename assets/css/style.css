@@ -166,8 +166,9 @@ section.posts {
 
 #mastodon-section {
   max-height: 50vh;
-  max-width: 25%;
+  max-width: 35%;
   margin-left: 1rem;
+  flex-basis: 35%;
 }
 
 #mastodon-posts {
@@ -176,11 +177,7 @@ section.posts {
   overflow-y: auto;
 }
 
-#mastodon-section>h1 {
-  position: sticky;
-}
-
-article {
+article.h-entry {
   max-width: 85%
 }
 

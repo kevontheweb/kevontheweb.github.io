@@ -1,5 +1,5 @@
 ---
-title: electronics
+title: Electronics
 ---
 <!--
 This is where I try to store all the information that I frequently forget or need a refresher on.
@@ -16,6 +16,7 @@ some common connectors are:
 
 [This video](https://www.youtube.com/watch?v=GZOh1NzqzzU) is a very thorough explanation of how to crimp many types of connectors.
 
+-->
 ## digital electronics
 
 ### bitwise operations
@@ -30,11 +31,6 @@ See [this post](https://mastodon.social/@elbosso/106767096728015399) and [this a
 
 This [wiki on bitmath](https://bisqwit.iki.fi/story/howto/bitmath/) is also really good
 
-## esp32
-
-- [esp32 basic interpreter](https://hackaday.com/2016/10/27/basic-interpreter-hidden-in-esp32-silicon/)
-- [esp32 forth](https://esp32forth.appspot.com/ESP32forth.html)
-
 ## Software Tools
 
 - [wokwi arduino simulator](https://wokwi.com/)
@@ -46,9 +42,11 @@ This [wiki on bitmath](https://bisqwit.iki.fi/story/howto/bitmath/) is also real
 ### unable to communicate over serial with hardware (arduino, ch341 serial etc) on linux
 
 1. Make sure you are in the ``uucp`` group.
+
 ```bash
 usermod -aG uucp $USER
 ```
+
 2. Check if you have ``orca`` installed. ``brltty``, a dependency of orca, conflicts with the udev rules that assign ``/dev/ttyUSB*`` and other serial devices) uninstall ``orca`` and ``brltty`` and check if your problem is resolved.
 
 > You may need to log out and log back in for these fixes (definitely for number 1)

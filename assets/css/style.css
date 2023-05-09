@@ -125,11 +125,16 @@ a:hover.icon {
 }
 
 .post-info-card {
-  flex-basis: 25%;
+  flex-basis: 35%;
+}
+
+.post-info-card p {
+  margin: 0.2rem 0;
 }
 
 .p-name {
-  flex-basis: 75%;
+  margin-top: 0.2rem;
+  flex-basis: 65%;
 }
 
 section.posts {
@@ -183,8 +188,7 @@ article table {
   margin: 0 auto
 }
 
-article img,
-article pre {
+article img {
   margin: 0 auto;
   max-width: 75%;
   display: block;
@@ -194,7 +198,6 @@ article pre {
 article pre {
   max-width: 85%;
   overflow-x: scroll;
-  border-radius: 0px;
 }
 
 article figcaption {

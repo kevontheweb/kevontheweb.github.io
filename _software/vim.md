@@ -1,17 +1,17 @@
 ---
-title: vim
+title: Vim
 ---
 
 This page contains a bunch of vim related stuff.
 
 Here is an article I wrote about my mistake when first learning vim:  [Don't get bad typing habits](/blog/completed/2020-10-10-touch-typing-and-vim.md)
 
-## cool vim things i like to use.
+## cool vim things i like to use
 
 - ``gf`` to go to open file under cursor and ``C-O`` to return back to last open file
 - ``g;`` to go to the line where you last made an edit
-- ``ci(`` to change the text inside the parenthesis that the cursor is withing (also works for other bracket types as well as closing brackets ``{,},[,],)``)
-- ``f`` and ``t`` to move the cursor to next occurence of a character on the current line (capital ``F`` and ``T`` move to previous)
+- ``ci(`` to change the text inside the parenthesis that the cursor is within (also works for other bracket types as well as closing brackets ``{,},[,],)``)
+- ``f`` and ``t`` to move the cursor to next occurrence of a character on the current line (capital ``F`` and ``T`` move to previous)
 - ``V`` to select the current line
 - searching for a word with ``/`` and then using ``n`` to go to next occurrence and ``N`` to go to previous occurrence
 - scrolling by a full page with forward (``<c-f>``) back (``<c-b>``)
@@ -29,6 +29,7 @@ Plugins:
 - [VimCompletesMe](https://github.com/ackyshake/VimCompletesMe) sets up tab completion using native vim completion like omnicomplete based on the context.
 
 Themes:
+
 - [vim dim](https://github.com/jeffkreeftmeijer/vim-dim) uses ansi color codes so that vim uses your terminal colors.
 
 ## useful stuff in my vimrc

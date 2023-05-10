@@ -9,7 +9,7 @@ If you, like me, moved over to VSCode after using sublime you probably miss the 
 
 Well as with most problems regarding VSCode *There's an extension for that*.
 
-![zen](/assets/images/zenmode.gif){loading="lazy"}
+![zen](/assets/images/zenmode.gif)
 
 ## Step 1
 
@@ -21,7 +21,7 @@ Step 2 is to add the following lines to your ``settings.json``.
 
 If you dont know how to open your ``settings.json`` you can open it by pressing ``ctrl+shift+p`` and then typing ``settings`` this bring up the option to either open your settings.json or open settings UI. select the settings.json and hit enter.
 
-![VSCode Settings](/assets/images/settingsjson.gif){loading="lazy"}
+![VSCode Settings](/assets/images/settingsjson.gif)
 
 ```json
 "settings.cycle": [
@@ -61,7 +61,7 @@ in order to assign a keyboard shortcut to these sets of settings you have to add
 
 You can open the ``keybindings.json`` file the same way as for ``settings.json``. Just search for ``keyboard shortcut``
 
-![VSCode Keybindings](/assets/images/keybindingsjson.gif){loading="lazy"}
+![VSCode Keybindings](/assets/images/keybindingsjson.gif)
 
 ```json
 {

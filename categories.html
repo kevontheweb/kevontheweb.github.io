@@ -8,7 +8,7 @@ permalink: /categories/
   {% for category in site.categories %}
   <section class="category">
     {% capture category_name %}{{ category | first }}{% endcapture %}
-    <h2>{{ category_name }}</h3>
+    <h2>{{ category_name | capitalize }}</h3>
       <ul>
         {% for post in site.categories[category_name] %}
         <li><time datetime="{{post.date}}">{{ post.date | date: "%B %e, %Y" }}&nbsp;</time><a

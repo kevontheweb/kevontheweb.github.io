@@ -38,15 +38,34 @@ body {
 header {
   flex-basis: 100%;
   flex-shrink: 0;
-  display: flex;
+  display: inline;
   grid-template-columns: 30% 50%;
+  /*
+  border-bottom: var(--text-color) 1px solid;
+  border-width: 85%;
+  */
+}
+
+header * {
+  margin-bottom: 1rem;
+}
+
+header>h1 {
+  float: right;
+  display: inline;
+  margin: 0;
+
+}
+
+header>img {
+  float: left;
 }
 
 .logo {
-  display: grid;
+  /*! display: grid; */
   max-width: 8em;
   vertical-align: middle;
-  margin-right: 2em;
+  /*! margin-right: 2em; */
   border-radius: 10px;
 }
 
@@ -55,6 +74,7 @@ main {
   padding-left: 1em;
   max-width: 85%;
   display: flex;
+  margin-top: 1rem;
 }
 
 main img {
@@ -96,6 +116,17 @@ body>nav {
 nav ul {
   padding-left: 1em;
 }
+
+/*
+nav>details>summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+nav>details>summary {
+  display: inline;
+}
+*/
 
 footer {
   display: flex;
@@ -183,7 +214,8 @@ section.posts {
 }
 
 article.h-entry {
-  max-width: 85%
+  max-width: 85%;
+  margin: 0 auto;
 }
 
 article table {
@@ -199,7 +231,11 @@ article img {
 
 article pre {
   max-width: 85%;
+  margin: 0 auto;
   overflow-x: scroll;
+  background-color: var(--bg-2);
+  border-radius: 10px;
+  padding: 1rem;
 }
 
 article figcaption {
@@ -208,16 +244,71 @@ article figcaption {
 }
 
 /* media queries */
-@media screen and (max-width: 500px) {}
+@media screen and (max-width: 1200px) {
+  body {
+    padding: 1rem;
+    max-width: 100%;
+    border-radius: 0;
+    margin: 4rem 0rem 0px 0px;
+    flex-direction: row;
+  }
+
+  nav {
+    border-bottom: var(--text-color) 1px solid;
+    border-width: 85%;
+    margin: 2rem auto;
+  }
+
+  #mastodon-section {
+    margin: 0 0;
+    padding: 0rem 2rem 0.25rem 2rem;
+    max-width: calc(100vw - 6rem);
+  }
+
+  footer {
+    flex-direction: row;
+  }
+
+  /*
+   nav>details>summary::before {
+    content: "☰";
+  } 
+  */
+
+  nav>ul * {
+    display: inline;
+  }
+
+  main section {
+    max-width: 95%;
+  }
+
+  main {
+    display: grid;
+    padding: 0;
+    flex-basis: unset;
+    max-width: unset;
+  }
+
+  article.h-entry {
+    max-width: 85vw;
+  }
+
+  article.h-entry img {
+    max-width: 95%;
+  }
+}
 
 /* media query for dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-color: #2f3e46;
+    --bg-2: #29363D;
     --text-color: #eaf4f4;
-    --bg-2: #dce7e7;
+    --bg-color: #29363D;
+    --bg-color: #192025FF;
     --accent-color: #355f52;
-    --alt-text-color: #a4c3b2;
+    --accent-color: #3A4644FF;
+    --alt-text-color: #819B91FF;
     --font: 'Noto Sans';
   }
 }

@@ -33,7 +33,7 @@ body {
   padding: 3em;
   font: 1.03em /1.5 var(--font), sans-serif;
   border-radius: 10px;
-  min-height: calc(100vh - 12em);
+  /* min-height: calc(100vh - 12em); */
 }
 
 header {
@@ -82,6 +82,10 @@ main img {
   max-width: 80%;
   margin: 0 auto;
   display: block;
+}
+
+main blockquote * {
+  font-style: italic;
 }
 
 header nav {
@@ -218,7 +222,8 @@ section.posts {
 }
 
 article.h-entry {
-  max-width: 85%;
+  max-width: 95%;
+  min-width: 90%;
   margin: 0 auto;
 }
 
@@ -289,7 +294,7 @@ article figcaption {
   }
 
   main section {
-    max-width: 95%;
+    /* max-width: 95%; */
   }
 
   main {
@@ -297,10 +302,6 @@ article figcaption {
     padding: 0;
     flex-basis: unset;
     max-width: unset;
-  }
-
-  article.h-entry {
-    max-width: 85vw;
   }
 
   article.h-entry img {

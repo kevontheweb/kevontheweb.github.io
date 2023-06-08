@@ -4,6 +4,8 @@ author: {{site.author}}
 last_modified_at: 2021-06-30
 ---
 
+> *update: my website no longer uses this, I  am back onm jekyll as my static site generator. I've kept some of the wiki-like functionality though*
+
 I've been very interested in the concepts of digital gardens and [personal knowledge management systems](/projects/pkms.md), so i decided to try and build my own system that could help me be a little more productive when it comes to writing articles, completing projects and organizing information.
 
 This post is a little bit more technical.

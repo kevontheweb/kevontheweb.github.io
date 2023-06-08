@@ -5,6 +5,8 @@ last_modified_at: 2021-04-02
 categories: [music]
 ---
 
+<!-- I have a new writeup with a much more minimal set of plugins for getting started  [over here]()) -->
+
 The first thing I realized when starting with [Reaper](https://reaper.fm) was that I didn't have all the plugins I had before with logic pro and I was hunting down plugins for ages before I started really being productive. so here are my essential plugins for Reaper.
 [TLDR at the end](#conclusion)
 

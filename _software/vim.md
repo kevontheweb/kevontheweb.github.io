@@ -1,41 +1,51 @@
 ---
 title: Vim
+author: {{site.author}}
+last_modified_at: 2023-07-16
+categories: [tech]
 ---
 
 This page contains a bunch of vim related stuff.
-
-Here is an article I wrote about my mistake when first learning vim:  [Don't get bad typing habits](/blog/completed/2020-10-10-touch-typing-and-vim.md)
 
 ## cool vim things i like to use
 
 - ``gf`` to go to open file under cursor and ``C-O`` to return back to last open file
 - ``g;`` to go to the line where you last made an edit
-- ``ci(`` to change the text inside the parenthesis that the cursor is within (also works for other bracket types as well as closing brackets ``{,},[,],)``)
-- ``f`` and ``t`` to move the cursor to next occurrence of a character on the current line (capital ``F`` and ``T`` move to previous)
+- ``ci(`` to change the text inside the parenthesis that the cursor is within (also works for other bracket types as well as closing brackets `{`,`}`,`[`,`]`,`)`, quotations `"`,`'`). `ca(` will change *around* the brackets also deleting the brackets.
+- ``f`` and ``t`` to move the cursor to next occurrence of a character on the current line (capital ``F`` and ``T`` move to previous). You can repeat this movement by using `;` to repeat forward and `,` to repeat backwards.
 - ``V`` to select the current line
 - searching for a word with ``/`` and then using ``n`` to go to next occurrence and ``N`` to go to previous occurrence
 - scrolling by a full page with forward (``<c-f>``) back (``<c-b>``)
 - centering line at cursor in the view with ``zz``
 - I also like to use vim substitutions using the ``:s`` command.
+- ``gx`` to open the file under curse with system default application, **this also works for URLS**
+- ``K`` to open information from diagnostics and documentation for the word under the cursor.
 
 ## plugins i use
 
-I currently use [vim-plug](https://github.com/junegunn/vim-plug) to manage plugins but I do want to give the native vim8 plugin manager a try.
+> note: my config is often changing, you can see what I've got going on at [my configs repo](https://github.com/kevin-nel/linux-configs)
+
+I currently use [lazy.nvim](https://github.com/folke/lazy.nvim) to manage plugins.
+
 Plugins:
 
-- [goyo](https://github.com/junegunn/goyo.vim) is a "zen mode" plugin that centers the content and removes extra ui elements. I like to use it when I am taking notes or writing in english but not really for writing code
-- [vim-easy-align](https://github.com/junegunn/vim-easy-align), I only use this to format markdown tables.
-- [vim-polyglot](https://github.com/sheerun/vim-polyglot) improves the syntax highlighting for a lot of languages.
-- [VimCompletesMe](https://github.com/ackyshake/VimCompletesMe) sets up tab completion using native vim completion like omnicomplete based on the context.
+- [which key](https://github.com/folke/which-key.nvim) shows a nice popup with commands available after you type the first letter of a command. I love this because I often forget custom bindings and this helps me to remember they exist and even learn about some new ones.
+Themes:
+- [gitsigns](https://github.com/lewis6991/gitsigns.nvim) this shows some git information in the gutter. I usually just use regular `git` commands on the cli or vscode for diffs of bigger changes.
+- [codeium](https://github.com/Exafunction/codeium.vim), Whether I like it or not AI is coming and it's at the very least trying to make our jobs easier. I've found this free alternative to co-pilot works quite well. But I often have it disabled as it slows down the editor and I also like to not have so much help when learning.
+- [Telescope](https://github.com/nvim-telescope/telescope.nvim) this is just an all round super useful plugin. It basically adds a command pallette style interface to neovim and lots of other third party plugins support it as well. It's great for fuzzy finding, jumping to symbols and easy control of other neovim parameters.
+- [lualine](https://github.com/nvim-lualine/lualine.nvim), it's a statusline that requires minimal setup.
 
 Themes:
 
-- [vim dim](https://github.com/jeffkreeftmeijer/vim-dim) uses ansi color codes so that vim uses your terminal colors.
+- [tokyo night](https://github.com/folke/tokyonight.nvim)
+
+### LSP stuff
+
+I used [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) as a jumping off point for my LSP setup so I am using [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) for completions, [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) and [mason](https://github.com/williamboman/mason.nvim) for lsp configuration.
+I also use [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim) to run code formatters that aren't supported by the LSPs.
 
 ## useful stuff in my vimrc
-
-Below is some of the stuff that took me some time to figure out.
-I have left out the simpler stuff like displaying whitespace, setting up clipboard and mouse, and my autocmds and macros.
 
 ### remove trailing whitespaces on save
 
@@ -44,16 +54,6 @@ autocmd BufWritePre *.py :%s/\s\+$//e
 ```
 
 [source](https://vim.fandom.com/wiki/Remove_unwanted_spaces)
-
-### nicer shortcuts to switch between splits
-
-```vim
-" swithing panes
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
-```
 
 ### save markdown files on insert leave
 
@@ -95,6 +95,8 @@ set statusline+=\ %p%%
 set statusline+=\ %l:%c
 ```
 
+> edit: I now use [lualine](https://github.com/nvim-lualine/lualine.nvim)
+
 ### type emojis and unicode characters with digraphs
 
 Using ``<Ctr>+k`` in insert mode will allow you to insert unicode characters using two character shorthand.
@@ -112,24 +114,16 @@ dig ;) 128521 " 😉
 dig :P 128523 " 😋
 dig xD 128514 " 😂
 dig B) 128526 " 😎
-dig :/ 128528 " 😐
+dig :| 128528 " 😐
 dig (: 128579 " 🙃
-dig 3) 128522 " 😊
-dig 3( 128532 " 😔
-dig :L 128530 " 😒
-dig ;P 128540 " 😜
 dig >: 128545 " 😡
-dig :; 128546 " 😢
-dig :< 128548 " 😤
 dig :I 128556 " 😬
 dig := 128557 " 😭
 dig :o 128558 " 😮
 dig :O 128561 " 😱
-dig 8/ 128563 " 😳
+dig 8| 128563 " 😳
 dig z: 128564 " 😴
 dig xo 128565 " 😵
-dig </ 128580 " 🙄
-dig hn 128588 " 🙌
 dig tx 128591 " 🙏
 dig ok 128076 " 👌
 dig mm 129292 " 🤌
@@ -141,9 +135,8 @@ dig mm 129292 " 🤌
 
 ## useful links
 
-- [nvm language server](https://github.com/neovim/nvim-lspconfig)
+- [nvim language server](https://github.com/neovim/nvim-lspconfig)
 - [collection of good vim plugins](https://www.vi-improved.org/plugins/)
 - [some funny](https://blog.samwhited.com/2015/04/the-dharma-of-vi/) [vim koans](https://blog.sanctum.geek.nz/vim-koans/) on the 'zen' of vim.[^1]
-- [using the native vim8 package manager](https://shapeshed.com/vim-packages/)
 
 [^1]: [What is a koan?](https://en.wikipedia.org/wiki/Koan)

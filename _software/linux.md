@@ -1,5 +1,8 @@
 ---
 title: Unix
+author: {{site.author}}
+last_modified_at: 2023-07-16
+categories: [tech]
 ---
 
 ## Infrequently needed but very helpful commands

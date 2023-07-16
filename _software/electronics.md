@@ -1,5 +1,8 @@
 ---
 title: Electronics
+author: {{site.author}}
+last_modified_at: 2023-07-16
+categories: [tech]
 ---
 <!--
 This is where I try to store all the information that I frequently forget or need a refresher on.
@@ -35,11 +38,10 @@ This [wiki on bitmath](https://bisqwit.iki.fi/story/howto/bitmath/) is also real
 
 - [wokwi arduino simulator](https://wokwi.com/)
 - [flux - collaborative EDA](https://www.flux.ai/p)
--->
 
-## bugs that i want to document because it wasted a lot of my time
+## Bugs That I Want To Document Because It Wasted A Lot Of My Time
 
-### unable to communicate over serial with hardware (arduino, ch341 serial etc) on linux
+### Unable To Communicate Over Serial With Hardware (Arduino, Ch341 Serial Etc) On Linux
 
 1. Make sure you are in the ``uucp`` group.
 

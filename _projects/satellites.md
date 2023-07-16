@@ -2,6 +2,9 @@
 title: Satellites
 ---
 
+My experiences with amateur radio satellites.
+<!-- (this article is still in outline format) -->
+
 You can use the [heavens above site](https://heavens-above.com/AmateurSats.aspx) or [n2yo](https://www.n2yo.com/) to see what satellites are passing you and when.
 
 Here is a collection of the satellite that I have decoded transmissions from.

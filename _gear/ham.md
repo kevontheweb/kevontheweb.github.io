@@ -1,5 +1,8 @@
 ---
 title: Ham
+author: {{site.author}}
+last_modified_at: 2023-07-16
+categories: [other]
 ---
 
 here is my ham radio stuff:

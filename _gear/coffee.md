@@ -1,5 +1,8 @@
 ---
 title: Coffee
+author: {{site.author}}
+last_modified_at: 2023-07-16
+categories: [other]
 ---
 
 I prefer to prepare my coffee using manual brewing methods and not machines.

@@ -1,6 +1,7 @@
 ---
 title: Keyboards
 last_modified_at: 2023-01-06
+author: {{site.author}}
 ---
 
 I have already dabbled somewhat in building mechanical keyboards.

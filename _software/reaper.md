@@ -1,5 +1,8 @@
 ---
 title: Reaper
+author: {{site.author}}
+last_modified_at: 2023-07-16
+categories: [music]
 ---
 
 ## envelopes in the track

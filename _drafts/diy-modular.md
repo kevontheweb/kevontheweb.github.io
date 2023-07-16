@@ -1,6 +1,8 @@
 ---
 title: DIY Modular
-last_modified_at: 2023-01-06
+author: {{site.author}}
+last_modified_at: 2023-07-16
+categories: [tech]
 ---
 For now this just serves as a knowledge base for future projects relating to modular synthesizers.
 

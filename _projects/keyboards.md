@@ -12,15 +12,31 @@ In the mean time I have been gathering parts and mocking up designs.
 You can read about my very-in-progress pi-pico powered dactyl manuform build [here](https://github.com/kevin-nel/pico-dactyl).
 As well as my way-too-boxy open-scad designed 3d printed baby-v handwire case [here](https://github.com/kevin-nel/babyv).
 
+## reviung41
+
 I currently daily drive a reviung41 ergonomic 40% keyboard, and I find the small size and ability to use layers has made typing much more comfortable (especially for symbols).
 
 ![reviung41](/assets/images/other/reviung.png)
 
+## le chiffre
+
 I have also built a 3D printed and handwired le chiffre 35% keyboard, but it is a little bit small to be practically useful.
 
-here's a family photo 😛
+here's a family photo 😛 with the le chiffre.
 
 ![family photo, top reviung, bottom le chiffre, sides diy split preonic](/assets/images/keebs.jpg)
+
+## corne
+
+I recently ordered some PCBs from [jlcpcb]() to build a corne crkbd
+
+![corne crkbd](/assets/images/corne_akko_neon_mda_kailh_box_royals_1.jpg)
+
+![corne crkbd](/assets/images/corne_akko_neon_mda_kailh_box_royals_2.jpg)
+
+![corne crkbd](/assets/images/corne_akko_neon_mda_kailh_box_royals_3.jpg)
+
+## meetups
 
 I also enjoy interacting with others that are interested in custom mechanical keyboards and have been to a few meetups.
 

@@ -3,18 +3,18 @@ title: Projects
 permalink: /:collection/
 ---
 
-{{ site.projects.description }}
-
 <p>{{site.projects.title}}</p>
+
+{{ site.projects.description }}
 
 <section class="posts">
   <ul>
     {% for page in site.projects %}
-      {% unless page.title contains "Projects" %}
-        <li>
-            <a class="page-link" href="{{ page.url }}">{{ page.title | escape }}</a>
-        </li>
-        {% endunless %}
+    {% unless page.title contains "Projects" %}
+    <li>
+      <a class="page-link" href="{{ page.url }}">{{ page.title | escape }}</a>
+    </li>
+    {% endunless %}
     {% endfor %}
   </ul>
 </section>

@@ -1,16 +1,17 @@
 ---
-title: Gear
+title: Playlists
 permalink: /:collection/
 ---
 
-<p>{{site.gear.title}}</p>
 
-{{ site.gear.description }}
+<p>{{site.playlists.title}}</p>
+
+{{ site.playlists.description }}
 
 <section class="posts">
   <ul>
-    {% for page in site.gear %}
-    {% unless page.title contains "Gear" %}
+    {% for page in site.playlists %}
+    {% unless page.title == "Playlists" %}
     <li>
       <a class="page-link" href="{{ page.url }}">{{ page.title | escape }}</a>
     </li>

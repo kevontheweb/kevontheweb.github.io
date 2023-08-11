@@ -25,6 +25,10 @@ collections:
   projects:
     output: true
     description: Buildlogs and the like.
+  playlists:
+    output: true
+    description: Some playlists I've made.
+
 
 defaults:
   -
@@ -49,6 +53,12 @@ defaults:
     scope:
       path: ""
       type: "projects"
+    values:
+      layout: "collection"
+  -
+    scope:
+      path: ""
+      type: "playlists"
     values:
       layout: "collection"
   -

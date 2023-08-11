@@ -1,5 +1,5 @@
 ---
-title: albums i like
+title: Some Albums I Like
 ---
 
 Albums (mostly from bandcamp) that I enjoyed.

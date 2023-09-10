@@ -5,7 +5,7 @@ last_modified_at: 2023-07-16
 categories: [tech]
 ---
 
-The projects page is currently under construction. I mainly track progress of my larger projects using the README file in a github repository on [my gihub](https://github.com/kevin-nel?tab=repositories)
+> The projects page is currently under construction. I mainly track progress of my larger projects using the README file in a github repository on [my gihub](https://github.com/kevin-nel?tab=repositories)
 
 I have an ender 3 v2 and mostly print in PLA.
 

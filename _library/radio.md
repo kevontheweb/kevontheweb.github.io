@@ -13,7 +13,7 @@ This [excellent talk by Gerard de Jong](https://youtu.be/DREv1zpkVwM) goes over 
 
 Here are some of my favorites (not all of these are from the above video):
 
-- receive signals from [satellites](satellites.md).
+- receive signals from [satellites](projects/satellites).
   - sstv on the iss
   - images on the NOAA weather sattelites (using wxtoimg)
 - "hack" gate motors and other keyfob systems

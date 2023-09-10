@@ -54,7 +54,20 @@ git push -u origin main #main is the branch to push commit to and -u sets it as 
 git rm --cached `git ls-files -i -c --exclude-from=.gitignore`
 ```
 
-## Linux
+### download youtube playsists into named folders from list of links in text file
 
-- [why i think linux is great](/blog/completed/2021-06-30-why-i-think-linux-is-great.md)
-- my guide to setting up [windows vsts on linux](/blog/completed/2021-07-16-windows-vsts-on-linux.md) using yabridge
+```bash
+cat downloads.txt | xargs -n1 yt-dlp -x --audio-quality best --audio-format mp3  --embed-metadata -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'
+```
+
+### convert folder of m4a files to mp3 while keeping metadata
+
+``` bash
+for i in *; do ffmpeg -i "$i" -ab 128k "${i%.*}.mp3" ; done && trash *.m4a
+```
+
+### change sample rate of system audio in pipewire
+
+```bash
+pw-metadata -n settings 0 clock.force-rate 192000
+```

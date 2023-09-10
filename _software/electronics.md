@@ -20,46 +20,27 @@ some common connectors are:
 [This video](https://www.youtube.com/watch?v=GZOh1NzqzzU) is a very thorough explanation of how to crimp many types of connectors.
 
 -->
-## digital electronics
-
-### bitwise operations
-
-Multiplication by 2 can be accomplished by shifting the bits in a register to the left by 1
-
-Division by 2 can be accomplished by shifting the bits in a register to the right by 1
-
-Modulo as well as many other operations can be done similarly
-
-See [this post](https://mastodon.social/@elbosso/106767096728015399) and [this article](https://graphics.stanford.edu/~seander/bithacks.html)
-
-This [wiki on bitmath](https://bisqwit.iki.fi/story/howto/bitmath/) is also really good
-
-## Software Tools
-
-- [wokwi arduino simulator](https://wokwi.com/)
-- [flux - collaborative EDA](https://www.flux.ai/p)
-
 ## Bugs That I Want To Document Because It Wasted A Lot Of My Time
 
 ### Unable To Communicate Over Serial With Hardware (Arduino, Ch341 Serial Etc) On Linux
 
 1. Make sure you are in the ``uucp`` group.
 
-```bash
-usermod -aG uucp $USER
-```
+  ```bash
+  usermod -aG uucp $USER
+  ```
 
 2. Check if you have ``orca`` installed. ``brltty``, a dependency of orca, conflicts with the udev rules that assign ``/dev/ttyUSB*`` and other serial devices) uninstall ``orca`` and ``brltty`` and check if your problem is resolved.
 
-> You may need to log out and log back in for these fixes (definitely for number 1)
+  > You may need to log out and log back in for these fixes (definitely for number 1)
 
 3. check dmesg output to see what is happening. (it may help if you still don't come right)
 
-```bash
-dmesg -k | grep "ftdi"
-dmesg -k | grep "ttyUSB"
-dmesg -k | grep "ch34"
-```
+  ```bash
+  dmesg -k | grep "ftdi"
+  dmesg -k | grep "ttyUSB"
+  dmesg -k | grep "ch34"
+  ```
 
 [source](https://www.ftdichip.com/Support/Documents/TechnicalNotes/TN_102_Customising_FTDI_VID_PID_In_Linux(FT_000081).pdf) that helped me figure it out
 
@@ -81,3 +62,22 @@ sleep 3;
 ./jtagconfig;
 cd $DIR;
 ```
+
+## digital electronics
+
+### bitwise operations
+
+Multiplication by 2 can be accomplished by shifting the bits in a register to the left by 1
+
+Division by 2 can be accomplished by shifting the bits in a register to the right by 1
+
+Modulo as well as many other operations can be done similarly
+
+See [this post](https://mastodon.social/@elbosso/106767096728015399) and [this article](https://graphics.stanford.edu/~seander/bithacks.html)
+
+This [wiki on bitmath](https://bisqwit.iki.fi/story/howto/bitmath/) is also really good
+
+## Software Tools
+
+- [wokwi arduino simulator](https://wokwi.com/)
+- [flux - collaborative EDA](https://www.flux.ai/p)

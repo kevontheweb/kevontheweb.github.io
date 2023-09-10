@@ -28,7 +28,7 @@ here's a family photo 😛 with the le chiffre.
 
 ## corne
 
-I recently ordered some PCBs from [jlcpcb]() to build a corne crkbd
+I recently ordered some PCBs from [jlcpcb](jlcpcb.com) to build a corne crkbd
 
 ![corne crkbd](/assets/images/corne_akko_neon_mda_kailh_box_royals_1.jpg)
 

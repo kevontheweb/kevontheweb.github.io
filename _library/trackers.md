@@ -1,6 +1,10 @@
 ---
 title: Trackers
+author: {{site.author}}
+last_modified_at: 2023-09-06
+categories: [music]
 ---
+
 
 Trackers were a popular way of composing music on a computer before traditional DAWs gained popularity.
 They were often used for music in video games and by the [demoscene](https://en.wikipedia.org/wiki/Demoscene) and in the [jungle/drum and bass](https://www.youtube.com/watch?v=WV1McEtejxo) scene.
@@ -65,9 +69,9 @@ if you intend on making music for different systems like NES, SNES, SEGA Genesis
 
 - botb
 - irc (esper.net)
-  - #modulez
-  - #mod_shrine
-  - #botb
+  - \#modulez
+  - \#mod_shrine
+  - \#botb
 - compos
   - [all sorts of battles](https://battleofthebits.org/)
   - [one hour comps](http://wiki.s3m.us/)

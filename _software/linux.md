@@ -71,3 +71,12 @@ for i in *; do ffmpeg -i "$i" -ab 128k "${i%.*}.mp3" ; done && trash *.m4a
 ```bash
 pw-metadata -n settings 0 clock.force-rate 192000
 ```
+
+### generate wallpaper from image using imagemagick
+
+This takes an image, resizes it to 1024x1024, and centers it on a background of 1920x1080. It chooses a pixel from the image as a color for the background.
+
+```bash
+mogrify -resize 1024x1024 -set background "%[pixel:p{10,10}]" \
+     -gravity center -extent 1920x1080 image.jpg 
+```

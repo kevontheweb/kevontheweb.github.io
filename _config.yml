@@ -2,10 +2,14 @@ title: Personal Site
 author: Kevin Nel
 description: My home on the world wide web.
 permalink: pretty
-markdown: kramdown
-#kramdown:
-#    syntax_highlighter: coderay
-#    smart_quotes: ["apos", "apos", "quot", "quot"]
+markdown: CommonMarkGhPages
+commonmark:
+  options: ["UNSAFE", "SMART", "FOOTNOTES"]
+  extensions: ["strikethrough", "autolink", "table", "tagfilter"]
+# markdown: kramdown
+# kramdown:
+#     syntax_highlighter: coderay
+#     smart_quotes: ["apos", "apos", "quot", "quot"]
 # Build settings
 #theme: minima
 plugins:

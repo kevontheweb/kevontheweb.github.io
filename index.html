@@ -1,21 +1,34 @@
----
-layout: default
-title: Blog
----
+<html>
 
-<!-- <h1>Welcome to My Website</h1>
-<p>{{site.description}}</p> -->
-<section class="posts">
-  <h1>{{ page.title }}</h1>
-  <ul>
-    {% for post in site.posts %}
-    {% unless post.path contains "microblog" %}
-    <li>
-      <time>{{ post.date | date: "%B %e, %Y" }}&nbsp;</time><a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
-    {% endunless %}
-    {% endfor %}
-  </ul>
-</section>
+<head>
+    <title>Kevin Nel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
 
-{%include mastodon.html%}
+<body style="max-width: 100%;">
+    <div style="height: 150px;"></div>
+    <center>
+        <h1><b><i>Kevin Nel</i></b></h1>
+        <img width="300px" src="img/home.jpg" alt="home">
+        <p>
+            <a href="me.html">me</a>
+            &nbsp;//&nbsp;
+            <a href="now.html">now</a>
+            &nbsp;//&nbsp;
+            <a href="cv.pdf">cv</a>
+            &nbsp;//&nbsp;
+            <a href="gear.html">gear</a>
+            &nbsp;//&nbsp;
+            <a href="other_stuff.html">other stuf</a>
+            &nbsp;//&nbsp;
+            <a href="contact.html">contact</a>
+            &nbsp;//&nbsp;
+            <a href="https://halfdeep.bandcamp.com/">music</a>
+            <!-- &nbsp;//&nbsp; -->
+            <!-- <a href="spotify.html">spotify playlists</a> -->
+        </p>
+    </center>
+</body>
+
+</html>

@@ -1,59 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
 html {
-    font-family: 'Merriweather', serif;
-    font-size: 16px;
-    line-height: 1.3;
-    letter-spacing: 0.6;
+	font: 400 14px/1.3 'Merriweather', Georgia, serif;
+	letter-spacing: 0.6;
 }
 
 body {
-    max-width: 800px;
+	margin-top: 20px;
+	max-width: 800px;
+	/* uncomment if you want it centered */
+	/* display: block; */
+	/* margin: auto; */
 }
 
 img,
 figure,
 figcaption {
-    max-width: 480px;
+	max-width: 480px;
 }
 
 img {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
 }
 
 pre,
 span,
 code {
-    overflow-x: scroll;
+	overflow-x: scroll;
 }
 
+blockquote {
+	/* text-align: center; */
+	font-style: italic;
+	font-size: 0.9rem;
+}
+
+/* make headings cool 🕶️ */
 h1,
 h2,
 h3,
 h4,
 h5 {
-    text-transform: capitalize;
+	text-transform: capitalize;
 }
 
 h1:before {
-    content: "∵ "
+	content: "∵ "
 }
 
 h1:after {
-    content: " ∵"
-}
-
-h3:before {
-    content: "⊙ "
+	content: " ∵"
 }
 
 h2:before {
-    content: "⎔ "
+	content: "⎔ "
 }
 
+h3:before {
+	content: "⊙ "
+}
+
+
+/* links */
 a {
-    font-style: italic;
+	font-style: italic;
 }
 
 /* a:before {
@@ -64,44 +75,47 @@ a:after {
     content: "|"
 } */
 
-blockquote {
-    /* text-align: center; */
-    font-style: italic;
-    font-size: 0.9rem;
-}
 
 @media (prefers-color-scheme: dark) {
-    html {
-        background: black;
-        color: gainsboro;
-        /* don't burn my eyes please */
-    }
 
-    a {
-        color: cornflowerblue;
-    }
+	/* don't burn my eyes please */
+	html {
+		background: black;
+		color: white;
+	}
 
-    a:hover {
-        text-decoration: none;
-        font-style: italic;
-    }
+	a {
+		color: cornflowerblue;
+	}
 
-    a:visited {
-        color: plum;
-    }
+	a:hover {
+		text-decoration: none;
+		font-style: italic;
+	}
+
+	a:visited {
+		color: plum;
+	}
 
 }
 
-@media only screen and (max-width: 1080px) {
-    html {
-        font-size: 18px
-    }
+@media only screen and (max-width: 768px) {
+	html {
+		font-size: 1.5rem
+	}
 
-    body {
-        max-width: 100vw;
-    }
+	body>* {
+		/* so that you can tap on stuff with your fat fingers on mobile */
+		margin-top: 15px
+	}
 
-    img {
-        max-width: 75vw;
-    }
+	body {
+		max-width: 100vw;
+	}
+
+	img,
+	figure,
+	figcaption {
+		max-width: 90vw;
+	}
 }

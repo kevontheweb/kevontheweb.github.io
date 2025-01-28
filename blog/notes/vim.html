@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Kevin Nel | Vim</title>
+	<link rel="icon" href="../../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../../styles.css">
+	<meta name="description" content="">
+	<style></style>
+</head>
+
+<body>
+<h1>(neo)vim</h1>
+
+<p>This page contains a bunch of vim related stuff.</p>
+
+<h2>cool vim things i like to use</h2>
+
+<ul>
+<li><code>gf</code> to go to open file under cursor and <code>C-O</code> to return back to last open file</li>
+<li><code>g;</code> to go to the line where you last made an edit</li>
+<li><code>ci(</code> to change the text inside the parenthesis that the cursor is within (also works for other bracket types as well as closing brackets <code>{</code>,<code>}</code>,<code>[</code>,<code>]</code>,<code>)</code>, quotations <code>"</code>,<code>'</code>). <code>ca(</code> will change <em>around</em> the brackets also deleting the brackets.</li>
+<li><code>f</code> and <code>t</code> to move the cursor to next occurrence of a character on the current line (capital <code>F</code> and <code>T</code> move to previous). You can repeat this movement by using <code>;</code> to repeat forward and <code>,</code> to repeat backwards.</li>
+<li><code>V</code> to select the current line</li>
+<li>searching for a word with <code>/</code> and then using <code>n</code> to go to next occurrence and <code>N</code> to go to previous occurrence</li>
+<li>scrolling by a full page with forward (<code>&lt;c-f&gt;</code>) back (<code>&lt;c-b&gt;</code>)</li>
+<li>centering line at cursor in the view with <code>zz</code></li>
+<li>I also like to use vim substitutions using the <code>:s</code> command.</li>
+<li><code>gx</code> to open the file under curse with system default application, <strong>this also works for URLS</strong></li>
+<li><code>K</code> to open information from diagnostics and documentation for the word under the cursor.</li>
+</ul>
+
+<h2>plugins i use</h2>
+
+<blockquote>
+  <p>note: my config is often changing, you can see what I've got going on at <a href="https://github.com/kevin-nel/linux-configs">my configs repo</a></p>
+</blockquote>
+
+<p>I currently use <a href="https://github.com/folke/lazy.nvim">lazy.nvim</a> to manage plugins.</p>
+
+<p>Plugins:</p>
+
+<ul>
+<li><a href="https://github.com/folke/which-key.nvim">which key</a> shows a nice popup with commands available after you type the first letter of a command. I love this because I often forget custom bindings and this helps me to remember they exist and even learn about some new ones.
+Themes:</li>
+<li><a href="https://github.com/lewis6991/gitsigns.nvim">gitsigns</a> this shows some git information in the gutter. I usually just use regular <code>git</code> commands on the cli or vscode for diffs of bigger changes.</li>
+<li><a href="https://github.com/Exafunction/codeium.vim">codeium</a>, Whether I like it or not AI is coming and it's at the very least trying to make our jobs easier. I've found this free alternative to co-pilot works quite well. But I often have it disabled as it slows down the editor and I also like to not have so much help when learning.</li>
+<li><a href="https://github.com/nvim-telescope/telescope.nvim">Telescope</a> this is just an all round super useful plugin. It basically adds a command pallette style interface to neovim and lots of other third party plugins support it as well. It's great for fuzzy finding, jumping to symbols and easy control of other neovim parameters.</li>
+<li><a href="https://github.com/nvim-lualine/lualine.nvim">lualine</a>, it's a statusline that requires minimal setup.</li>
+</ul>
+
+<p>Themes:</p>
+
+<ul>
+<li><a href="https://github.com/folke/tokyonight.nvim">tokyo night</a></li>
+</ul>
+
+<h3>LSP stuff</h3>
+
+<p>I used <a href="https://github.com/nvim-lua/kickstart.nvim">kickstart.nvim</a> as a jumping off point for my LSP setup so I am using <a href="https://github.com/hrsh7th/nvim-cmp">nvim-cmp</a> for completions, <a href="https://github.com/neovim/nvim-lspconfig">nvim-lspconfig</a> and <a href="https://github.com/williamboman/mason.nvim">mason</a> for lsp configuration.
+I also use <a href="https://github.com/jose-elias-alvarez/null-ls.nvim">null-ls</a> to run code formatters that aren't supported by the LSPs.</p>
+
+<h2>useful stuff in my vimrc</h2>
+
+<h3>remove trailing whitespaces on save</h3>
+<p><pre>
+autocmd BufWritePre *.py :%s/\s\+$//e
+</pre></p>
+
+<p><a href="https://vim.fandom.com/wiki/Remove_unwanted_spaces">source</a></p>
+
+<h3>save markdown files on insert leave</h3>
+
+<p>You can use this for any file type but i only want it to happen for markdown.</p>
+
+<p><pre>
+autocmd InsertLeave *.md silent! execute ":w"
+</pre></p>
+
+<h3>spellchecking for text documents</h3>
+
+<p>You can navigate to the next, <code>]s</code> and previous <code>[s</code> spelling mistake in normal mode and then bring up a list of corrections with <code>z=</code> when your cursor is over the word.
+I also remove the highlighting and opted to make the errors bold and underlined to be slightly less obnoxious</p>
+
+<p><pre>
+autocmd filetype markdown,tex,latex,groff set spell
+hi clear SpellBad
+hi SpellBad cterm=underline,bold
+</pre></p>
+
+<h3>my own vim statusline</h3>
+
+<p>I didn't want to use a plugin for my status line but wanted a few more things added.</p>
+
+<p><pre>
+"statusline
+set laststatus=2
+set statusline=
+set statusline+=%#PmenuSel#
+set statusline+=%#LineNr#
+set statusline+=\ %f
+set statusline+=%m
+set statusline+=%=
+set statusline+=%#LineNr#
+set statusline+=\ %y
+set statusline+=\ %{&amp;fileencoding?&amp;fileencoding:&amp;encoding}
+set statusline+=\[%{&amp;fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+</pre></p>
+
+<blockquote>
+  <p>edit: I now use <a href="https://github.com/nvim-lualine/lualine.nvim">lualine</a></p>
+</blockquote>
+
+<h3>type emojis and unicode characters with digraphs</h3>
+
+<p>Using <code>&lt;Ctr&gt;+k</code> in insert mode will allow you to insert unicode characters using two character shorthand.
+You can see all the digraphs by entering <code>:digraphs</code> or <code>:help digraph-table</code> in normal mode</p>
+
+<p>Some installs of vim contain some emojis by default but my vim install did not have emojis so I added the following to my <code>.vimrc</code>.</p>
+
+<blockquote>
+  <p>note: when you search online for <a href="https://unicode.org/emoji/charts/full-emoji-list.html">emoji codes</a> the codes are given in hexadecimal (base 16) and vim wants them in decimal (base 10). You can use <a href="https://www.binaryhexconverter.com/hex-to-decimal-converter">an online tool</a> to convert hex to dec.</p>
+</blockquote>
+
+<pre>
+dig &lt;3 129293 " 🤍
+dig :) 128578 " 🙂
+dig :( 128577 " 🙁
+dig ;) 128521 " 😉
+dig :P 128523 " 😋
+dig xD 128514 " 😂
+dig B) 128526 " 😎
+dig :| 128528 " 😐
+dig (: 128579 " 🙃
+dig &gt;: 128545 " 😡
+dig :I 128556 " 😬
+dig := 128557 " 😭
+dig :o 128558 " 😮
+dig :O 128561 " 😱
+dig 8| 128563 " 😳
+dig z: 128564 " 😴
+dig xo 128565 " 😵
+dig tx 128591 " 🙏
+dig ok 128076 " 👌
+dig mm 129292 " 🤌
+</pre>
+
+<blockquote>
+  <p>note: you could also use abbreviations with <code>ab</code> if you want vim to always replace that text in insert mode and don't want to enter a new mode.</p>
+</blockquote>
+
+<p><a href="https://lual.dev/blog/how-to-use-emojis-with-vim/">source</a></p>
+
+<h2>useful links</h2>
+
+<ul>
+<li><a href="https://github.com/neovim/nvim-lspconfig">nvim language server</a></li>
+<li><a href="https://www.vi-improved.org/plugins/">collection of good vim plugins</a></li>
+<li><a href="https://blog.samwhited.com/2015/04/the-dharma-of-vi/">some funny</a> <a href="https://blog.sanctum.geek.nz/vim-koans/">vim koans</a> on the 'zen' of vim.[^1]</li>
+</ul>
+
+<p>[^1]: <a href="https://en.wikipedia.org/wiki/Koan">What is a koan?</a></p>
+
+<hr>
+<footer>
+	<a href="index.html">home</a>
+	<p>updated: <time datetime="2023-07-16">16/07/2023</time></p>
+</footer>
+
+</body>
+</html>
